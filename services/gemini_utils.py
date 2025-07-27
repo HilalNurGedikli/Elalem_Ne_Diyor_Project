@@ -12,7 +12,9 @@ def ask_gemini_with_reviews(site: str, yorumlar: list[str]) -> str:
 Sen bir güvenilirlik analiz uzmanısın. Aşağıda {site} hakkında Şikayetvar sitesinden alınmış bazı kullanıcı yorumları verilmiştir. Bu yorumlara göre sitenin güvenilirlik düzeyini değerlendir:
 
 Yorumlar:
-{chr(10).join(['- ' + yorum for yorum in yorumlar])}
+# Yeni hali (DOĞRU)
+{chr(10).join(['- ' + yorum["yorum"] for yorum in yorumlar if "yorum" in yorum])}
+
 
 Analiz sonucunda güvenilirlik derecesini belirt.
 """

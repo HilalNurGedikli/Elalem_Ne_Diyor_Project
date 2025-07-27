@@ -1,17 +1,17 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from bs4 import BeautifulSoup
+import subprocess
+import time
+import sys
+import json
 
-def scrape_sikayetvar(site_name: str, max_entries: int = 5) -> list[str]:
+def scrape_sikayetvar(site_name: str) -> list[dict]:
     url_site_name = site_name.replace(".", "-")
     url = f"https://www.sikayetvar.com/{url_site_name}"
 
     options = Options()
-    options.add_argument("--headless")
+    # options.add_argument("--headless")  # İstersen aktif et
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
 
@@ -21,23 +21,27 @@ def scrape_sikayetvar(site_name: str, max_entries: int = 5) -> list[str]:
     )
     driver.get(url)
 
-    try:
-        # En fazla 10 saniye boyunca yorum elemanlarının gelmesini bekle
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "p.card-text"))
-        )
-    except Exception as e:
-        print(f"Yorumlar yüklenmedi veya hata oluştu: {e}")
-    
-    # Sayfa içeriğini çek
-    soup = BeautifulSoup(driver.page_source, "html.parser")
-    entries = soup.find_all("p", class_="card-text")
-    yorumlar = [entry.get_text(strip=True) for entry in entries[:max_entries]]
+    # Sayfa biraz yüklensin diye aşağı kaydır
+    for _ in range(2):
+        driver.execute_script("window.scrollBy(0, 1000);")
+        time.sleep(1.5)
 
-    # Yorumlar boşsa HTML’yi kaydet
-    if not yorumlar:
-        with open("sayfa.html", "w", encoding="utf-8") as f:
-            f.write(driver.page_source)
+    # Sayfayı kaydet
+    with open("sayfa.html", "w", encoding="utf-8") as f:
+        f.write(driver.page_source)
+    print("HTML sayfası kaydedildi: sayfa.html")
+
+    # yorumlari_cek.py dosyasını çalıştır
+    print("Yorumları işleyen Python dosyası çalıştırılıyor...")
+    subprocess.run([sys.executable, "yorumlari_cek.py"], check=True)
 
     driver.quit()
-    return yorumlar
+
+    # İşlenmiş JSON dosyasını oku ve liste olarak döndür
+    try:
+        with open("yorumlar_tarihli_filtreli.json", "r", encoding="utf-8") as json_dosya:
+            yorumlar = json.load(json_dosya)
+            return yorumlar
+    except FileNotFoundError:
+        print("yorumlar_tarihli_filtreli.json bulunamadı.")
+        return []

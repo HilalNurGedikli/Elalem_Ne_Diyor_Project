@@ -3,12 +3,12 @@ from services.site_lookup import scrape_sikayetvar
 from services.gemini_utils import ask_gemini_with_reviews
 
 router = APIRouter()
-
 @router.get("/analyze")
 def analyze_site(site: str = Query(..., description="Değerlendirilecek site adı")):
     yorumlar = scrape_sikayetvar(site)
 
-    if not yorumlar or yorumlar[0].startswith("[HATA]"):
+    # Eğer yorumlar list değilse veya içinde yorum verisi yoksa hata döndür
+    if not isinstance(yorumlar, list) or not yorumlar or not isinstance(yorumlar[0], dict):
         return {
             "site": site,
             "yorum_sayısı": 0,
