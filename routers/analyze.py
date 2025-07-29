@@ -1,11 +1,14 @@
 from fastapi import APIRouter, Query
 from services.site_lookup import scrape_sikayetvar
+from services.twitterdan_jsona_cek import twitter_yorum_ekle
 from services.gemini_utils import ask_gemini_with_reviews
-
+from yorumlari_json_oku import yorumlari_oku
 router = APIRouter()
 @router.get("/analyze")
 def analyze_site(site: str = Query(..., description="Değerlendirilecek site adı")):
-    yorumlar = scrape_sikayetvar(site)
+    scrape_sikayetvar(site)
+    twitter_yorum_ekle(site)
+    yorumlar= yorumlari_oku()
 
     # Eğer yorumlar list değilse veya içinde yorum verisi yoksa hata döndür
     if not isinstance(yorumlar, list) or not yorumlar or not isinstance(yorumlar[0], dict):
