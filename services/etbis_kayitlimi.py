@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.service import Service
 
 
 def etbis_kayit_kontrol(girdi: str) -> str:
+    girdi = girdi.replace(" ", "")  # boşlukları sil
     if not girdi.startswith("http"):
         site_url = f"https://www.{girdi}"
     else:
@@ -68,9 +69,3 @@ def yorumu_jsona_ekle(yorum: str, json_dosya_yolu: str = "yorumlar_tarihli_filtr
     with open(json_dosya_yolu, "w", encoding="utf-8") as f:
         json.dump(mevcut_yorumlar, f, ensure_ascii=False, indent=2)
 
-
-if __name__ == "__main__":
-    site = "badebutik.com"
-    sonuc = etbis_kayit_kontrol(site)
-    print(sonuc)  # opsiyonel
-    yorumu_jsona_ekle(sonuc)

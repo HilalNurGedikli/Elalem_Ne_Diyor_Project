@@ -1,0 +1,2 @@
+JSON_PATH = "veriler/json"
+TXT_PATH = "veriler/txt"
