@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-def twitter_yorum_ekle(query: str, max_results: int = 10, json_dosya: str = "yorumlar_tarihli_filtreli.json"):
+def twitter_yorum_ekle(query: str, max_results: int = 100, json_dosya: str = "yorumlar_tarihli_filtreli.json"):
     """Twitter'dan belirtilen sorguya göre yorumları alıp JSON dosyasına ekler."""
 
     bearer_token = "AAAAAAAAAAAAAAAAAAAAAAz53AEAAAAAVDJhfP%2FNGjTlUxg8SZ2%2BaRmlsRM%3Dapnkbo0p7mZuVXesRCxnvpp6bCy3k7EdLa1q1Q9CZDsDfZMEum"

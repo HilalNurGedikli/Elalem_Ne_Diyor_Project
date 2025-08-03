@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 configure(api_key=os.getenv("GEMINI_API_KEY"))
-print("API KEY :", os.getenv("GEMINI_API_KEY"))
 model = GenerativeModel("models/gemini-2.5-flash")
 
 def ask_gemini_with_reviews(site: str, yorumlar: list[str]) -> str:
