@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 load_dotenv()
 configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = GenerativeModel("models/gemini-2.5-flash")
-    
-def ask_gemini_with_reviews(site: str, yorumlar: list[dict]) -> str:
+
+def ask_gemini_with_reviews(site: str, yorumlar: list[str]) -> str:
     prompt = f"""
 Sen bir güvenlik analiz uzmanısın. Aşağıda {site} isimli bir butik e-ticaret sitesi hakkında farklı kaynaklardan (Şikayetvar, ETBİS, Twitter...) toplanmış kullanıcı yorumları ve veriler bulunmaktadır. Bu verileri kaynaklarına göre ayrı ayrı değerlendir:
 
