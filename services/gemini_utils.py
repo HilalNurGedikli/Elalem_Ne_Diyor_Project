@@ -7,6 +7,7 @@ configure(api_key=os.getenv("GEMINI_API_KEY"))
 print("API KEY :", os.getenv("GEMINI_API_KEY"))
 model = GenerativeModel("models/gemini-2.5-flash")
 
+
 def ask_gemini_with_reviews(site: str, yorumlar: list[str]) -> str:
     prompt = f"""
 Sen bir güvenilirlik analiz uzmanısın. Aşağıda {site} hakkında Şikayetvar sitesinden alınmış bazı kullanıcı yorumları verilmiştir. Bu yorumlara göre sitenin güvenilirlik düzeyini değerlendir:
