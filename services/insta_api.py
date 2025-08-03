@@ -5,8 +5,10 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
-JSON_PATH = "veriler/json"
-TXT_PATH = "veriler/txt"
+from get_param import Paths as path
+
+JSON_PATH = path.json_path
+TXT_PATH = path.txt_path
 
 
 def get_instagram_stats(username):

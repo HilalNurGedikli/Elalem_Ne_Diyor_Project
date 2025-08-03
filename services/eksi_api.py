@@ -7,8 +7,10 @@ import sys
 import json
 import os
 
-JSON_PATH = "veriler/json"
-TXT_PATH = "veriler/txt"
+from get_param import Paths as path
+
+JSON_PATH = path.json_path
+TXT_PATH = path.txt_path
 
 
 def scrape_eksi(baslik: str, max_pages: int = 3) -> None:
