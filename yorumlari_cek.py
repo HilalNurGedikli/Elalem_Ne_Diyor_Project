@@ -36,7 +36,8 @@ for i, p in enumerate(paragraflar, 1):
         filtreli_yorumlar.append({
             "id": i,
             "yorum": metin,
-            "tarihler": tarihler
+            "tarihler": tarihler,
+            "kaynak" : "sikayetvar"
         })
 
 # JSON'a kaydet
