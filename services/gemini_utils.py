@@ -6,6 +6,17 @@ load_dotenv()
 configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = GenerativeModel("models/gemini-2.5-flash")
 
+def find_insta(site: str) -> str:
+    prompt = f"""
+    Bana {site} 'e ait instagram sayfasını ve hakkındaki bilgileri bul ve kullanıcı yorumlarını direkt yaz
+    twitter, şikayetvar, etbis ve ekşi sözlük gibi kaynaklardan veri çek. bütün verileri istiyorum!!
+    """
+    try:
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        return f"[HATA] Gemini isteği başarısız: {str(e)}"
+
 def ask_gemini_with_reviews(site: str, yorumlar: list[str]) -> str:
     prompt = f"""
     Sen bir güvenlik analiz uzmanısın. Aşağıda {site} adlı bir butik e-ticaret sitesi hakkında çeşitli kaynaklardan (Şikayetvar, ETBİS, Twitter, Ekşi Sözlük) toplanmış kullanıcı yorumları ve veriler bulunmaktadır.
@@ -49,3 +60,7 @@ Veriler:
         return response.text
     except Exception as e:
         return f"[HATA] Gemini isteği başarısız: {str(e)}"
+
+
+if __name__ == "__main__":
+    print(find_insta("bade butik"))
