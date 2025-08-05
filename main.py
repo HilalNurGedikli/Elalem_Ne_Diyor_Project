@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from datetime import datetime
 from routers import analyze
@@ -7,6 +8,7 @@ import uvicorn
 import sys
 import os
 import logging
+import json
 from pathlib import Path
 
 # Logging konfigürasyonu
@@ -204,11 +206,19 @@ async def analyze_extension_data(request: AnalysisRequest):
 async def test_endpoint():
     """Test endpoint - Extension bağlantı testi"""
     logger.info("🧪 Test endpoint called")
-    return {
+    
+    # UTF-8 encoding ile Türkçe karakterleri test edelim
+    test_data = {
         "status": "success",
-        "message": "API is working!",
-        "timestamp": str(datetime.now())
+        "message": "API çalışıyor! Turkish chars: ğüşıöç",
+        "timestamp": str(datetime.now()),
+        "test_turkish": "Şımşır, çiçek, ığdır, öğrenci"
     }
+    
+    return JSONResponse(
+        content=test_data, 
+        media_type="application/json; charset=utf-8"
+    )
 
 @app.post("/analyze")
 async def analyze_site_endpoint(request: AnalysisRequest):
@@ -247,13 +257,17 @@ async def analyze_site_endpoint(request: AnalysisRequest):
             }
             
             logger.info(f"   📤 Sending Response: {response_data.get('site')} - {len(comments)} comments")
-            return response_data
+            
+            return JSONResponse(
+                content=response_data, 
+                media_type="application/json; charset=utf-8"
+            )
             
         except Exception as analysis_error:
             logger.error(f"   ❌ Analysis Error: {str(analysis_error)}")
             
             # Analiz hatası durumunda basit yanıt döndür
-            return {
+            fallback_data = {
                 "site": site_info.get('display_name', site_name),
                 "yorum_sayısı": len(comments),
                 "analiz": f"Site analizi yapıldı. {len(comments)} yorum toplandı. Detaylı analiz için dashboard'u kontrol edin.",
@@ -261,28 +275,32 @@ async def analyze_site_endpoint(request: AnalysisRequest):
                 "processed_at": str(datetime.now())
             }
             
+            return JSONResponse(
+                content=fallback_data, 
+                media_type="application/json; charset=utf-8"
+            )
+            
     except Exception as e:
         logger.error(f"   ❌ Request Error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/test")
-async def test_api():
-    """Test endpoint - Chrome extension connectivity test"""
-    return {
-        "status": "success",
-        "message": "API is working!",
-        "timestamp": str(datetime.now())
-    }
+# Duplicate test endpoint removed - using the UTF-8 version above
 
 @app.get("/status")
 async def get_status():
     """API durumunu kontrol et"""
-    return {
+    status_data = {
         "status": "healthy",
         "mode": "main_system_integrated",
         "chrome_extension": "enabled",
-        "services": ["sikayetvar", "eksisozluk", "instagram", "twitter", "trendyol", "etbis", "gemini"]
+        "services": ["şikayetvar", "ekşisözlük", "instagram", "twitter", "trendyol", "etbis", "gemini"],
+        "encoding": "UTF-8 destekli"
     }
+    
+    return JSONResponse(
+        content=status_data, 
+        media_type="application/json; charset=utf-8"
+    )
 
 # Orijinal router'ı dahil et
 app.include_router(analyze.router)
