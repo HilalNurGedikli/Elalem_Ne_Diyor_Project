@@ -6,15 +6,50 @@ load_dotenv()
 configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = GenerativeModel("models/gemini-2.5-flash")
 
+def find_insta(site: str) -> str:
+    prompt = f"""
+    Bana {site} 'e ait instagram sayfasını ve hakkındaki bilgileri bul ve kullanıcı yorumlarını direkt yaz
+    twitter, şikayetvar, etbis ve ekşi sözlük gibi kaynaklardan veri çek. bütün verileri istiyorum!!
+    """
+    try:
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        return f"[HATA] Gemini isteği başarısız: {str(e)}"
+
 def ask_gemini_with_reviews(site: str, yorumlar: list[str]) -> str:
     prompt = f"""
-Sen bir güvenlik analiz uzmanısın. Aşağıda {site} isimli bir butik e-ticaret sitesi hakkında farklı kaynaklardan (Şikayetvar, ETBİS, Twitter...) toplanmış kullanıcı yorumları ve veriler bulunmaktadır. Bu verileri kaynaklarına göre ayrı ayrı değerlendir:
+    Sen bir güvenlik analiz uzmanısın. Aşağıda {site} adlı bir butik e-ticaret sitesi hakkında çeşitli kaynaklardan (Şikayetvar, ETBİS, Twitter, Ekşi Sözlük) toplanmış kullanıcı yorumları ve veriler bulunmaktadır.
 
-1. **Şikayetvar** verilerinde kullanıcıların şikayetlerinin sayısı, yoğunluğu ve haklılık düzeyi hakkında yorum yap.burada maduriyetlerin nereden kaynaklandığı önemli. ve buradan gelen yorumların en nihayetinde şikayetten ibaret olduğunu unutma bu site hakkında olumlu şeyler olmadığı anlamına gelmez.
-2. **ETBİS** verisinde site kayıtlı mı, değil mi? Bu durumun güvenilirlik açısından ne anlama geldiğini belirt.
-3. **Twitter** yorumlarında genel kullanıcı memnuniyeti,duygu analizi, olumlu ya da olumsuz görüşlerin baskınlığı hakkında çıkarımda bulun.
+    Verileri **kaynak bazında ayrı ayrı değerlendir** ve aşağıdaki kurallara dikkat et:
 
-Tüm bu değerlendirmelerin sonucunda sitenin genel güvenilirliğini, güçlü ve zayıf yönleriyle birlikte analiz et ve kısa bir sonuç çıkarımı yaz.
+    1. **Şikayetvar**: 
+        - Yorumlar ticari alışveriş deneyimiyle ilgili mi? Değilse atla.
+        - Kaç farklı şikayet var, içeriklerinde öne çıkan sorunlar neler?
+        - Kullanıcıların mağduriyetleri benzer mi, tekrar eden sorunlar var mı?
+        - Yorumların tümü şikayet olduğundan, olumlu veri beklenmemeli, fakat yorumlardaki **haklılık payını ve yoğunluğunu** analiz et.
+
+    2. **ETBİS**: 
+       - Site ETBİS sistemine kayıtlı mı? 
+       - Kayıtlıysa bu yasal güvenilirlik açısından ne ifade eder?
+       - Kayıtlı değilse bu eksikliğin anlamı nedir?
+
+    3. **Twitter**: 
+       - Yorum sayısı yeterli mi? Değilse analiz yapmadan geç.
+        - Kullanıcılar markadan olumlu mu olumsuz mu bahsediyor?
+        - Genelde duygu analizi ne yönde (memnuniyet, öfke, şüphe vb.)?
+        - Ticari bağlamı olmayan yorumlar (reklam, şaka, alakasız) varsa dikkate alma.
+
+    4. **Ekşi Sözlük**: 
+        - Kaç yorum var ve ne kadar güncel?
+        - Yorumların tarihleri çok eskiyse olumsuzlukların düzeltilmiş olabileceğini varsayabilirsin.
+        - Yorumlar ticari deneyime dayanıyor mu? Alakasızsa geç.
+        - Genel memnuniyet düzeyi ve hangi yönler eleştirilmiş veya övülmüş, değerlendir.
+
+    Tüm bu kaynakları inceledikten sonra:
+        - **Sitenin genel güvenilirliğini** değerlendir.
+        - **Güçlü ve zayıf yönleri** özetle.
+        - Son olarak kısa ve objektif bir sonuç çıkarımı yap. Abartıdan, süslemelerden kaçın.
 
 Veriler:
 {chr(10).join(['- (' + yorum.get('kaynak', 'belirsiz') + ') ' + yorum['yorum'] for yorum in yorumlar if "yorum" in yorum])}
@@ -25,3 +60,7 @@ Veriler:
         return response.text
     except Exception as e:
         return f"[HATA] Gemini isteği başarısız: {str(e)}"
+
+
+if __name__ == "__main__":
+    print(find_insta("bade butik"))

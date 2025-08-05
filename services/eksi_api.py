@@ -3,73 +3,82 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import time
+import uuid
 import sys
 import json
 import os
 
-from get_param import Paths as path
-
-JSON_PATH = path.json_path
+from services.get_param import Paths as path
 TXT_PATH = path.txt_path
 
-
 def scrape_eksi(baslik: str, max_pages: int = 3) -> None:
+    os.makedirs(TXT_PATH, exist_ok=True)
+
     url_baslik = baslik.lower().replace(" ", "%20")
     url = f"https://eksisozluk.com/{url_baslik}"
-
-    # Dosya adlarını hazırla
-    json_filename = f"{JSON_PATH}/_{url_baslik}_eksi_entryler.json"
+    json_filename = "yorumlar_tarihli_filtreli.json"
     txt_filename = f"{TXT_PATH}/_{url_baslik}_eksi_entryler.txt"
 
-    # JSON dosyasını baştan boş bir liste ile başlat
-    with open(json_filename, "w", encoding="utf-8") as f_json:
-        json.dump([], f_json)
-
     options = Options()
-    options.add_argument("--headless")
+    #options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
     options.add_argument("--start-maximized")
 
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(
+        service=Service("C:/Users/gedik/tools/chromedriver-win64/chromedriver.exe"),
+        options=options
+    )
     driver.get(url)
     time.sleep(3)
 
     current_page = 1
     entry_count = 0
+    all_new_entries = []
 
     while True:
         current_url = driver.current_url
         print(f"\n🔗 URL: {current_url}")
         print(f"🟦 Sayfa {current_page} işleniyor...")
 
-        # Aşağı kaydır (içerik yüklemesi için)
         for _ in range(2):
             driver.execute_script("window.scrollBy(0, 1000);")
-            time.sleep(1)
+            time.sleep(1.5)
+        entry_blocks = driver.find_elements(By.CSS_SELECTOR, "li[id^='entry']")
+        print(entry_blocks)
+        print(f"{len(entry_blocks)} entry bulundu.")
 
-        entries = driver.find_elements(By.CSS_SELECTOR, ".content")
-        print(f"{len(entries)} entry bulundu.")
-
-        if len(entries) == 0:
+        if not entry_blocks:
             print("🟨 Entry bulunamadı, işlem durduruluyor.")
             break
 
-        new_entries = []
         with open(txt_filename, "a", encoding="utf-8") as f_txt:
-            for i, entry in enumerate(entries, 1):
-                text = entry.text.strip()
-                entry_count += 1
-                print(f"{entry_count}. {text}")
-                f_txt.write(f"{entry_count}. {text}\n\n")
-                new_entries.append(text)
+        
+            for entry_block in entry_blocks:
+                try:
+                    text_element = entry_block.find_element(By.CSS_SELECTOR, ".content")
+                    date_element = entry_block.find_element(By.CSS_SELECTOR, "a.entry-date")
 
-        # JSON'a ekle
-        with open(json_filename, "r+", encoding="utf-8") as f_json:
-            existing = json.load(f_json)
-            f_json.seek(0)
-            json.dump(existing + new_entries, f_json, ensure_ascii=False, indent=2)
-            f_json.truncate()
+                    text = text_element.text.strip()
+                    tarih = date_element.text.strip()
+
+                    if not text:
+                        continue
+
+                    entry_count += 1
+                    print(f"{entry_count}. ({tarih}) {text}")
+                    f_txt.write(f"{entry_count}. ({tarih}) {text}\n\n")
+
+                    all_new_entries.append({
+                        "id": str(uuid.uuid4()),
+                        "yorum": text,
+                        "tarih": tarih,
+                        "kaynak": "eksi"
+                    })
+                except Exception as e:
+                    print(f"⚠️ Hata (entry atlanıyor): {e}")
+                    continue
+
 
         if current_page >= max_pages:
             print("🟥 Maksimum sayfa sınırına ulaşıldı.")
@@ -87,12 +96,17 @@ def scrape_eksi(baslik: str, max_pages: int = 3) -> None:
             break
 
     driver.quit()
+
+    # JSON'a yaz
+    if os.path.exists(json_filename):
+        with open(json_filename, "r", encoding="utf-8") as f_json:
+            existing = json.load(f_json)
+    else:
+        existing = []
+
+    existing.extend(all_new_entries)
+
+    with open(json_filename, "w", encoding="utf-8") as f_json:
+        json.dump(existing, f_json, ensure_ascii=False, indent=2)
+
     print("✅ Her sayfa çekildikçe veriler yazıldı ve işlem tamamlandı.")
-
-
-if __name__ == "__main__":
-    # Klasörler yoksa oluştur
-    os.makedirs(JSON_PATH, exist_ok=True)
-    os.makedirs(TXT_PATH, exist_ok=True)
-
-    scrape_eksi("selcuk bayraktar", max_pages=5)

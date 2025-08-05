@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-
+import time
 
 
 def etbis_kayit_kontrol(girdi: str) -> str:
@@ -19,7 +19,7 @@ def etbis_kayit_kontrol(girdi: str) -> str:
     tam_url = base_url + site_url
 
     options = Options()
-    options.add_argument("--headless")
+    #options.add_argument("--headless")
 
     driver = webdriver.Chrome(
         service=Service(r"C:\Users\gzmns\Downloads\chromedriver-win64\chromedriver-win64\chromedriver.exe"),
@@ -30,7 +30,8 @@ def etbis_kayit_kontrol(girdi: str) -> str:
 
     try:
         driver.get(tam_url)
-
+        driver.execute_script("window.scrollBy(0, 1000);")
+        time.sleep(1.5)
         tr_satirlari = driver.find_elements(By.XPATH, "//table//tr")
         if not tr_satirlari:
             return f"{site_url} E-Ticaret Bilgi Sistemine sisteminde kayıtlı değildir."
