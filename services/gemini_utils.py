@@ -63,6 +63,7 @@ def ask_gemini_with_reviews(site: str, yorumlar: list[str]) -> str:
         - Genel memnuniyet düzeyi ve hangi yönler eleştirilmiş veya övülmüş, değerlendir.
 
     Tüm bu kaynakları inceledikten sonra:
+        - **Site hakkında sitenin bilnirlik ve kapasitesine göre genel bir değerlendirme** yap
         - **Sitenin genel güvenilirliğini** değerlendir.
         - **Güçlü ve zayıf yönleri** özetle.
         - Son olarak kısa ve objektif bir sonuç çıkarımı yap. Abartıdan, süslemelerden kaçın.
