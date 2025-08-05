@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Sitesi - Elalem Chrome Extension Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .content {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-left: 4px solid #2196f3;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔍 Test Sitesi</h1>
+        <p>Elalem Chrome Extension Test Sayfası</p>
+    </div>
+
+    <div class="content">
+        <h2>Bu Sayfa Hakkında</h2>
+        <p>Bu sayfa, Elalem Chrome Extension'ının test edilmesi için oluşturulmuştur.</p>
+        
+        <div class="info">
+            <strong>Test İçin:</strong><br>
+            1. Chrome Extension'ı yükleyin<br>
+            2. Bu sayfayı açın<br>
+            3. Sağ üstte çıkan "🔍 Elalem Analizi" butonuna tıklayın<br>
+            4. Extension'ın API ile iletişim kurmasını bekleyin
+        </div>
+
+        <h3>Site Özellikleri</h3>
+        <ul>
+            <li>Site Adı: Test Sitesi</li>
+            <li>Kategori: Generic</li>
+            <li>Test URL'i: file:// protokolü</li>
+            <li>Analiz Tipi: Universal site support</li>
+        </ul>
+
+        <h3>Beklenen Sonuç</h3>
+        <p>Extension bu sayfada şunları yapmalı:</p>
+        <ul>
+            <li>Sayfa bilgilerini çıkarmalı (başlık, URL, vb.)</li>
+            <li>Python backend'e POST isteği göndermelidir</li>
+            <li>Backend'den analiz sonucu almalıdır</li>
+            <li>Sonucu sayfada göstermelidir</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2>Debug Bilgileri</h2>
+        <p><strong>URL:</strong> <span id="current-url"></span></p>
+        <p><strong>Hostname:</strong> <span id="hostname"></span></p>
+        <p><strong>Title:</strong> <span id="title"></span></p>
+        <p><strong>Timestamp:</strong> <span id="timestamp"></span></p>
+    </div>
+
+    <script>
+        // Debug bilgilerini doldur
+        document.getElementById('current-url').textContent = window.location.href;
+        document.getElementById('hostname').textContent = window.location.hostname || 'localhost';
+        document.getElementById('title').textContent = document.title;
+        document.getElementById('timestamp').textContent = new Date().toISOString();
+
+        // Console'a test bilgileri yazdır
+        console.log('🔍 Test Sayfası Yüklendi');
+        console.log('URL:', window.location.href);
+        console.log('Hostname:', window.location.hostname);
+        console.log('Extension beklendiği zaman otomatik olarak çalışacak');
+    </script>
+</body>
+</html>

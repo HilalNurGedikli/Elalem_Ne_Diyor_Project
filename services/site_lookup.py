@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 import subprocess
 import time
 import sys
@@ -16,9 +18,10 @@ def scrape_sikayetvar(site_name: str) -> list[dict]:
     options.add_argument("--no-sandbox")
 
     driver = webdriver.Chrome(
-        service=Service("C:/Users/gedik/tools/chromedriver-win64/chromedriver.exe"),
+        service=Service(r"C:\Users\gzmns\Downloads\chromedriver-win64\chromedriver-win64\chromedriver.exe"),
         options=options
     )
+    # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     driver.get(url)
 
     # Sayfa biraz yüklensin diye aşağı kaydır

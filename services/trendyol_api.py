@@ -38,7 +38,20 @@ def get_store_id_from_search(store_name):
         return None, store_url
 
 
-# Örnek
-store_id, url = get_store_id_from_search("Epify")
-print("✅ Store ID:", store_id)
-print("🔗 Mağaza URL:", url)
+# Örnek kullanım (sadece doğrudan çalıştırıldığında)
+if __name__ == "__main__":
+    store_id, url = get_store_id_from_search("Epify")
+    if store_id and url:
+        print("✅ Store ID:", store_id)
+        print("🔗 Mağaza URL:", url)
+    else:
+        print("❌ Store bulunamadı")
+
+def scrape_trendyol(site_name: str) -> list:
+    """Trendyol scraping fonksiyonu - API entegrasyonu için"""
+    try:
+        # Burada Trendyol scraping implementasyonu olacak
+        return []
+    except Exception as e:
+        print(f"Trendyol scraping hatası: {e}")
+        return []

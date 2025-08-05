@@ -11,6 +11,22 @@
 *.pyd
 *.log
 
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+venv2/
+nesli/myenv/
+env/
+ENV/
+
+# Chrome extension development
+chrome-extension/*.crx
+chrome-extension/*.pem
+
 # Packages #
 ############
 *.7z
@@ -94,3 +110,4 @@ chromedriver.zip
 .env.*
 env
 
+.env

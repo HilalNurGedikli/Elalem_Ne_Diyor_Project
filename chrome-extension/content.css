@@ -1,0 +1,62 @@
+/* Content script CSS - Web sayfasına enjekte edilecek stiller */
+
+#elalem-analysis-btn {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+#elalem-analysis-btn:hover {
+    transform: scale(1.05) !important;
+}
+
+/* Analiz butonunun diğer elementlerle çakışmaması için */
+#elalem-analysis-btn {
+    pointer-events: auto !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Notification stilleri */
+.elalem-notification {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Site-specific adjustments */
+/* Şikayetvar için */
+body[data-elalem-site="sikayetvar"] #elalem-analysis-btn {
+    top: 100px !important;
+}
+
+/* Ekşi Sözlük için */
+body[data-elalem-site="eksisozluk"] #elalem-analysis-btn {
+    top: 80px !important;
+}
+
+/* Instagram için */
+body[data-elalem-site="instagram"] #elalem-analysis-btn {
+    top: 70px !important;
+    right: 30px !important;
+}
+
+/* Twitter için */
+body[data-elalem-site="twitter"] #elalem-analysis-btn {
+    top: 60px !important;
+}
+
+/* Trendyol için */
+body[data-elalem-site="trendyol"] #elalem-analysis-btn {
+    top: 120px !important;
+}
