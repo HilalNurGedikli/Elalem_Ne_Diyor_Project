@@ -7,9 +7,14 @@ import time
 import sys
 import json
 import re
+import os
 from bs4 import BeautifulSoup
 import uuid
 from datetime import datetime
+from dotenv import load_dotenv
+
+# .env dosyasını yükle
+load_dotenv()
 
 def scrape_sikayetvar(site_name: str) -> list[dict]:
     """Şikayetvar.com'dan yorumları çek ve işle - HTML dosyası kaydetmeden"""
@@ -37,10 +42,31 @@ def scrape_sikayetvar(site_name: str) -> list[dict]:
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
 
-    driver = webdriver.Chrome(
-        service=Service(r"C:\Users\gzmns\Downloads\chromedriver-win64\chromedriver-win64\chromedriver.exe"),
-        options=options
-    )
+    # ChromeDriver path'ini environment variable'dan al
+    chromedriver_path = os.getenv('CHROMEDRIVER_PATH', './services/chromedriver.exe')
+    fallback_path = os.getenv('CHROMEDRIVER_FALLBACK_PATH', 'chromedriver')
+    
+    try:
+        # Önce birincil path'i dene
+        driver = webdriver.Chrome(
+            service=Service(chromedriver_path),
+            options=options
+        )
+    except Exception as e:
+        print(f"⚠️ Birincil ChromeDriver çalışmadı ({chromedriver_path}): {e}")
+        try:
+            # Fallback path'i dene
+            driver = webdriver.Chrome(
+                service=Service(fallback_path),
+                options=options
+            )
+        except Exception as e2:
+            print(f"⚠️ Fallback ChromeDriver çalışmadı ({fallback_path}): {e2}")
+            # WebDriverManager ile dene
+            driver = webdriver.Chrome(
+                service=Service(ChromeDriverManager().install()),
+                options=options
+            )
     
     try:
         driver.get(url)

@@ -81,7 +81,48 @@ pip install -r requirements.txt
 
 ### 2. Konfigürasyon
 
-`.env` dosyasını oluşturun:
+#### .env Dosyası Konfigürasyonu
+
+Projeyi çalıştırmadan önce `.env` dosyasını oluşturun ve aşağıdaki environment variable'ları tanımlayın:
+
+```bash
+# Google Gemini AI API Anahtarı (Zorunlu)
+GEMINI_API_KEY=your_gemini_api_key_here
+
+# Twitter API Konfigürasyonu (İsteğe Bağlı)
+TWITTER_BEARER_TOKEN=your_twitter_bearer_token_here
+TWITTER_API_KEY=your_twitter_api_key_here
+TWITTER_API_SECRET=your_twitter_api_secret_here
+TWITTER_ACCESS_TOKEN=your_twitter_access_token_here
+TWITTER_ACCESS_TOKEN_SECRET=your_twitter_access_token_secret_here
+
+# ChromeDriver Konfigürasyonu (Selenium için)
+CHROMEDRIVER_PATH=./services/chromedriver.exe
+CHROMEDRIVER_FALLBACK_PATH=C:\Users\gzmns\Downloads\chromedriver-win64\chromedriver-win64\chromedriver.exe
+```
+
+#### API Anahtarları Nasıl Alınır:
+
+**Gemini API Key:**
+1. [Google AI Studio](https://makersuite.google.com/) adresine gidin
+2. Google hesabınızla giriş yapın
+3. "Create API Key" butonuna tıklayın
+4. Oluşturulan anahtarı `.env` dosyasındaki `GEMINI_API_KEY` yerine yazın
+
+**Twitter API Keys (Opsiyonel):**
+1. [Twitter Developer Portal](https://developer.twitter.com/) adresine gidin
+2. Geliştirici hesabı oluşturun veya mevcut hesabınızla giriş yapın
+3. Yeni bir App oluşturun
+4. API Keys and Tokens bölümünden gerekli anahtarları alın
+
+#### Güvenlik Notları:
+- `.env` dosyasını asla version control'e eklemeyin
+- API anahtarlarınızı kimseyle paylaşmayın
+- Üretim ortamında environment variable'ları sistem düzeyinde tanımlayın
+
+#### Ek Konfigürasyon
+
+`.env` dosyasını oluşturduktan sonra:
 
 ```properties
 GEMINI_API_KEY=your_gemini_api_key_here
@@ -267,7 +308,7 @@ TWITTER_BEARER_TOKEN=your_twitter_token
 
 # Server Settings
 DEBUG=True
-PORT=8000
+PORT=8003
 HOST=127.0.0.1
 
 # Cache Settings
@@ -385,33 +426,12 @@ tail -f server.log
 3. Cache mekanizmasını güncelleyin
 4. Test edin
 
-## 📊 Performans
 
-### Benchmark Sonuçları
 
-| İşlem | Süre | Cache Hit | Cache Miss |
-|-------|------|-----------|------------|
-| Şikayetvar Scraping | ~3s | - | ✅ |
-| Ekşi Sözlük (5 sayfa) | ~8s | - | ✅ |
-| Gemini AI Analizi | ~2s | - | ✅ |
-| Cache'den Okuma | ~50ms | ✅ | - |
-| **Toplam (Cache Miss)** | **~15s** | - | ✅ |
-| **Toplam (Cache Hit)** | **~50ms** | ✅ | - |
-
-### Optimizasyon İpuçları
-
-- Cache süresini ihtiyaca göre ayarlayın
-- Headless mode kullanın (production'da)
-- Gereksiz scraping'i azaltın
-- Background işleme kullanın
-
-## 📄 Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
 ## 👥 Ekip
 
-- **Geliştirici**: HilalNurGedikli
+- **Geliştirici**: HilalNurGedikli, nslzsn, batoddy
 - **AI Entegrasyon**: Google Gemini
 - **Veri Kaynakları**: Şikayetvar, Ekşi Sözlük, Sosyal Medya
 

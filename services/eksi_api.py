@@ -7,6 +7,10 @@ import uuid
 import sys
 import json
 import os
+from dotenv import load_dotenv
+
+# .env dosyasını yükle
+load_dotenv()
 
 from services.get_param import Paths as path
 TXT_PATH = path.txt_path
@@ -25,23 +29,44 @@ def scrape_eksi(baslik: str, max_pages: int = 3) -> None:
     options.add_argument("--no-sandbox")
     options.add_argument("--start-maximized")
 
-    # ChromeDriver path'ini doğru şekilde ayarla
+    # ChromeDriver path'ini environment variable'dan al
+    chromedriver_path = os.getenv('CHROMEDRIVER_PATH', './services/chromedriver.exe')
+    fallback_path = os.getenv('CHROMEDRIVER_FALLBACK_PATH', 'chromedriver')
+    
     try:
-        # Önce yerel ChromeDriver'ı dene
+        # Önce birincil ChromeDriver'ı dene
         driver = webdriver.Chrome(
-            service=Service(r"c:\Users\gzmns\onedrivefake\Masaüstü\elalem\Elalem_Ne_Diyor_Project\services\chromedriver.exe"),
+            service=Service(chromedriver_path),
             options=options
         )
-        print("✅ Yerel ChromeDriver kullanılıyor")
+        print("✅ Birincil ChromeDriver kullanılıyor")
     except Exception as e:
-        print(f"⚠️ Yerel ChromeDriver çalışmadı: {e}")
+        print(f"⚠️ Birincil ChromeDriver çalışmadı ({chromedriver_path}): {e}")
         try:
-            # WebDriverManager ile dene
-            from webdriver_manager.chrome import ChromeDriverManager
-            
-            # Cache'i temizle ve yeniden indir
-            wdm_path = ChromeDriverManager().install()
-            print(f"📥 WebDriverManager path: {wdm_path}")
+            # Fallback path'i dene
+            driver = webdriver.Chrome(
+                service=Service(fallback_path),
+                options=options
+            )
+            print("✅ Fallback ChromeDriver kullanılıyor")
+        except Exception as e2:
+            print(f"⚠️ Fallback ChromeDriver çalışmadı ({fallback_path}): {e2}")
+            try:
+                # WebDriverManager ile dene
+                from webdriver_manager.chrome import ChromeDriverManager
+                
+                # Cache'i temizle ve yeniden indir
+                wdm_path = ChromeDriverManager().install()
+                print(f"📥 WebDriverManager path: {wdm_path}")
+                
+                driver = webdriver.Chrome(
+                    service=Service(wdm_path),
+                    options=options
+                )
+                print("✅ WebDriverManager ChromeDriver kullanılıyor")
+            except Exception as e3:
+                print(f"❌ Tüm ChromeDriver seçenekleri başarısız: {e3}")
+                return
             
             # WebDriverManager bazen yanlış dosyayı döndürür, doğru exe dosyasını bulalım
             if "THIRD_PARTY_NOTICES" in wdm_path:
