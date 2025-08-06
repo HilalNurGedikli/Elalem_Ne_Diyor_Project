@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elalem - Site Analizi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .search-bar {
+            max-width: 600px;
+            margin: 20px auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .analyze-btn {
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .analyze-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .analyze-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .site-title {
+            text-align: center;
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .analysis-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
+            border-left: 6px solid #667eea;
+            margin-bottom: 15px;
+        }
+
+        .analysis-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-icon {
+            font-size: 2em;
+            margin-right: 15px;
+        }
+
+        .card-content {
+            color: #555;
+            line-height: 1.8;
+            font-size: 16px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+
+        .security { border-left-color: #4CAF50; border-left-width: 6px; }
+        .satisfaction { border-left-color: #2196F3; border-left-width: 6px; }
+        .positive { border-left-color: #8BC34A; border-left-width: 6px; }
+        .negative { border-left-color: #f44336; border-left-width: 6px; }
+        .highlight { border-left-color: #FF9800; border-left-width: 6px; }
+        .warning { border-left-color: #FF5722; border-left-width: 6px; }
+        .rating { border-left-color: #9C27B0; border-left-width: 6px; }
+        .recommendation { border-left-color: #00BCD4; border-left-width: 6px; }
+        .summary { border-left-color: #607D8B; border-left-width: 6px; }
+
+        .summary-section {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .summary-section h3 {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .rating-display {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .recommendation-text {
+            font-size: 1.2em;
+            margin: 15px 0;
+        }
+
+        .error {
+            background: #f44336;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>🛡️ Elalem Site Analizi</h1>
+            <p style="text-align: center; color: #6c757d; margin-top: 8px; font-size: 14px;">
+                E-ticaret sitelerini güvenilirlik açısından analiz edin
+            </p>
+            
+            <div class="search-bar">
+                <input type="text" 
+                       class="search-input" 
+                       id="siteInput" 
+                       placeholder="Site adını girin (örn: trendyol, hepsiburada, bade butik)">
+                <button class="analyze-btn" id="analyzeBtn" onclick="analyzeSite()">
+                    Analiz Et
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Site analiz ediliyor, lütfen bekleyin...</p>
+        </div>
+
+        <div class="results" id="results">
+            <h2 class="site-title" id="siteTitle"></h2>
+            
+            <div class="summary-section" id="summary">
+                <h3>📊 Genel Değerlendirme</h3>
+                <div class="rating-display" id="ratingDisplay">-/10</div>
+                <div class="recommendation-text" id="recommendationText">Analiz sonucu yükleniyor...</div>
+            </div>
+
+            <div class="analysis-grid" id="analysisGrid">
+                <!-- Analiz kartları buraya dinamik olarak eklenecek -->
+            </div>
+        </div>
+
+        <div class="error" id="error" style="display: none;">
+            <h3>❌ Hata Oluştu</h3>
+            <p id="errorMessage">Bilinmeyen bir hata oluştu.</p>
+        </div>
+    </div>
+
+    <script>
+        // Site analizi fonksiyonu
+        async function analyzeSite() {
+            const siteInput = document.getElementById('siteInput');
+            const site = siteInput.value.trim();
+            
+            if (!site) {
+                alert('Lütfen bir site adı girin!');
+                return;
+            }
+
+            // UI durumlarını güncelle
+            showLoading();
+            hideResults();
+            hideError();
+
+            try {
+                // API'ye istek gönder
+                const response = await fetch(`http://127.0.0.1:8000/analyze-formatted?site=${encodeURIComponent(site)}`);
+                const data = await response.json();
+
+                if (data.success) {
+                    displayResults(data);
+                } else {
+                    showError(data.error || 'Analiz başarısız oldu');
+                }
+            } catch (error) {
+                console.error('API Hatası:', error);
+                showError('API bağlantısı başarısız. Sunucunun çalıştığından emin olun.');
+            } finally {
+                hideLoading();
+            }
+        }
+
+        // Sonuçları göster
+        function displayResults(data) {
+            const { site, analysis } = data;
+            
+            // Site başlığını güncelle
+            document.getElementById('siteTitle').textContent = `${site} - Analiz Sonuçları`;
+            
+            // Özet bilgileri güncelle
+            document.getElementById('ratingDisplay').textContent = analysis.summary.rating;
+            document.getElementById('recommendationText').textContent = analysis.summary.recommendation;
+            
+            // Analiz kartlarını oluştur
+            const grid = document.getElementById('analysisGrid');
+            grid.innerHTML = '';
+            
+            analysis.sections.forEach(section => {
+                const card = createAnalysisCard(section);
+                grid.appendChild(card);
+            });
+            
+            showResults();
+        }
+
+        // Analiz kartı oluştur
+        function createAnalysisCard(section) {
+            const card = document.createElement('div');
+            card.className = `analysis-card ${section.type}`;
+            
+            // Başlığı temizle (emoji ve ** karakterlerini çıkar)
+            const cleanTitle = section.title.replace(section.icon, '').replace(/\*\*/g, '').trim();
+            
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="card-icon">${section.icon}</span>
+                    <span>${cleanTitle}</span>
+                </div>
+                <div class="card-content">
+                    ${section.content || 'Analiz verisi yükleniyor...'}
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // UI yardımcı fonksiyonları
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('analyzeBtn').disabled = true;
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('analyzeBtn').disabled = false;
+        }
+
+        function showResults() {
+            document.getElementById('results').style.display = 'block';
+        }
+
+        function hideResults() {
+            document.getElementById('results').style.display = 'none';
+        }
+
+        function showError(message) {
+            document.getElementById('errorMessage').textContent = message;
+            document.getElementById('error').style.display = 'block';
+        }
+
+        function hideError() {
+            document.getElementById('error').style.display = 'none';
+        }
+
+        // Enter tuşu ile arama
+        document.getElementById('siteInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                analyzeSite();
+            }
+        });
+
+        // Sayfa yüklendiğinde URL'den site parametresini al
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const site = urlParams.get('site');
+            if (site) {
+                document.getElementById('siteInput').value = site;
+                analyzeSite();
+            }
+        });
+    </script>
+</body>
+</html>

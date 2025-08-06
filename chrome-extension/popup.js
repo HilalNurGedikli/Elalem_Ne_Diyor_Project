@@ -3,6 +3,13 @@
 document.addEventListener('DOMContentLoaded', async function() {
     const statusDiv = document.getElementById('status');
     const analyzeBtn = document.getElementById('analyzeBtn');
+    const loadingDiv = document.getElementById('loading');
+    
+    // Loading göster
+    loadingDiv.style.display = 'block';
+    statusDiv.innerHTML = `
+        <span class="icon">⏳</span>Extension yükleniyor...
+    `;
     
     try {
         // Aktif tab'ı al
@@ -18,6 +25,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         const results = await chrome.tabs.sendMessage(tab.id, {action: 'getSiteInfo'});
         
         if (results) {
+            // Loading gizle
+            loadingDiv.style.display = 'none';
+            
             const siteInfo = results;
             
             // Platform mağazası mı kontrol et
@@ -28,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             // Artık tüm siteler destekleniyor
             statusDiv.innerHTML = `
                 <div style="color: #4CAF50; margin-bottom: 10px;">
-                    <strong>✅ ${storeName}${platformInfo}</strong>
+                    <span class="icon">✅</span><strong>${storeName}${platformInfo}</strong>
                 </div>
                 <div style="margin-bottom: 8px;"><strong>Site:</strong> ${storeName}</div>
                 <div style="margin-bottom: 8px;"><strong>URL:</strong> ${siteInfo.currentUrl}</div>
@@ -36,73 +46,84 @@ document.addEventListener('DOMContentLoaded', async function() {
                 ${isPlatformStore ? `<div style="margin-bottom: 8px;"><strong>Platform:</strong> ${siteInfo.platformDisplay}</div>` : ''}
                 ${siteInfo.searchTerm ? `<div style="margin-bottom: 8px;"><strong>Arama:</strong> ${siteInfo.searchTerm}</div>` : ''}
                 <div style="font-size: 12px; color: #666;">
-                    ${isPlatformStore ? `Bu ${siteInfo.platformDisplay} mağazası analiz edilebilir.` : 'Bu site analiz edilebilir.'}
+                    <span class="icon">🔍</span>${isPlatformStore ? `Bu ${siteInfo.platformDisplay} mağazası analiz edilebilir.` : 'Bu site analiz edilebilir.'}
                 </div>
             `;
             
             // Analiz butonunu aktif et ve site adını ekle
             analyzeBtn.disabled = false;
-            analyzeBtn.textContent = `${storeName} Analiz Et`;
+            analyzeBtn.innerHTML = `<span class="icon">📊</span>${storeName} Analiz Et`;
             
             // Analiz butonuna click event ekle
             analyzeBtn.addEventListener('click', async () => {
                 analyzeBtn.disabled = true;
-                analyzeBtn.textContent = 'Analiz ediliyor...';
+                analyzeBtn.innerHTML = `<span class="icon">⏳</span>Yeni sekmede açılıyor...`;
+                loadingDiv.style.display = 'block';
                 
                 try {
-                    // Platform mağazası ise mağaza ismini kullan
-                    const analyzeTarget = isPlatformStore ? storeName : siteInfo.siteName;
+                    // Yeni analiz sayfasını aç
+                    const analysisUrl = chrome.runtime.getURL(`analysis.html?site=${encodeURIComponent(storeName)}`);
+                    await chrome.tabs.create({ url: analysisUrl });
                     
-                    // Analiz isteği gönder
-                    await chrome.tabs.sendMessage(tab.id, {action: 'analyzeSite', storeName: analyzeTarget});
-                    
-                    // Başarı mesajı göster
-                    statusDiv.innerHTML += `
-                        <div style="background: #e8f5e8; color: #2e7d2e; padding: 10px; 
-                                    border-radius: 6px; margin-top: 10px; font-size: 14px;">
-                            ✅ ${analyzeTarget} analiz talebi gönderildi! Sonuçlar sayfada görüntülenecek.
-                        </div>
-                    `;
-                    
-                    // Butonu yeniden aktif et
-                    setTimeout(() => {
-                        analyzeBtn.disabled = false;
-                        analyzeBtn.textContent = `${storeName} Analiz Et`;
-                    }, 3000);
-                    
+                    // Popup'ı kapat
+                    window.close();
                 } catch (error) {
-                    console.error('Analiz hatası:', error);
+                    console.error('Analiz sayfası açılamadı:', error);
+                    loadingDiv.style.display = 'none';
                     analyzeBtn.disabled = false;
-                    analyzeBtn.textContent = `${storeName} Analiz Et`;
+                    analyzeBtn.innerHTML = `<span class="icon">📊</span>${storeName} Analiz Et`;
                     
-                    statusDiv.innerHTML += `
-                        <div style="background: #ffe8e8; color: #d32f2f; padding: 10px; 
-                                    border-radius: 6px; margin-top: 10px; font-size: 14px;">
-                            ❌ Analiz sırasında hata oluştu.
-                        </div>
-                    `;
+                    // Hata durumunda eski yöntemi dene
+                    try {
+                        const response = await fetch(`http://127.0.0.1:8000/analyze?site=${encodeURIComponent(storeName)}`);
+                        const data = await response.json();
+                        
+                        // Basit sonuç göster
+                        statusDiv.innerHTML = `
+                            <div style="color: #4CAF50; margin-bottom: 10px;">
+                                <span class="icon">✅</span><strong>Analiz Tamamlandı</strong>
+                            </div>
+                            <div style="font-size: 12px;">
+                                Yorum sayısı: ${data.yorum_sayısı || 0}<br>
+                                ${data.analiz ? data.analiz.substring(0, 100) + '...' : 'Analiz bulunamadı'}
+                            </div>
+                        `;
+                    } catch (fallbackError) {
+                        statusDiv.innerHTML = `
+                            <div style="color: #f44336;">
+                                <span class="icon">❌</span><strong>Analiz Başarısız</strong><br>
+                                <small>API sunucusu çalışmıyor olabilir.</small>
+                            </div>
+                        `;
+                    }
                 }
             });
         } else {
+            // Loading gizle
+            loadingDiv.style.display = 'none';
+            
             statusDiv.innerHTML = `
                 <div style="color: #f44336;">
-                    <strong>❌ Site bilgisi alınamadı</strong>
+                    <span class="icon">❌</span><strong>Site bilgisi alınamadı</strong>
                 </div>
                 <div style="font-size: 12px; color: #666; margin-top: 5px;">
-                    Sayfayı yenileyin ve tekrar deneyin.
+                    <span class="icon">🔄</span>Sayfayı yenileyin ve tekrar deneyin.
                 </div>
             `;
             analyzeBtn.disabled = true;
         }
         
     } catch (error) {
+        // Loading gizle
+        loadingDiv.style.display = 'none';
+        
         console.error('Popup yüklenirken hata:', error);
         statusDiv.innerHTML = `
             <div style="color: #f44336;">
-                <strong>❌ Extension yüklenemedi</strong>
+                <span class="icon">❌</span><strong>Extension yüklenemedi</strong>
             </div>
             <div style="font-size: 12px; color: #666; margin-top: 5px;">
-                ${error.message}
+                <span class="icon">⚠️</span>${error.message}
             </div>
         `;
         analyzeBtn.disabled = true;
@@ -214,7 +235,51 @@ async function analyzeSiteByName(siteName) {
     const statusDiv = document.getElementById('status');
     
     searchBtn.disabled = true;
-    searchBtn.textContent = 'Analiz ediliyor...';
+    searchBtn.innerHTML = '<span class="icon">⏳</span>Yeni sekmede açılıyor...';
+    
+    try {
+        // Yeni analiz sayfasını aç
+        const analysisUrl = chrome.runtime.getURL(`analysis.html?site=${encodeURIComponent(siteName)}`);
+        await chrome.tabs.create({ url: analysisUrl });
+        
+        // Popup'ı kapat
+        window.close();
+    } catch (error) {
+        console.error('Analiz sayfası açılamadı:', error);
+        searchBtn.disabled = false;
+        searchBtn.innerHTML = '<span class="icon">🚀</span>Ara & Analiz Et';
+        
+        // Hata durumunda eski yöntemi dene
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/analyze?site=${encodeURIComponent(siteName)}`);
+            const data = await response.json();
+            
+            // Basit sonuç göster
+            statusDiv.innerHTML = `
+                <div style="color: #4CAF50; margin-bottom: 10px;">
+                    <span class="icon">✅</span><strong>${siteName} Analiz Tamamlandı</strong>
+                </div>
+                <div style="font-size: 12px;">
+                    Yorum sayısı: ${data.yorum_sayısı || 0}<br>
+                    ${data.analiz ? data.analiz.substring(0, 100) + '...' : 'Analiz bulunamadı'}
+                </div>
+            `;
+            
+            searchBtn.disabled = false;
+            searchBtn.innerHTML = '<span class="icon">🚀</span>Ara & Analiz Et';
+        } catch (fallbackError) {
+            statusDiv.innerHTML = `
+                <div style="color: #f44336;">
+                    <span class="icon">❌</span><strong>${siteName} Analiz Başarısız</strong><br>
+                    <small><span class="icon">⚠️</span>API sunucusu çalışmıyor olabilir.</small>
+                </div>
+            `;
+            
+            searchBtn.disabled = false;
+            searchBtn.innerHTML = '<span class="icon">🚀</span>Ara & Analiz Et';
+        }
+    }
+}
     
     try {
         // Fake URL oluştur
@@ -269,7 +334,7 @@ async function analyzeSiteByName(siteName) {
         searchBtn.textContent = 'Ara & Analiz Et';
         document.getElementById('suggestions').style.display = 'none';
     }
-}
+
 
 function generateResultsHTML(result) {
     const analysis = result.data?.main_analysis || {};

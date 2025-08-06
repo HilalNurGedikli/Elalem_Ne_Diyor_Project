@@ -559,8 +559,17 @@ class ElalemAnalyzer {
         const analiz = analysisData.analiz || analysisData.analysis || 'Analiz bulunamadı';
         const siteName = analysisData.site || siteInfo?.siteName || 'Bilinmeyen Site';
         
-        // Tüm veriyi JSON formatında göster
-        const fullDataJson = JSON.stringify(analysisData, null, 2);
+        // Analizi formatlı bir şekilde göster (satır satır böl)
+        const formattedAnalysis = analiz.split('\n').map(line => {
+            if (line.trim().endsWith(':')) {
+                // Başlık satırları için özel stil
+                return `<div style="font-weight: bold; color: #2196F3; margin-top: 12px; margin-bottom: 6px;">${line.trim()}</div>`;
+            } else if (line.trim()) {
+                // Normal satırlar
+                return `<div style="margin-bottom: 4px; padding-left: 8px;">${line.trim()}</div>`;
+            }
+            return '';
+        }).join('');
         
         resultDiv.innerHTML = `
             <div style="position: fixed; top: 100px; right: 20px; z-index: 999999; 
@@ -590,30 +599,16 @@ class ElalemAnalyzer {
                     <h4 style="margin: 0 0 10px 0; color: #333; font-size: 16px;">🤖 AI Analizi:</h4>
                     <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; 
                                 border-left: 4px solid #2196F3; line-height: 1.6; font-size: 14px;">
-                        ${analiz}
-                    </div>
-                </div>
-                <div style="margin-bottom: 15px;">
-                    <h4 style="margin: 0 0 10px 0; color: #333; font-size: 16px;">� Tam Veri (JSON):</h4>
-                    <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; 
-                                border-left: 4px solid #FF9800; font-family: 'Courier New', monospace; 
-                                font-size: 12px; white-space: pre-wrap; max-height: 300px; overflow-y: auto;">
-                        ${fullDataJson}
+                        ${formattedAnalysis}
                     </div>
                 </div>
                 
                 <div style="display: flex; gap: 10px; margin-top: 15px;">
                     <button onclick="navigator.clipboard.writeText('${analiz.replace(/'/g, "\\'")}'); 
-                                     this.textContent='✅ Analiz Kopyalandı'; setTimeout(() => this.textContent='📋 Analiz Kopyala', 2000)" 
+                                     this.textContent='✅ Kopyalandı'; setTimeout(() => this.textContent='📋 Analizi Kopyala', 2000)" 
                             style="flex: 1; background: #4CAF50; color: white; border: none; padding: 10px; 
                                    border-radius: 6px; cursor: pointer; font-size: 13px;">
-                        📋 Analiz Kopyala
-                    </button>
-                    <button onclick="navigator.clipboard.writeText(\`${fullDataJson.replace(/`/g, '\\`').replace(/'/g, "\\'")}\`); 
-                                     this.textContent='✅ JSON Kopyalandı'; setTimeout(() => this.textContent='� JSON Kopyala', 2000)" 
-                            style="flex: 1; background: #FF9800; color: white; border: none; padding: 10px; 
-                                   border-radius: 6px; cursor: pointer; font-size: 13px;">
-                        � JSON Kopyala
+                        📋 Analizi Kopyala
                     </button>
                 </div>
             </div>

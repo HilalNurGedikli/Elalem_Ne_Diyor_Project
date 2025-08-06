@@ -41,21 +41,20 @@ except ImportError as e:
         return []
 
 try:
-    from gemini_utils import ask_gemini_with_reviews
-    print("✅ IMPORT SUCCESS: ask_gemini_with_reviews")
+    from gemini_utils import ask_gemini_with_reviews, get_formatted_analysis
+    print("✅ IMPORT SUCCESS: ask_gemini_with_reviews, get_formatted_analysis")
 except ImportError as e:
-    print(f"❌ IMPORT FAILED: ask_gemini_with_reviews - {e}")
+    print(f"❌ IMPORT FAILED: gemini_utils - {e}")
     def ask_gemini_with_reviews(site, yorumlar): 
         print(f"⚠️  FALLBACK: ask_gemini_with_reviews called for {site}")
         return "Gemini analizi şu anda kullanılamıyor."
-try:
-    from gemini_utils import find_insta
-    print("✅ IMPORT SUCCESS: find_insta")
-except ImportError as e:
-    print(f"❌ IMPORT FAILED: find_insta - {e}")
-    def find_insta(site): 
-        print(f"⚠️  FALLBACK: find_insta called for {site}")
-        return "Gemini analizi insta şu anda kullanılamıyor."
+    def get_formatted_analysis(site, yorumlar):
+        print(f"⚠️  FALLBACK: get_formatted_analysis called for {site}")
+        return {
+            "success": False,
+            "error": "Gemini servisi kullanılamıyor",
+            "site": site
+        }
 
 try:
     from gemini_utils import find_insta
@@ -126,29 +125,33 @@ def is_cache_valid(timestamp_str):
     except:
         return False
 
+def normalize_site_name(site):
+    """Site adını normalize et - tutarlı cache key için"""
+    return site.lower().strip().replace(" ", "").replace("-", "")
+
 def get_cached_result(site):
     """Site için cache'lenmiş sonucu getir"""
     cache = load_cache()
-    site_key = site.lower().strip()
+    site_key = normalize_site_name(site)
     
     if site_key in cache:
         cached_entry = cache[site_key]
         if is_cache_valid(cached_entry.get('timestamp', '')):
-            print(f"🎯 CACHE HIT: Using cached result for '{site}'")
+            print(f"🎯 CACHE HIT: Using cached result for '{site}' (key: {site_key})")
             return cached_entry['result']
         else:
-            print(f"⏰ CACHE EXPIRED: Cache expired for '{site}'")
+            print(f"⏰ CACHE EXPIRED: Cache expired for '{site}' (key: {site_key})")
             # Eski cache'i temizle
             del cache[site_key]
             save_cache(cache)
     
-    print(f"🔍 CACHE MISS: No valid cache for '{site}'")
+    print(f"🔍 CACHE MISS: No valid cache for '{site}' (key: {site_key})")
     return None
 
 def save_result_to_cache(site, result):
     """Sonucu cache'e kaydet"""
     cache = load_cache()
-    site_key = site.lower().strip()
+    site_key = normalize_site_name(site)
     
     cache[site_key] = {
         'result': result,
@@ -156,7 +159,7 @@ def save_result_to_cache(site, result):
     }
     
     save_cache(cache)
-    print(f"💾 RESULT CACHED for '{site}'")
+    print(f"💾 RESULT CACHED for '{site}' (key: {site_key})")
 
 router = APIRouter()
 
@@ -235,10 +238,10 @@ def analyze_site(site: str = Query(..., description="Değerlendirilecek site ad�
         print(f"❌ EKŞİ ERROR: {e}")
     
     # 6. Yorumları Oku
-    print(f"\n📖 6. YORUMLARI OKU...")
+    print(f"\n📖 6. YORUMLARI OKU for '{site}'...")
     try:
-        yorumlar = yorumlari_oku()
-        print(f"✅ YORUMLAR OKUNDU")
+        yorumlar = yorumlari_oku(site)  # Site adını parametre olarak geç
+        print(f"✅ YORUMLAR OKUNDU for '{site}'")
         print(f"   📊 Type: {type(yorumlar)}")
         if isinstance(yorumlar, list):
             print(f"   📊 Count: {len(yorumlar)}")
@@ -274,23 +277,38 @@ def analyze_site(site: str = Query(..., description="Değerlendirilecek site ad�
     
     print(f"✅ YORUMLAR VALİDASYON SUCCESS - {len(yorumlar)} valid comments")
     
-    # 8. Gemini Analizi
-    print(f"\n🤖 8. GEMİNİ ANALİZİ...")
+    # 8. Gemini Analizi - Formatlanmış
+    print(f"\n🤖 8. GEMİNİ ANALİZİ (FORMATLI)...")
     try:
-        analiz = ask_gemini_with_reviews(site, yorumlar)
-        print(f"✅ GEMİNİ ANALİZİ COMPLETED")
-        print(f"   📊 Analysis length: {len(str(analiz))}")
-        print(f"   📊 Analysis preview: {str(analiz)[:100]}...")
+        # Yeni formatlanmış analiz fonksiyonunu kullan
+        formatted_result = get_formatted_analysis(site, yorumlar)
+        
+        if formatted_result.get("success"):
+            print(f"✅ GEMİNİ ANALİZİ COMPLETED")
+            print(f"   📊 Formatted sections: {len(formatted_result['formatted_ui']['sections'])}")
+            print(f"   📊 Raw analysis length: {len(str(formatted_result['raw_analysis']))}")
+            print(f"   📊 Rating: {formatted_result['formatted_ui']['summary']['rating']}")
+            
+            # Hem ham metni hem de formatlanmış veriyi final result'a ekle
+            analiz = formatted_result['raw_analysis']
+            formatted_analysis = formatted_result['formatted_ui']
+        else:
+            print(f"❌ GEMİNİ ANALİZİ ERROR: {formatted_result.get('error', 'Bilinmeyen hata')}")
+            analiz = f"Analiz hatası: {formatted_result.get('error', 'Bilinmeyen hata')}"
+            formatted_analysis = None
+            
     except Exception as e:
         print(f"❌ GEMİNİ ANALİZİ ERROR: {e}")
         analiz = f"Analiz hatası: {e}"
+        formatted_analysis = None
     
-    # 9. Final Result
+    # 9. Final Result - Hem eski format hem yeni format
     final_result = {
         "site": site,
         "yorum_sayısı": len(yorumlar),
         "yorumlar": yorumlar,
-        "analiz": analiz
+        "analiz": analiz,  # Eski format için
+        "formatted_analysis": formatted_analysis  # Yeni format için
     }
     
     # Sonucu cache'e kaydet
@@ -300,6 +318,55 @@ def analyze_site(site: str = Query(..., description="Değerlendirilecek site ad�
     print(f"   📊 Site: {final_result['site']}")
     print(f"   📊 Yorum Sayısı: {final_result['yorum_sayısı']}")
     print(f"   📊 Analiz Length: {len(str(final_result['analiz']))}")
+    if final_result.get('formatted_analysis'):
+        print(f"   📊 Formatted Sections: {len(final_result['formatted_analysis']['sections'])}")
+        print(f"   ⭐ Rating: {final_result['formatted_analysis']['summary']['rating']}")
     print("=" * 50)
     
     return final_result
+
+@router.get("/analyze-formatted")
+def analyze_site_formatted(site: str = Query(..., description="Değerlendirilecek site adı")):
+    """
+    Site analizi yapar ve kullanıcı dostu formatlanmış sonuç döndürür
+    """
+    print(f"\n🚀 ANALYZE SITE FORMATTED STARTED: {site}")
+    print("=" * 50)
+    
+    # Cache kontrolü (formatted için ayrı cache key)
+    formatted_cache_key = f"formatted_{normalize_site_name(site)}"
+    cached_result = get_cached_result(formatted_cache_key)
+    if cached_result:
+        print(f"📤 RETURNING CACHED FORMATTED RESULT for '{site}'")
+        print("=" * 50)
+        return cached_result
+    
+    # Normal analizi çalıştır
+    full_result = analyze_site(site)
+    
+    # Sadece formatlanmış kısmı döndür
+    if full_result.get('formatted_analysis'):
+        formatted_only = {
+            "site": site,
+            "success": True,
+            "analysis": full_result['formatted_analysis'],
+            "comment_count": full_result['yorum_sayısı'],
+            "analysis_date": datetime.now().isoformat()
+        }
+        
+        # Formatted cache'e kaydet
+        save_result_to_cache(formatted_cache_key, formatted_only)
+        
+        print(f"\n🎯 FORMATTED RESULT RETURNED for '{site}'")
+        print("=" * 50)
+        return formatted_only
+    else:
+        error_result = {
+            "site": site,
+            "success": False,
+            "error": "Formatlanmış analiz oluşturulamadı",
+            "analysis_date": datetime.now().isoformat()
+        }
+        print(f"\n❌ FORMATTED ANALYSIS FAILED for '{site}'")
+        print("=" * 50)
+        return error_result

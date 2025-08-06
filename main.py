@@ -473,7 +473,7 @@ async def get_status():
     )
 
 # Orijinal router'ı dahil et
-app.include_router(analyze.router, prefix="/analyze")
+app.include_router(analyze.router)
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8003, reload=False)
