@@ -116,6 +116,16 @@ def save_cache(cache_data):
     except Exception as e:
         print(f"❌ CACHE SAVE ERROR: {e}")
 
+def clean_yorumlar_file():
+    """Her analiz başlangıcında yorumlar_tarihli_filtreli.json dosyasını temizle"""
+    yorumlar_file = "yorumlar_tarihli_filtreli.json"
+    try:
+        with open(yorumlar_file, 'w', encoding='utf-8') as f:
+            json.dump([], f, ensure_ascii=False, indent=2)
+        print(f"🧹 YORUMLAR DOSYASI TEMİZLENDİ: {yorumlar_file}")
+    except Exception as e:
+        print(f"❌ YORUMLAR TEMİZLEME HATASI: {e}")
+
 def is_cache_valid(timestamp_str):
     """Cache'in hala geçerli olup olmadığını kontrol et"""
     try:
@@ -163,10 +173,23 @@ def save_result_to_cache(site, result):
 
 router = APIRouter()
 
+@router.get("/status")
+def get_status():
+    """Server durumu kontrolü - Extension için"""
+    return {
+        "status": "ok",
+        "message": "Elalem Analiz API çalışıyor",
+        "timestamp": datetime.now().isoformat(),
+        "services": ["şikayetvar", "ekşisözlük", "instagram", "twitter", "trendyol", "etbis", "gemini"]
+    }
+
 @router.get("/analyze")
 def analyze_site(site: str = Query(..., description="Değerlendirilecek site adı")):
     print(f"\n🚀 ANALYZE SITE STARTED: {site}")
     print("=" * 50)
+    
+    # Her analiz başlangıcında yorumlar dosyasını temizle
+    clean_yorumlar_file()
     
     # Cache kontrolü
     cached_result = get_cached_result(site)
@@ -186,6 +209,30 @@ def analyze_site(site: str = Query(..., description="Değerlendirilecek site ad�
         print(f"✅ ŞIKAYETVAR COMPLETED - Result type: {type(sikayetvar_result)}")
         if isinstance(sikayetvar_result, list):
             print(f"   📊 Found {len(sikayetvar_result)} items")
+            
+            # Şikayetvar verilerini JSON'a yaz
+            if len(sikayetvar_result) > 0:
+                print(f"📝 1.1. ŞIKAYETVAR -> JSON...")
+                try:
+                    # Mevcut JSON dosyasını oku
+                    json_dosya_yolu = "yorumlar_tarihli_filtreli.json"
+                    try:
+                        with open(json_dosya_yolu, "r", encoding="utf-8") as f:
+                            mevcut_yorumlar = json.load(f)
+                    except (FileNotFoundError, json.JSONDecodeError):
+                        mevcut_yorumlar = []
+                    
+                    # Şikayetvar verilerini ekle
+                    mevcut_yorumlar.extend(sikayetvar_result)
+                    
+                    # Dosyaya yaz
+                    with open(json_dosya_yolu, "w", encoding="utf-8") as f:
+                        json.dump(mevcut_yorumlar, f, ensure_ascii=False, indent=2)
+                    
+                    print(f"✅ ŞIKAYETVAR JSON EKLEME COMPLETED")
+                    print(f"   📊 JSON Result: {len(sikayetvar_result)} items added")
+                except Exception as json_error:
+                    print(f"❌ ŞIKAYETVAR JSON ERROR: {json_error}")
         else:
             print(f"   📊 Result: {sikayetvar_result}")
     except Exception as e:
@@ -332,6 +379,9 @@ def analyze_site_formatted(site: str = Query(..., description="Değerlendirilece
     """
     print(f"\n🚀 ANALYZE SITE FORMATTED STARTED: {site}")
     print("=" * 50)
+    
+    # Her analiz başlangıcında yorumlar dosyasını temizle
+    clean_yorumlar_file()
     
     # Cache kontrolü (formatted için ayrı cache key)
     formatted_cache_key = f"formatted_{normalize_site_name(site)}"

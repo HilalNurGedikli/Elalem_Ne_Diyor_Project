@@ -193,7 +193,7 @@ class ElalemAnalyzer {
         // Sayfaya analiz butonu ekle
         const button = document.createElement('div');
         button.id = 'elalem-analysis-btn';
-        button.innerHTML = '🔍 Elalem Analizi';
+        button.innerHTML = '🔍 Elalem Ne Diyor Analizi'
         button.style.cssText = `
             position: fixed;
             top: 20px;
@@ -257,6 +257,39 @@ class ElalemAnalyzer {
         } finally {
             button.innerHTML = '🔍 Elalem Analizi';
             button.style.pointerEvents = 'auto';
+        }
+    }
+
+    async analyzeSearchTerm(searchTerm) {
+        // Manuel arama terimi için analiz
+        this.showNotification(`🔍 "${searchTerm}" analizi başlatılıyor...`, 'info');
+
+        try {
+            // Önce API test et
+            const testResponse = await fetch('http://127.0.0.1:8003status');
+            if (!testResponse.ok) {
+                throw new Error('API server ulaşılamıyor');
+            }
+            console.log('✅ API Test başarılı');
+            
+            // Arama terimi için fake data oluştur
+            const data = {
+                url: `https://${searchTerm.toLowerCase().replace(/\s+/g, '')}.com`,
+                siteType: 'search_term',
+                timestamp: new Date().toISOString(),
+                comments: [],
+                metadata: {
+                    searchTerm: searchTerm,
+                    source: 'manual_search'
+                }
+            };
+            
+            // Python API'sine veri gönder
+            await this.sendToPythonAPIForSearch(data, searchTerm);
+            
+        } catch (error) {
+            console.error('Arama analizi hatası:', error);
+            this.showNotification('❌ Analiz hatası: ' + error.message, 'error');
         }
     }
 
@@ -548,6 +581,60 @@ class ElalemAnalyzer {
             this.showLocalAnalysis(data);
         }
     }
+
+    async sendToPythonAPIForSearch(data, searchTerm) {
+        try {
+            console.log(`🔍 Manuel arama analizi: ${searchTerm}`);
+            
+            // Backend'in beklediği format - manuel arama için
+            const requestData = {
+                url: `https://${searchTerm.toLowerCase().replace(/\s+/g, '')}.com`,
+                site_type: 'search_term',
+                data: {
+                    ...data,
+                    search_info: {
+                        search_term: searchTerm,
+                        source: 'manual_search',
+                        original_site: window.location.href
+                    }
+                },
+                headless: true
+            };
+            
+            console.log('Arama API\'ye gönderilen veriler:', requestData);
+            
+            // Doğrudan site analiz endpoint'ini kullan
+            const response = await fetch(`http://127.0.0.1:8003/analyze-formatted?site=${encodeURIComponent(searchTerm)}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('Arama analizi sonucu:', result);
+                
+                // Analiz sonucunu göster
+                const fakeInfo = {
+                    siteName: searchTerm,
+                    siteType: 'search_term'
+                };
+                this.showAnalysisResults(result, fakeInfo);
+                this.showNotification(`✅ "${searchTerm}" analizi tamamlandı!`, 'success');
+                
+                return result;
+            } else {
+                const errorText = await response.text();
+                console.error('Arama API Error:', response.status, errorText);
+                throw new Error(`HTTP ${response.status}: ${errorText}`);
+            }
+            
+        } catch (error) {
+            console.log('Arama API bağlantı hatası:', error);
+            this.showNotification(`⚠️ "${searchTerm}" Analiz Hatası: ${error.message}`, 'error');
+        }
+    }
     
     showAnalysisResults(analysisData, siteInfo) {
         // Ana analiz sonuçlarını sayfa üzerinde göster
@@ -625,7 +712,7 @@ class ElalemAnalyzer {
             if (resultDiv.parentNode) {
                 resultDiv.parentNode.removeChild(resultDiv);
             }
-        }, 60000);
+        }, 600000); // 10 dakika sonra otomatik kaldır
     }
     
     showLocalAnalysis(data) {
@@ -725,6 +812,21 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         analyzer.startQuickAnalysis()
             .then(() => {
                 sendResponse({ success: true, message: 'Analiz başlatıldı' });
+            })
+            .catch(error => {
+                sendResponse({ success: false, error: error.message });
+            });
+        return true; // Asenkron yanıt için
+    }
+    
+    if (request.action === 'analyzeSearchTerm') {
+        // Popup'tan manuel arama terimi ile analiz isteği
+        const analyzer = new ElalemAnalyzer();
+        const searchTerm = request.searchTerm;
+        
+        analyzer.analyzeSearchTerm(searchTerm)
+            .then(() => {
+                sendResponse({ success: true, message: `${searchTerm} analizi başlatıldı` });
             })
             .catch(error => {
                 sendResponse({ success: false, error: error.message });

@@ -1,18 +1,31 @@
 import requests
 import json
+import os
 from datetime import datetime
 from pathlib import Path
+from dotenv import load_dotenv
 
-def twitter_yorum_ekle(query: str, max_results: int = 10, json_dosya: str = "yorumlar_tarihli_filtreli.json"):
+# Load environment variables
+load_dotenv()
+
+def twitter_yorum_ekle(query: str, max_results: int = 50, json_dosya: str = "yorumlar_tarihli_filtreli.json"):
     """Twitter'dan belirtilen sorguya göre yorumları alıp JSON dosyasına ekler."""
 
-    bearer_token = "AAAAAAAAAAAAAAAAAAAAANqW3QEAAAAAYo6pM%2B8%2FJMevEoAWDLyb2LivW40%3DhUYPxY0yiiLOX0pyGKBKnnMDHRXx9sN6OyDgQNFcIF8aFsKPo1"
+    # Environment değişkenlerinden Twitter Bearer Token'ı al
+    bearer_token = os.getenv('TWITTER_BEARER_TOKEN')
+    
+    if not bearer_token:
+        print("❌ TWITTER_BEARER_TOKEN environment değişkeni bulunamadı!")
+        print("🔧 Lütfen .env dosyasında TWITTER_BEARER_TOKEN değişkenini ayarlayın")
+        return []
+    
     headers = {"Authorization": f"Bearer {bearer_token}"}
     url = (
         f"https://api.twitter.com/2/tweets/search/recent"
         f"?query={query}&max_results={max_results}&tweet.fields=created_at,lang"
     )
 
+    print(f"🐦 Twitter API isteği gönderiliyor: {query}")
     response = requests.get(url, headers=headers)
 
     if response.status_code != 200:
