@@ -48,6 +48,14 @@ except ImportError as e:
     def ask_gemini_with_reviews(site, yorumlar): 
         print(f"⚠️  FALLBACK: ask_gemini_with_reviews called for {site}")
         return "Gemini analizi şu anda kullanılamıyor."
+try:
+    from gemini_utils import find_insta
+    print("✅ IMPORT SUCCESS: find_insta")
+except ImportError as e:
+    print(f"❌ IMPORT FAILED: find_insta - {e}")
+    def find_insta(site): 
+        print(f"⚠️  FALLBACK: find_insta called for {site}")
+        return "Gemini analizi insta şu anda kullanılamıyor."
 
 try:
     from gemini_utils import find_insta

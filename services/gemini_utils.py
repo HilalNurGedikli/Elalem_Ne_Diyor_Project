@@ -1,16 +1,16 @@
 import os
 from google.generativeai import configure, GenerativeModel
 from dotenv import load_dotenv
-from datetime import datetime
-import json
 
 load_dotenv()
 configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = GenerativeModel("models/gemini-2.5-flash")
 
-def find_insta(site: str) -> str:
+def find_insta(site: str) -> None:
     prompt = f"""
-    {site} 'e ait instagram sayfasını ve mevcut takipçi sayısını ve kullanıcı yorumlarını direkt yaz"""
+    Bana {site} 'e ait instagram sayfasını ve hakkındaki bilgileri bul ve kullanıcı yorumlarını direkt yaz
+    twitter, şikayetvar, etbis ve ekşi sözlük gibi kaynaklardan veri çek. bütün verileri istiyorum!!
+    """
     try:
         response = model.generate_content(prompt)
         yorum = {
@@ -29,7 +29,9 @@ def find_insta(site: str) -> str:
         with open(dosya_yolu, "w", encoding="utf-8") as f:
             json.dump(mevcut_veri, f, ensure_ascii=False, indent=2)
     except Exception as e:
-        return f"[HATA] Gemini isteği başarısız: {str(e)}"
+        print(f"[HATA] Gemini isteği başarısız: {str(e)}")
+
+
 
 def ask_gemini_with_reviews(site: str, yorumlar: list[str]) -> str:
     prompt = f"""
@@ -61,6 +63,7 @@ def ask_gemini_with_reviews(site: str, yorumlar: list[str]) -> str:
         - Genel memnuniyet düzeyi ve hangi yönler eleştirilmiş veya övülmüş, değerlendir.
 
     Tüm bu kaynakları inceledikten sonra:
+        - **Site hakkında sitenin bilnirlik ve kapasitesine göre genel bir değerlendirme** yap
         - **Sitenin genel güvenilirliğini** değerlendir.
         - **Güçlü ve zayıf yönleri** özetle.
         - Son olarak kısa ve objektif bir sonuç çıkarımı yap. Abartıdan, süslemelerden kaçın.
