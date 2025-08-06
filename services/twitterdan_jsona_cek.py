@@ -3,10 +3,10 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-def twitter_yorum_ekle(query: str, max_results: int = 100, json_dosya: str = "yorumlar_tarihli_filtreli.json"):
+def twitter_yorum_ekle(query: str, max_results: int = 10, json_dosya: str = "yorumlar_tarihli_filtreli.json"):
     """Twitter'dan belirtilen sorguya göre yorumları alıp JSON dosyasına ekler."""
 
-    bearer_token = "AAAAAAAAAAAAAAAAAAAAAAz53AEAAAAAVDJhfP%2FNGjTlUxg8SZ2%2BaRmlsRM%3Dapnkbo0p7mZuVXesRCxnvpp6bCy3k7EdLa1q1Q9CZDsDfZMEum"
+    bearer_token = "AAAAAAAAAAAAAAAAAAAAANqW3QEAAAAAYo6pM%2B8%2FJMevEoAWDLyb2LivW40%3DhUYPxY0yiiLOX0pyGKBKnnMDHRXx9sN6OyDgQNFcIF8aFsKPo1"
     headers = {"Authorization": f"Bearer {bearer_token}"}
     url = (
         f"https://api.twitter.com/2/tweets/search/recent"

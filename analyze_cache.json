@@ -1,0 +1,845 @@
+{
+  "eksisozluk": {
+    "result": {
+      "site": "eksisozluk",
+      "yorum_sayısı": 1,
+      "yorumlar": [
+        {
+          "id": "ef815176-934e-4f66-a778-7185e5fe0f5d",
+          "yorum": "https://www.eksisozluk E-Ticaret Bilgi Sistemine sisteminde kayıtlı değildir.",
+          "kaynak": "E-Ticaret Bilgi Sistemi"
+        }
+      ],
+      "analiz": "Bir güvenlik analiz uzmanı olarak, sağlanan veriler doğrultusunda \"eksisozluk\" adlı butik e-ticaret sitesi hakkında aşağıdaki değerlendirmeler yapılmıştır:\n\n---\n\n**Kaynak Bazında Değerlendirme:**\n\n1.  **Şikayetvar:**\n    *   **Veri Durumu:** Sağlanan verilerde Şikayetvar'a ilişkin herhangi bir yorum veya şikayet bulunmamaktadır.\n    *   **Analiz:** Bu kaynaktan herhangi bir ticari alışveriş deneyimi şikayeti veya olumlu geri bildirim olmadığı için sitenin müşteri hizmetleri, ürün kalitesi, teslimat süreleri gibi konularda kullanıcı deneyimi hakkında bir yorum yapmak mümkün değildir. Mevcut veri eksikliği nedeniyle bir analiz yapılamamıştır.\n\n2.  **ETBİS (E-Ticaret Bilgi Sistemi):**\n    *   **Veri Durumu:** \"https://www.eksisozluk E-Ticaret Bilgi Sistemine sisteminde kayıtlı değildir.\" bilgisi bulunmaktadır.\n    *   **Analiz:** Bir e-ticaret sitesinin ETBİS'e kayıtlı olmaması, Türk mevzuatına göre büyük bir eksiklik ve önemli bir yasal uyumsuzluktur.\n        *   **Yasal Güvenilirlik Açısından Anlamı:** ETBİS kaydı, sitenin işletmecisinin kimliğinin Ticaret Bakanlığı tarafından doğrulanmış olduğunu ve yasal yükümlülüklerini yerine getirdiğini gösterir. Kayıtsızlık, işletmenin yasal bir zeminde faaliyet göstermediği veya denetimden kaçtığı izlenimini yaratır. Bu durum, tüketiciler için ciddi bir güvenlik ve güvenilirlik zafiyeti oluşturur. Anlaşmazlık durumunda resmi bir muhatap bulma veya hak arama süreçleri zorlaşabilir.\n        *   **Eksikliğin Anlamı:** Yasal bir zorunluluğun yerine getirilmemesi, sitenin genel güvenilirliğini ve şeffaflığını ciddi şekilde düşürür. Tüketicinin korunması mekanizmalarından (örneğin, şikayet bildirimleri, adres doğrulaması) mahrum kalınmasına neden olur.\n\n3.  **Twitter:**\n    *   **Veri Durumu:** Sağlanan verilerde Twitter'a ilişkin herhangi bir yorum veya etkileşim bulunmamaktadır.\n    *   **Analiz:** Yeterli veri olmadığı için kullanıcıların markadan olumlu mu olumsuz mu bahsettiği, genel duygu analizi veya ticari bağlamdaki yorumlar hakkında herhangi bir değerlendirme yapılamamıştır.\n\n4.  **Ekşi Sözlük:**\n    *   **Veri Durumu:** Sağlanan verilerde Ekşi Sözlük platformuna ilişkin herhangi bir yorum veya değerlendirme bulunmamaktadır.\n    *   **Analiz:** Yorum sayısı, güncelliği veya ticari deneyime dayalı olup olmadığı hakkında bilgi olmadığı için sitenin genel memnuniyet düzeyi, eleştirilen veya övülen yönleri hakkında bir analiz yapılamamıştır.\n\n---\n\n**Genel Değerlendirme ve Sonuç:**\n\n*   **Sitenin Genel Güvenilirliği:** Sağlanan tek somut veri olan ETBİS kaydının bulunmaması nedeniyle, \"eksisozluk\" adlı butik e-ticaret sitesinin **yasal ve dolayısıyla ticari güvenilirliği oldukça düşüktür.** Yasal zorunluluklara uymayan bir platformda alışveriş yapmak, tüketiciler için yüksek risk barındırır. Diğer kaynaklardan veri eksikliği, kullanıcı deneyimi, müşteri hizmetleri veya ürün kalitesi hakkında olumlu ya da olumsuz herhangi bir bilgiye sahip olmadığımız anlamına gelir, ancak ETBİS eksikliği başlı başına ciddi bir güvensizlik sebebidir.\n\n*   **Güçlü ve Zayıf Yönleri:**\n    *   **Güçlü Yönler:** Sağlanan verilerle belirlenebilen herhangi bir güçlü yön bulunmamaktadır. Diğer kaynaklardan (Şikayetvar, Twitter, Ekşi Sözlük) veri olmaması nedeniyle olası olumlu kullanıcı deneyimleri veya operasyonel başarılar hakkında bilgi edinilememiştir.\n    *   **Zayıf Yönler:**\n        *   **Yasal Uyumsuzluk:** En önemli zayıf yön, Türkiye'de e-ticaret siteleri için zorunlu olan ETBİS sistemine kayıtlı olmamasıdır. Bu durum, yasal denetim eksikliği ve tüketicinin korunması mekanizmalarının dışına çıkma potansiyeli taşır.\n        *   **Şeffaflık Eksikliği:** ETBİS kaydının olmaması, işletmenin yasal kimliği ve operasyonel şeffaflığı hakkında şüpheler uyandırır.\n        *   **Risk Faktörü:** Tüketiciler için olası anlaşmazlıklarda resmi başvuru ve çözüm yollarının kısıtlı olması nedeniyle yüksek risk taşımaktadır.\n\n*   **Sonuç Çıkarımı:**\n    \"eksisozluk\" adlı e-ticaret sitesinin, ETBİS'e kayıtlı olmaması ciddi bir yasal uyumsuzluk ve güvenilirlik problemidir. Sağlanan kısıtlı veri setine göre sitenin yasal zeminde güvenli bir platform olmadığı değerlendirilmektedir. Diğer kullanıcı deneyimi faktörleri hakkında veri bulunmaması, analizin kapsamını sınırlamaktadır. Tüketicilerin bu sitede alışveriş yaparken dikkatli olmaları ve olası riskleri göz önünde bulundurmaları önerilir."
+    },
+    "timestamp": "2025-08-05T20:18:30.817743"
+  },
+  "bade butik": {
+    "result": {
+      "site": "bade butik",
+      "yorum_sayısı": 17,
+      "yorumlar": [
+        {
+          "id": "ce574bb9-f73a-475f-bb49-96c58f226349",
+          "yorum": "hizmetle ilgili gereksiz bir güvensizlik ve hayal kırıklığı yaşadım çünkü uyarı mahiyetinde belirtmek isterim, aldığınız ürünlerin detaylı faturasını görmeden ürünlerinizi kargolatmayın. bade butik'ten 2 ürün alıp birini iade etmek istedim. ürünü değiştirirsem bana 30 tl hediye çeki vereceklerini sö...",
+          "tarih": "2025-04-22T10:50:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "63c42b73-ac25-4eab-a4e4-2774a9e04265",
+          "yorum": "\"sıkıntı kargo kaynaklı çıktı sağ olsunlar süreci öğrendiğimiz gibi iade talebinde bulundum ve iademi gerçekleştirdiler. teşekkürler...\"",
+          "tarih": "2025-04-01T21:22:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "bb04652e-df99-4b62-a7b7-3c296c277cf8",
+          "yorum": "bade butik'ten aldığım ürünler kargoya verildi. maili geldikten sonra bir daha hiçbir şekilde mesaj veya arama yapılmadan (kendileri sms geldi diye diretse de) hiçbir dönüş veya bilgilendirme olmadan ürünlerim iade sürecine girmiştir. bunu da kendim sorarak bilgi almış bulunmaktayım. kendileriyle il...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "64a7e650-ef43-47c7-9464-7766c9262270",
+          "yorum": "bade butik firmasından alışveriş yaptım. i̇ade ettiğim ürünle ilgili kargo ücretini benden tahsil ettiler. zaten ürünün açıklama kısmında da değişim belirtmişler değişim taleplerinde kargo alıcıya aittir diye. i̇ade için görüşürken karşı ödemeli gönderin diye kendileri söyledi. hem ürünü alırken ücret...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "ae70f5a3-12a8-445f-9870-880e33dab45e",
+          "yorum": "trabzon'da bulunan bade butikten 14 ağustos tarihi haki rengi drapeli bir elbise aldım. ürünün fiyatı 700 tl idi, kargo ücreti ile toplamda 754,90 tl...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "4d9267f8-9df9-42d7-b176-cd2ad020e789",
+          "yorum": "aras kargo bugün bade butikten gönderilen sipariş teslimatımı yaptığını iddia ediyor. ancak kargom adresime teslim edilmedi. call center üzerinden bu konuya ilişkin kayıt açtıramıyorum. bade butik teslim edilmiştir bilgisi veriyor. kargo adresime gelmedi🥰şikayetime ilişkin geri dönüş yapılmasını ri...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "f5dc6750-3374-4554-a9fd-a3fc9d2d161a",
+          "yorum": "bade butik internet sitesinden alışveriş yaptım. i̇lk denemede fermuar kısmı ikiye ayrıldı ve bozuldu. kendilerine yazdığımda, 'biz size normal gönderdik' dediler. hiçbir şey yapamayız dendi. daha önce de bu siteden crop aldım, denerken ertesi gün ipi koptu. şikayetçiyim. bir gün sonra doğum günüm va...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "96839b1b-9981-43eb-93fd-feb78eeaadfe",
+          "yorum": "bade butik üzerinden 2.817,54 tl tutarında 4 haziran tarihinde alışveriş yaptım. bu alışverişimdeki ürünleri beden uymamasından dolayı iade ettim. üzerinden 1 ay geçmesine rağmen hala iadem gerçekleştirilmedi. butik yetkilileri, bankadan kaynaklı bekleyin dedi. 1 ayın sonunda bugün iyzico'dan kaynak...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "8357cff1-24bb-4638-aeef-e08c6ec1dffa",
+          "yorum": "instagram sitesinde bade butik'ten elbise sipariş etmiştim. elbisenin fiyatı 565 tl idi. sonra ürünü iade etmek istedim. ürünü iade edince kargo ücreti kesildi ve hesabıma sadece 459 tl ödeme yaptılar. yani ben ürünü alırken de kargo ücreti ödemiştim. ürünü iade ettiğimde 2 kez kargo ücreti kestiler...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "644f9c4f-b030-4b83-af15-782e100da59e",
+          "yorum": "buradan taksitli alışveriş yaparken iadesinde sizden ekstra para alacaklarını bilerek yapın arkadaşlar. bir elbise aldım peşin fiyatı 1399, 2 taksitli fiyatı 1446 tl. kargo ile birlikte toplam ödediğim tutar 1503 oldu. bedeni olmadı iade ettim. bana yatan para 1349 tl oldu. sebebini sorduğumda ise d...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "d000e8ee-22fa-4b97-87d0-cb682275d3b0",
+          "yorum": "bade butik firmasından bir bluz ve bir pantolon sipariş ettim. 694.80 tl ödeme yaptım. bedeni olmadığı için ve ürünün kalitesizliğinden dolayı iade talebinde bulundum ve ürünleri kargoladım. ürünler karşı tarafa ulaştıktan sonra iade edeceğimi söyledim ve tarafıma 589.90 tl iade yaptılar. kargo para...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "c50c5113-0d82-4562-b117-14290c8b80c5",
+          "yorum": "kusurlu ürün gönderilmiş, ben bunu 14 gün olan iade süresi geçtikten sonra fark ettim. durumu kendileriyle fotoğraflar göndererek paylaştım. ancak yardımcı olamayacaklarını söylediler. ürünün kontrolünün sorumluluğu tüketici kadar satıcıya da aittir. keşke daha özverili olunsaydı.",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "dd9de2c7-26f8-49fd-ba19-21a5d47fb396",
+          "yorum": "bade butik internet sitesinden tayt satın aldım. taytın fiyatı 259,9 tl idi ancak ben 314,9 tl ödeme yaptım. ürün olmadığı için iadesini talep ettim. sitesinde bana iade edilecek tutarın 259,9 tl olarak gözüktüğünü gördüm. ancak bana dört gün sonra yalnızca 209 tl iade edildi. görüşme yaptığımda ban...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "36b4984f-5e1c-4191-bde6-13c7c6dbce19",
+          "yorum": "öncelikle yıllardır müşterisi olduğumu belirtmek isterim. genellikle güzel ve düzenli alışverişler yaparım. ancak son yaptığım büyük alışveriş sonrasında yaşadığım sorunları dile getirmek istiyorum. büyük bir alışveriş yaptım ve beklediğim gibi olmayan, kalitesiz ürünlerle karşılaştım. i̇ade etmek is...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "abd6c5bf-3691-46f0-b8ec-004a68637796",
+          "yorum": "trabzon'da bulunan bade butik internet sayfasından aldığım mango bebek mavisi eşofman takımını 28/12/2023 tarihinde yurtiçi kargo ile iadeye gönderdim. kargo kodu: 650000437, kargo müşteri kodu: 5616***14. bugün 11. gün siteye giriş yaptığımda, iadeye gönderdiğim ürün hala beklemede görünüyor. param...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "25b979ad-b416-49cb-8332-3e9692ba8d6b",
+          "yorum": "bade butik'ten aldığım ve ikinci kez gelmeyen ürünüm için şikayetçiyim. ürünü 10 gün önce sipariş verdim ve kargoda görünmesine rağmen 10. günün sonunda üründe defo olduğu gerekçesiyle gönderemeyeceklerini belirttiler. bu süreçte, belirttiğim tarihte giymek üzere olan bir planım olduğunu ve mağdur e...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "12b85f64-b330-4abc-8bf5-28c618e42047",
+          "yorum": "https://www.badebutik E-Ticaret Bilgi Sistemine sisteminde kayıtlıdır. Mobil uygulaması VAR.",
+          "kaynak": "E-Ticaret Bilgi Sistemi"
+        }
+      ],
+      "analiz": "Güvenlik analiz uzmanı olarak, bade butik adlı e-ticaret sitesi hakkındaki verileri kaynak bazında değerlendirip genel bir güvenilirlik analizi sunuyorum:\n\n---\n\n**1. Şikayetvar Değerlendirmesi:**\n\n*   **Ticari Alışveriş Deneyimi ile İlgili Yorumlar:** Tüm yorumlar doğrudan ticari alışveriş deneyimiyle ilgilidir.\n*   **Farklı Şikayet Sayısı ve Öne Çıkan Sorunlar:** En az 15 farklı şikayet dile getirilmiştir. Öne çıkan sorunlar şunlardır:\n    *   **Para İadesi ve Kargo Ücreti Kesintileri (En Yoğun Sorun):** Kullanıcılar, iade ettikleri ürünlerden beklenmedik ve yüksek kargo ücreti kesintileri yapıldığını, hatta bazen iki kez kargo ücreti ödendiğini veya genel iade tutarının çok düşük kaldığını belirtmektedir (örneğin 314.9 TL ödenen ürüne 209 TL iade, 694.8 TL ödenen ürüne 589.9 TL iade). Taksitli alışverişlerde de iade sırasında ek kesintiler yapıldığı vurgulanmıştır. Bu, sistemik ve tekrar eden bir sorundur.\n    *   **Ürün Kalitesi ve Kusurlu Ürün Gönderimi:** Fermuarın bozulması, ürün ipinin kopması, kalitesiz ürün gönderimi ve defolu ürünlerin teslimat sürecinde fark edilmesi gibi şikayetler mevcuttur.\n    *   **İletişim ve Bilgilendirme Eksikliği:** Kargoya verilen ürünlerin iade sürecine girmesi gibi durumların müşteriye haber verilmemesi, müşterinin kendisinin bilgi almak zorunda kalması.\n    *   **Geciken İadeler:** İadelerin 1 ay veya daha uzun sürebildiği, butiğin suçu banka veya ödeme sistemine (Iyzico) atması.\n    *   **Kargo Teslimat Sorunları:** Kargoların teslim edilmediği halde teslim edilmiş gösterilmesi ve butiğin bu konuda yeterli destek vermemesi.\n    *   **Müşteri Desteği ve Çözüm Odaklı Yaklaşım Eksikliği:** Kusurlu ürün gönderildiğinde veya sorun yaşandığında \"biz size normal gönderdik\", \"hiçbir şey yapamayız\" gibi yanıtlarla müşterilere yardımcı olunmaması.\n*   **Kullanıcı Mağduriyetlerinin Benzerliği:** Para iadesi ve kargo ücreti kesintileri konusunda mağduriyetler büyük ölçüde benzer ve tekrar etmektedir. Ürün kalitesi ve müşteri hizmetleri sorunları da sıkça dile getirilmiştir.\n*   **Haklılık Payı ve Yoğunluk:** Şikayetlerin haklılık payı oldukça yüksektir. Özellikle iade edilen tutarlardan yapılan açıklanamayan veya haksız kesintiler, tüketici hakları açısından ciddi sorun teşkil etmektedir. Şikayetlerin yoğunluğu ve benzerliği, münferit sorunlar yerine butiğin operasyonel süreçlerinde veya politika uygulamalarında ciddi aksaklıklar olduğunu düşündürmektedir. Nadir de olsa tek bir şikayetin \"kargo kaynaklı sorunun çözüldüğü\" yönünde olumlu geri dönüşü olsa da, bu durum genel olumsuz tabloyu değiştirmemektedir.\n\n**2. ETBİS Değerlendirmesi:**\n\n*   **Site ETBİS Sistemine Kayıtlı mı?** Evet, badebutik.com ETBİS (E-Ticaret Bilgi Sistemi) sistemine kayıtlıdır ve mobil uygulaması bulunmaktadır.\n*   **Yasal Güvenilirlik Açısından Anlamı:** ETBİS'e kayıtlı olmak, e-ticaret sitesinin Türkiye Cumhuriyeti mevzuatına (özellikle 6563 Sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun ve ilgili yönetmelikler) uygun olarak faaliyet gösterdiğinin ve Bilgi Teknolojileri ve İletişim Kurumu (BTK) tarafından denetlenebilir olduğunun bir göstergesidir. Bu durum, temel bir yasal zeminde faaliyet gösterdiğini ve en azından resmi bir kaydının bulunduğunu ifade eder. Ancak, ETBİS kaydı tek başına bir işletmenin tüm ticari uygulamalarının kusursuz veya güvenilir olduğu anlamına gelmez; yalnızca yasal zorunluluklara uyumun ilk adımıdır. Yani, yasalara uygun hareket ettiğine dair bir taahhüttür ancak uygulamadaki sorunları ortadan kaldırmaz.\n\n**3. Twitter Değerlendirmesi:**\n\n*   Verilen bilgiler arasında Twitter'dan alınan yorum bulunmamaktadır. Bu nedenle bu platform üzerinden bir analiz yapılamamaktadır.\n\n**4. Ekşi Sözlük Değerlendirmesi:**\n\n*   Verilen bilgiler arasında Ekşi Sözlük'ten alınan yorum bulunmamaktadır. Bu nedenle bu platform üzerinden bir analiz yapılamamaktadır.\n\n---\n\n**Genel Güvenilirlik Değerlendirmesi:**\n\nBade Butik, ETBİS'e kayıtlı olması nedeniyle yasalara uyum konusunda temel bir adım atmış ve denetlenebilir bir zeminde faaliyet göstermektedir. Ancak, Şikayetvar'daki yoğun ve tekrar eden kullanıcı yorumları, operasyonel güvenilirlik ve müşteri memnuniyeti açısından ciddi sorunlar olduğunu göstermektedir. Özellikle para iadesi süreçlerindeki şeffaflık eksikliği, haksız kesintiler ve ürün kalitesi sorunları, sitenin ticari güvenilirliğini olumsuz etkilemektedir.\n\n**Güçlü Yönler:**\n\n*   **ETBİS Kayıtlı Olması:** Yasalara uygun faaliyet gösterdiğini ve denetlenebilir olduğunu gösterir.\n*   **Mobil Uygulama Varlığı:** Müşterilere farklı bir erişim kanalı sunar.\n\n**Zayıf Yönler:**\n\n*   **Para İadesi Süreçlerindeki Güven Sorunu:** Haksız/aşırı kargo kesintileri ve eksik iadeler, müşterilerde büyük mağduriyet ve güvensizlik yaratmaktadır. Bu, en kritik zayıf yöndür.\n*   **Ürün Kalitesi Sorunları:** Defolu veya kısa sürede bozulan ürünlerin gönderilmesi.\n*   **Yetersiz Müşteri İletişimi ve Desteği:** Müşterilerin sorunlarına çözüm odaklı yaklaşılmaması, bilgi akışında eksiklikler.\n*   **Geciken İade Süreçleri:** Para iadelerinin uzun sürmesi.\n*   **Teslimat Sorunlarına Yetersiz Yaklaşım:** Kargo firması kaynaklı sorunlarda müşteriye yeterli desteğin verilmemesi.\n\n**Sonuç Çıkarımı:**\n\nBade Butik, ETBİS kaydı ile yasal bir zeminde yer almasına rağmen, Şikayetvar platformundaki çok sayıda ve benzer nitelikteki olumsuz geri bildirimler (özellikle iade edilen tutarlardan yapılan beklenmedik ve yüksek kesintiler, ürün kalitesi ve müşteri hizmetleri sorunları) nedeniyle operasyonel güvenilirliği düşük bir profil çizmektedir. Mevcut veriler ışığında, tüketiciler için iade süreçlerinde ve ürün kalitesinde ciddi riskler barındırdığı söylenebilir."
+    },
+    "timestamp": "2025-08-05T20:32:40.489241"
+  },
+  "magaza-adi": {
+    "result": {
+      "site": "magaza-adi",
+      "yorum_sayısı": 9,
+      "yorumlar": [
+        {
+          "id": "a5aec612-b540-41f9-8786-75d6ba7f3429",
+          "yorum": "21.09.2024 tarihinde teknosa'dan aldığım roborock s8 pro ultra (piyasada kaliteli ürün diye adlandırılan ve pahalı ürünlerden biri) 4 defa arızalandı. ürünü alırken teknosa'nın kendi sitesinde daha uygun fiyatlıları var iken satış temsilcisi onların ithalatçı garantili olduğunu bu ürünün ise roboroc...",
+          "tarih": "2025-08-04T21:19:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "80defb20-6e9b-4829-9e0d-63bc78e3b255",
+          "yorum": "jimmy key mağazasından pantolon aldım fermuarı bozuldu, fermuarı tutmuyordu ürünü iade etmek istediğimde incelemeye gönderileceği söylendi ayrıca iade olumlu olursa aynı üründen tekrar alınamıyormuş! müşteri memnuniyeti adı altında! ayrıca ret oldu. fermuar kırılmış ya da sökülmüş değil bunu ben ken...",
+          "tarih": "2025-08-04T16:58:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "339924c5-d2de-4359-b1e9-30948c944094",
+          "yorum": "temmuz 2025'te i̇daş yenibosna şubesi'nden yatak aldık. yatak 29 temmuz'da teslim edildi. teslimat süreci çok sıkıntılıydı, bütün gün uğraştık. satış aşamasında, aldığımız yatağın 120 gün değişim süresi olduğu söylendi. gelen yatak çok sert, hiç memnun kalmadık; geldiğinden beri koltuklarda yatıyoruz...",
+          "tarih": "2025-08-01T12:42:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "5f98f9ad-7a8a-45af-8a35-532960a50944",
+          "yorum": "i̇stanbul marmara form avm de zemin kat eczanenin yanındaki takı mağazası uzak ışıklardan 28 temmuz 2025 saat altı gibi kız kardeşim ve çocuklarımızla alışveriş yapmak için gittik. yiyenim gözlük beğendi biz daha ürün bakıyorduk. kasada duran bey beni işaret ederek elemanını mağaza içinde arkama takt...",
+          "tarih": "2025-07-30T00:21:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "432feb08-8138-44ba-8900-5ca09ac890d2",
+          "yorum": "sayın yetkili, 28 temmuz 2025 tarihinde saat 09:06'da a101 akbük, didim/aydın şubesinden alışveriş yaptım. fişim elimdedir. yaklaşık 1,5 saat sonra, satın aldığım üç ürünü (sucuk, beyaz peynir ve kaşar peyniri) iade etmek üzere mağazaya geri döndüm. ürünlerde herhangi bir bozulma, açılma ya da has...",
+          "tarih": "2025-07-28T12:21:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "2f05449f-0111-4e6b-a406-a4605a509ab3",
+          "yorum": "ürün çocuğum için uygun olmadığından iade talebi için i̇zmir buca yenigün 222/11 sokaktaki şubeye 27/07/2025 günü saat 15.45 sularında gittiğimde önce ürün bizim mağazamızdan alınmadığı için iade alamayız dendi daha sonra ürün bizim şubemizde satılmıyor dendi ancak arkada rafta mevcuttu. kasada bulun...",
+          "tarih": "2025-07-27T16:28:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "d1ac665b-32d3-4440-b98e-6c9524bc6421",
+          "yorum": "sayın yetkili, 26.07.2025 tarihinde ankara atlantis mağazanıza iade ettiğim ürünün ödemesini almak için gittiğimde, mağaza müdürü m** bey işlemleri başlatırken hoş olmayan tavırlar sergilemiştir. sürekli söylenerek işlem yapması ve 'gerekli yerlere şikayet edeceğim.' dediğimde, 'i̇stediğiniz yere ede...",
+          "tarih": "2025-07-26T14:58:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "52e48bff-322f-41f7-9148-0a8dea66b8e8",
+          "yorum": "\"mağaza müdürü çağatay bey ve satış uzmanı i̇**** bey ile görüştük, konu çözüme ulaştı. oldukça şeffaf bir anlatım oldu. bilgilendirme, ürettikleri çözüm ve ilgilenmeleri için iki arkadaşa da teşekkür ediyorum.\"",
+          "tarih": "2025-07-25T23:19:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "357d9304-6907-4836-8dc7-d1560bc5475a",
+          "yorum": "https://www.magaza-adi E-Ticaret Bilgi Sistemine sisteminde kayıtlı değildir.",
+          "kaynak": "E-Ticaret Bilgi Sistemi"
+        }
+      ],
+      "analiz": "Bir güvenlik analiz uzmanı olarak, \"magaza-adi\" adlı butik e-ticaret sitesi hakkındaki verileri kaynak bazında ayrı ayrı değerlendirip genel bir analiz sunacağım.\n\n---\n\n**Kaynak Bazında Değerlendirme:**\n\n1.  **Şikayetvar:**\n    *   Sağlanan yorumların hiçbiri doğrudan \"magaza-adi\" adlı butik e-ticaret sitesiyle ilgili değildir. Yorumlar, Teknosa, Jimmy Key, İdaş, Uzak Işıklar, A101 gibi farklı firmalara veya genel alışveriş deneyimlerine aittir.\n    *   Bu nedenle, Şikayetvar verileri üzerinden \"magaza-adi\" hakkında ticari alışveriş deneyimi, sorunlar, haklılık payı veya yoğunluk analizini yapmak mümkün değildir. Mevcut veriler sitenin Şikayetvar'daki durumu hakkında bilgi sunmamaktadır.\n\n2.  **ETBİS (E-Ticaret Bilgi Sistemi):**\n    *   **Veri:** \"https://www.magaza-adi E-Ticaret Bilgi Sistemine sisteminde kayıtlı değildir.\"\n    *   **Değerlendirme:** magaza-adi'nın ETBİS sistemine kayıtlı olmaması, Türkiye'deki e-ticaret siteleri için bir yasal yükümlülüğün yerine getirilmediği anlamına gelir. ETBİS kaydı, sitenin Ticaret Bakanlığı tarafından denetlenebilir ve yasalara uygun hareket ettiğine dair bir güven unsuru sağlar. Kayıtlı olmaması, tüketiciler için yasal güvencelerin zayıf olduğu, potansiyel anlaşmazlıklarda muhatap bulmanın veya tüketici haklarını aramanın daha zor olabileceği bir izlenim yaratır. Bu, sitenin yasal güvenilirliği açısından ciddi bir eksikliktir.\n\n3.  **Twitter:**\n    *   Sağlanan veriler arasında Twitter yorumlarına ilişkin herhangi bir bilgi bulunmamaktadır.\n    *   Bu nedenle, Twitter üzerinden sitenin marka algısı, kullanıcı duygu analizi veya ticari bağlamdaki yorumları hakkında bir değerlendirme yapmak mümkün değildir.\n\n4.  **Ekşi Sözlük:**\n    *   Sağlanan veriler arasında Ekşi Sözlük yorumlarına ilişkin herhangi bir bilgi bulunmamaktadır.\n    *   Bu nedenle, Ekşi Sözlük üzerinden sitenin genel memnuniyet düzeyi, eleştirilen/öven yönleri veya güncelliği hakkında bir değerlendirme yapmak mümkün değildir.\n\n---\n\n**Genel Güvenilirlik Değerlendirmesi, Güçlü ve Zayıf Yönler:**\n\n**Genel Güvenilirlik Değerlendirmesi:**\nSağlanan kısıtlı verilere göre, \"magaza-adi\"nın genel güvenilirliği hakkında kapsamlı bir yargıya varmak zordur. Mevcut tek somut veri, sitenin ETBİS'e kayıtlı olmamasıdır. Bu durum, sitenin yasal uyumluluk ve dolayısıyla tüketici güvenliği açısından önemli bir zafiyete sahip olduğunu göstermektedir. Diğer popüler platformlarda (Şikayetvar, Twitter, Ekşi Sözlük) siteye dair hiçbir kullanıcı yorumunun olmaması, sitenin bilinirliği veya aktif kullanıcı tabanı hakkında da soru işaretleri yaratmaktadır.\n\n**Güçlü Yönler:**\n*   **Belirlenemedi:** Sağlanan verilerde \"magaza-adi\"nın herhangi bir güçlü yönünü gösteren bilgi bulunmamaktadır. Kullanıcı deneyimi, ürün kalitesi veya müşteri hizmetleri hakkında pozitif bir veri seti mevcut değildir.\n\n**Zayıf Yönler:**\n*   **Yasal Uyumluluk Eksikliği (ETBİS):** En belirgin ve kritik zayıflık, sitenin ETBİS'e kayıtlı olmamasıdır. Bu durum, yasal denetim ve tüketici hakları açısından ciddi bir risk faktörü oluşturur.\n*   **Kullanıcı Geri Bildirimi Eksikliği:** Şikayetvar, Twitter ve Ekşi Sözlük gibi platformlardan hiçbir veri gelmemesi, sitenin genel kullanıcı algısı, memnuniyet düzeyi veya karşılaşılan sorunlar hakkında bilgi edinmeyi engellemektedir. Bu durum, potansiyel müşteriler için bir şeffaflık eksikliği ve güvenilirlik belirsizliği yaratabilir.\n\n---\n\n**Sonuç Çıkarımı:**\n\n\"magaza-adi\" adlı butik e-ticaret sitesi hakkında elimizdeki en kritik bilgi, ETBİS'e kayıtlı olmamasıdır. Bu durum, yasal yükümlülüklere uyum konusunda önemli bir eksiklik teşkil etmekte ve potansiyel tüketiciler için ciddi bir güvenlik endişesi yaratmaktadır. Diğer kullanıcı yorum platformlarından hiçbir veri bulunmaması nedeniyle, sitenin müşteri deneyimi veya genel operasyonel performansı hakkında herhangi bir değerlendirme yapılamamaktadır. Sitenin, özellikle yasal uyumluluk açısından, güvenilirlik sorunları taşıdığı düşünülmektedir."
+    },
+    "timestamp": "2025-08-05T21:19:41.326326"
+  },
+  "shopier": {
+    "result": {
+      "site": "shopier",
+      "yorum_sayısı": 16,
+      "yorumlar": [
+        {
+          "id": "8863c10e-dd63-4b9d-a481-9906ae6816c1",
+          "yorum": "\"teşekkürler ilgilenip hemen çözdüler\"",
+          "tarih": "2025-08-05T16:05:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "82378465-a0c7-4b6c-8937-df3e4026276c",
+          "yorum": "shopier'den 27 temmuz'da bir ürün sipariş ettim (#287599153), ancak satıcı ürünü kargoya vermedi ve ürün elime ulaşmadı. para iadesi de alamıyorum. ka...",
+          "tarih": "2025-08-05T12:25:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "3a6696a7-e9b2-49b4-98f3-e1acc1cc9e69",
+          "yorum": "\"shopier müşteri hizmetlerine teşekkür ederim sorunumu hızlı bir şekilde çözdüler\"",
+          "tarih": "2025-08-04T14:46:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "3d90eaf7-4b89-423e-b2dd-e596b649e8f9",
+          "yorum": "\"kısa sürede çözüm sağlandığı için çok çok teşekkür ediyorum\"",
+          "tarih": "2025-08-04T13:47:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "abecccfa-21c9-4e4d-aece-b0db02a689ac",
+          "yorum": "\"24 saat geçmeden benimle iletişime geçip yardımcı oldular. teşekkürler 🙏🏻\"",
+          "tarih": "2025-08-03T22:54:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "21b17e4b-49df-4631-9994-fbdad873ef63",
+          "yorum": "shopier.com üzerinden iki ayrı satıcıdan ürün aldım. 1 haftayı geçmesine rağmen kargoya verilmedi ve herhangi bir geri dönüş alamadım. satıcılara da ulaşamıyorum. ücretin geri iadesini istiyorum. satıcıların telefon numaraları da yok, sadece mail adresleri var; oradan da ulaşamadım.",
+          "tarih": "2025-08-02T09:34:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "67f6d336-22f4-497a-8859-1de6718da914",
+          "yorum": "shopier üzerinden manomwear mağazasından yaptığım alışverişte sipariş numaram 777930301, iade referans kodum 5212*****470’dir. toplamda 200 tl ürün tutarı ve 95 tl kargo ücretiyle alışveriş yaptım. ancak, ürün bana hiç ulaşmadı ve teslim almadan iptal oldu. i̇ade işlemi başlatıldıktan sonra hesabıma...",
+          "tarih": "2025-08-01T21:02:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "27ef00c6-1e30-4050-90b3-6f0497abf3e0",
+          "yorum": "pawn wear’ın instagram hesabından shopier üzerinden satın aldığım gözlük, kargo paketinden çıktığı anda gözlük pedleri sallanıyordu. ürün elime ulaştığı ilk andan itibaren ayıplıydı ve kullanım imkânı sunmuyordu. siparişle birlikte fatura da gönderilmedi. i̇ade talebimi iletmeme rağmen, satıcı iade...",
+          "tarih": "2025-08-01T18:22:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "663bfa8e-2124-4672-8d9c-fd4b42b02c9d",
+          "yorum": "\"sorunum çözüldü teşekkürler\"",
+          "tarih": "2025-08-01T17:34:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "5e73575f-9c93-4cb8-9198-23a8bf2aac16",
+          "yorum": "\"sorunum çözüldü teşekkür ediyorum\"",
+          "tarih": "2025-08-01T15:25:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "b6f2c1e0-dfac-4244-9fb7-d8c749edf57c",
+          "yorum": "shopier üzerinden kredi kartıyla alışveriş yaptım, 3 gün oldu. herhangi bir ürün gelmedi. 962533144 numaralı siparişim için satıcı cevap vermiyor, paramın iadesini istiyorum. lütfen yardımcı olur musunuz? siteye hiçbir şekilde ulaşamıyorum, cevap da vermiyorlar. görselleri de mevcut, yardımcı olursa...",
+          "tarih": "2025-08-01T02:32:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "614e9af9-4a63-4eeb-be9a-cf236816efc6",
+          "yorum": "\"şikayetimi yazdım ve 1 günden az bir şekilde hemen geri dönüş yapıp iademi oluşturdular\"",
+          "tarih": "2025-08-01T00:31:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "0fb9ba23-fd78-4ed5-bd0f-a081164e1312",
+          "yorum": "\"teşekkür ederim\"",
+          "tarih": "2025-07-31T22:19:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "4ea83489-c041-4cba-bde0-b041a9c11b81",
+          "yorum": "kremlin.co dan shopier aracığıyla aldığım parfümler sahte çıktı ücret iademi istiyorum. satıcı bana orijinal olduğunu söylemesine rağmen aldığım iki parfüm de sahte üzerindeki seri numarası tırnağımla bile siliniyor, kokuları 20dakikada neredeyse geçti. bir tanesinin içindeki sıvıda kir partikülleri...",
+          "tarih": "2025-07-31T18:52:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "a259ca56-18bf-49f0-92c0-e627db1046f3",
+          "yorum": "\"i̇lgilendiğiniz için teşekkür ederim\"",
+          "tarih": "2025-07-31T16:58:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "fe6d1e8b-4e70-4c94-8e97-5edf63d49f33",
+          "yorum": "https://www.shopier E-Ticaret Bilgi Sistemine sisteminde kayıtlıdır. Mobil uygulaması YOK.",
+          "kaynak": "E-Ticaret Bilgi Sistemi"
+        }
+      ],
+      "analiz": "Bir güvenlik analiz uzmanı olarak, Shopier platformu hakkındaki verileri kaynak bazında değerlendirip genel bir güvenilirlik analizi sunacağım.\n\n---\n\n### Kaynak Bazında Değerlendirme:\n\n**1. Şikayetvar Değerlendirmesi:**\n\n*   **Yorumların Ticari Bağlamı**: Sunulan tüm yorumlar ticari alışveriş deneyimleriyle ilgilidir.\n*   **Farklı Şikayet Türleri ve Öne Çıkan Sorunlar**:\n    *   **Ürün Teslim Edilmeme/Kargoya Verilmeme ve Para İadesi Sorunu**: En yaygın şikayet türüdür. Kullanıcılar, sipariş ettikleri ürünlerin satıcılar tarafından kargoya verilmediğini, kendilerine ulaşmadığını ve bu durumda para iadesi almakta zorlandıklarını belirtmektedir (örn. #287599153, iki ayrı satıcıdan alışveriş, 777930301, 962533144 numaralı siparişler). Satıcılara ve Shopier'a ulaşılamadığı da ifade edilmiştir.\n    *   **Ayıplı/Sahte Ürün Teslimatı ve İade Reddi**: Kullanıcılar, aldıkları ürünlerin ayıplı (kırık gözlük) veya sahte (parfüm) çıktığını ve satıcıların iade taleplerini reddettiğini veya fatura göndermediğini belirtmektedir (Pawn Wear gözlük, Kremlin.co parfümleri).\n*   **Mağduriyetlerin Benzerliği ve Tekrar Eden Sorunlar**: Evet, mağduriyetler büyük ölçüde benzerdir. Temel sorunlar, ürünün ulaşmaması/kalite sorunları ve buna bağlı olarak para iadesi alamama veya iletişim kurmada yaşanan zorluklardır. Bu sorunlar farklı satıcılar aracılığıyla tekrar etmektedir.\n*   **Haklılık Payı ve Yoğunluk Analizi**:\n    *   **Olumsuz Yorumların Haklılık Payı**: Çok sayıda kullanıcının temel bir e-ticaret beklentisi olan \"ürünü teslim alma\" veya \"ürün kusurluysa iade etme\" konusunda mağduriyet yaşaması, şikayetlerin haklılık payının yüksek olduğunu göstermektedir. Para iadesi ve iletişimdeki zorluklar mağduriyeti artırmaktadır. Bu yorumların yoğunluğu, Shopier platformundaki satıcı kontrol mekanizmalarında veya arabuluculuk süreçlerinde ciddi eksiklikler olduğunu düşündürmektedir.\n    *   **Olumlu Yorumların Yoğunluğu**: Şikayetvar'da aynı zamanda birçok olumlu geri bildirim bulunmaktadır (\"teşekkürler ilgilenip hemen çözdüler\", \"hızlı bir şekilde çözdüler\", \"24 saat geçmeden yardımcı oldular\" vb.). Bu durum, kullanıcılar Şikayetvar gibi platformlar üzerinden Shopier'a ulaştığında, sorunların Shopier müşteri hizmetleri tarafından **hızlı ve etkili bir şekilde çözüldüğünü** göstermektedir. Bu, platformun problem çözme yeteneği açısından güçlü bir yönüdür, ancak sorunların öncelikle oluşması ve kullanıcının şikayet etme noktasına gelmesi zayıf bir noktadır.\n\n**2. ETBİS Değerlendirmesi:**\n\n*   **Site ETBİS Sistemine Kayıtlı mı?**: Evet, Shopier (https://www.shopier) E-Ticaret Bilgi Sistemine (ETBİS) kayıtlıdır.\n*   **Yasal Güvenilirlik Açısından İfade Ettikleri**: ETBİS'e kayıtlı olmak, Shopier'ın Türkiye Cumhuriyeti Ticaret Bakanlığı'nın belirlediği yasal yükümlülükleri yerine getirdiğini ve kayıtlı bir e-ticaret platformu olarak faaliyet gösterdiğini gösterir. Bu durum, yasal bir çerçeve içerisinde hareket ettiğine ve denetlenebilir bir yapıya sahip olduğuna dair olumlu bir işarettir. Hukuki süreçlerde muhatap bulunabilirliği açısından güvenilirliği artırır. Ancak, ETBİS kaydı, platform üzerindeki tüm satıcıların güvenilirliğini veya tüm ticari işlemlerin sorunsuz olacağını garanti etmez. Mobil uygulamasının olmaması ETBİS kaydıyla doğrudan ilgili değildir ancak ek bir bilgidir.\n\n**3. Twitter Değerlendirmesi:**\n\n*   **Yorum Sayısı Yeterli mi?**: Verilen bilgiler arasında Twitter yorumu bulunmamaktadır.\n*   **Analiz**: Yetersiz veri nedeniyle analiz yapılamamaktadır.\n\n**4. Ekşi Sözlük Değerlendirmesi:**\n\n*   **Yorum Sayısı ve Güncelliği**: Verilen bilgiler arasında Ekşi Sözlük yorumu bulunmamaktadır.\n*   **Analiz**: Yetersiz veri nedeniyle analiz yapılamamaktadır.\n\n---\n\n### Genel Güvenilirlik Değerlendirmesi:\n\nShopier'ın genel güvenilirliği karmaşıktır ve hem güçlü hem de zayıf yönler içermektedir. Yasal uyumluluk açısından ETBİS kaydıyla güvenilir bir temel sunsa da, kullanıcı deneyimi açısından ciddi operasyonel aksaklıklar yaşanabilmektedir. Şikayetvar'daki yoğun ve benzer mağduriyetler, platformdaki satıcıların denetimi ve ürün/teslimat kalitesi konularında zafiyetler olduğunu göstermektedir. Ancak, bu sorunlar ortaya çıktığında Shopier müşteri hizmetlerinin çözüm odaklı ve hızlı müdahalesi, kullanıcıların mağduriyetlerini gidermede önemli bir rol oynamaktadır.\n\n### Güçlü Yönleri:\n\n1.  **Yasal Uyumluluk**: E-Ticaret Bilgi Sistemi'ne (ETBİS) kayıtlı olması, platformun yasal çerçevede faaliyet gösterdiğini ve resmi merciler tarafından bilindiğini gösterir.\n2.  **Etkili Şikayet Çözüm Mekanizması**: Şikayetvar'daki geri bildirimler, Shopier müşteri hizmetlerinin sorunları hızlı ve genellikle memnun edici bir şekilde çözdüğünü ortaya koymaktadır. Bu durum, mağduriyet oluştuğunda bir çözüm kanalının mevcut olduğunu göstermektedir.\n\n### Zayıf Yönleri:\n\n1.  **Satıcı Denetimi ve Takibi Eksikliği**: Kullanıcı şikayetlerinin büyük çoğunluğu, satıcıların ürün teslim etmemesi, ayıplı/sahte ürün göndermesi ve müşterilerle iletişim kurmaması gibi temel sorunlara dayanmaktadır. Bu durum, Shopier'ın satıcıları üzerindeki önleyici kontrol ve performans takibinin yetersiz olduğunu düşündürmektedir.\n2.  **Proaktif Tüketici Koruması Zayıflığı**: Sorunların genellikle kullanıcıların doğrudan Şikayetvar gibi mecralara başvurmasıyla çözülmesi, Shopier'ın sorunları baştan engelleme veya kullanıcının ilk şikayetinde otomatik olarak devreye girme konusunda daha proaktif olması gerektiğini göstermektedir.\n3.  **İletişim Zorlukları**: İlk aşamada satıcılara veya Shopier'a ulaşmada yaşanan zorluklar, iletişim kanallarında iyileştirme ihtiyacını ortaya koymaktadır.\n\n### Sonuç Çıkarımı:\n\nShopier, yasal zeminde faaliyet gösteren ve müşteri şikayetlerini çözmede etkili bir e-ticaret platformudur. Ancak, platform üzerindeki satıcılardan kaynaklanan teslimat aksaklıkları, ürün kalitesi sorunları ve iletişim eksiklikleri sıkça kullanıcı mağduriyetine yol açmaktadır. Kullanıcılar genellikle sorunlarını Shopier'ın doğrudan müdahalesiyle çözebilmektedir. Platformun, satıcıların performansını daha sıkı denetleyerek ve proaktif tüketici koruma mekanizmalarını güçlendirerek güvenilirliğini artırması gerekmektedir."
+    },
+    "timestamp": "2025-08-05T21:24:53.999346"
+  },
+  "hepsiburada": {
+    "result": {
+      "site": "hepsiburada",
+      "yorum_sayısı": 12,
+      "yorumlar": [
+        {
+          "id": "618c1be4-8f02-4052-b3db-24b7050a693d",
+          "yorum": "17 temmuz saat 12:39’da hepsiburada güvencesiyle, 447 886 013 9 sipariş numarasıyla hepsiburada satıcısından microcase araç i̇çi tablet tutucu satın aldım. ürünü sarıçam/adana adresine teslim aldım. daha ilk kullanımda, en sağlam olması gereken kısmının ince yapılmasından dolayı bu bölümden kırıldı....",
+          "tarih": "2025-08-05T19:57:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "ae21549c-6caf-41cf-adeb-5adb61a5ff40",
+          "yorum": "30 temmuz’da hepsiburada üzerinden satın aldığım msi katana 17 model elektronik ürünüm yerine yanlış bir ürün teslim edildi. sipariş numaram: 474 828 020 0. ürünü i̇stanbul/ümraniye adresime teslim aldım ve hemen ardından müşteri temsilcisiyle iletişime geçerek yanlış ürünü iade ettim. bu sorunun sa...",
+          "tarih": "2025-08-05T19:28:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "ad43e850-b5aa-446c-b2c8-c1c92980458b",
+          "yorum": "hepsiburada üzerinden i̇pek mobilya 5 kapaklı dolap satın aldım. ürünü diyarbakır yenişehir adresine teslim aldım. dolabın vida yerlerinden suntası zamanla paramparça oldu ve bir yıl dolmadan mobilya tamamen dağıldı. ürün garanti kapsamında olmasına rağmen, üretici firma kapanmış durumda. yaşadığım...",
+          "tarih": "2025-08-05T19:21:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "399e63e9-4ca9-4161-a215-4fef13c7a860",
+          "yorum": "9 temmuz’dan bu yana hepsiburada üzerinden iki kez philips 7009 55\" tv siparişi verdim. her iki siparişte de televizyonlar kırık şekilde teslim edildi. kolay iade seçeneğiyle işlem yapmak istedim ancak sistem fotoğrafı kabul etmedi ve servis raporu almak için farklı bir ilçeye gitmem gerekti. 21. yü...",
+          "tarih": "2025-08-05T18:52:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "22a69d43-6812-4d00-b456-e74fd663143b",
+          "yorum": "merhaba hepsiburada dan 6.7.2025 tarihinde modem aldım ve paketi hiç açmadan 8.7.2025 tarihinde iade ettim. kabul ettiler ancak firmaya iadeleri 24.7.2025 i buldu. özür dilediler ve parayı bankaya iade ettiklerini söylediler. hala iade etmediler ve neredeyse 1 ay oldu. sadece özür diliyorlar herhang...",
+          "tarih": "2025-08-05T18:37:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "529cf7af-533e-4c35-a0d4-737b1f9cf4ec",
+          "yorum": "kasım 2024’ten bu yana her ay akbank’a ait kredi kartımdan (son dört hane: 1224) hepsiburada tarafından 49,99 tl tutarında bir ücret çekilmektedir. hepsiburada hesabımda herhangi bir üyeliğim bulunmamasına rağmen, toplamda 499,99 tl para kesilmiştir. bu durumu fark ettiğimde müşteri hizmetlerini tel...",
+          "tarih": "2025-08-05T18:07:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "d52bb76d-f604-4cdd-83bb-39e9e0e2e4f5",
+          "yorum": "hepsiburada, sattığı ürünü kaç gündür göndermemek için elinden geleni yapıyor. talep sonucu depoda ürün olduğu ve gönderileceği söylendi ancak gönderilmedi. kaç gündür cüzi bir ücreti olan ürünü göndermemek için uğraşıyorlar. kaç milyon dolarlık şirket olmasına rağmen sürekli bahane üretiyorlar. o ü...",
+          "tarih": "2025-08-05T17:33:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "710bc514-36fb-439b-8b37-19221e798a4f",
+          "yorum": "hepsiburada platformundan, satıcı olarak hepsiburada'nın kendisinin belirtildiği bir ekran koruyucu ürünü, 15.000 tl değerindeki telefonum için güvenli ve kaliteli olacağına inanarak satın aldım. özellikle hepsiburada'yı tercih etmemin sebebi, markanıza olan güvenim ve ürünün orijinal, açıklamalarda...",
+          "tarih": "2025-08-05T17:24:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "aaf2a65a-a078-431e-a027-e8e6f696063d",
+          "yorum": "hepsiburada.com'dan 2 adet melaris marka halı aldık. kışın aldığım halıyı, yazın kirlendiği için balkonumda kendimiz yumuşak fırça ile yıkadık. daha ilk yıkamamızda halının bir tanesi adeta kırıldı, kesilmiş gibi oldu. yerden kaldırınca dağıldı. elde yıkamasak, halı yıkamaya versek demek ki parampar...",
+          "tarih": "2025-08-05T16:13:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "78420772-a4db-4341-a117-8a1371606ca5",
+          "yorum": "hepsiburada’dan bir buçuk aydır hesabıma para yatırılmasını bekliyorum. sizden alışveriş yaparken parayı kuruşuna kadar ödüyoruz, ürünü beğenmeyip iade ettiğimizde ise ücret bir buçuk aydır hesabıma yatmıyor. sürekli müşteriyi oyalıyor ve erteliyorsunuz, artık yeter, sabrım kalmadı. paramın hesabıma...",
+          "tarih": "2025-08-05T15:05:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "0fd9cdd2-1056-445a-8ffd-9d4b615a7d4f",
+          "yorum": "türkiye'nin en beğenilen e-ticaret platformlarından olan hepsiburada.com 2001 yılından beri perakende satış konusunda hizmetlerini sürdürmektedir. türkiye'de online alışveriş denildiğinde ilk akla gelen isimlerden biri olan hepsiburada.com online alışverişin gelişmesi konusunda da ülke genelinde büyük payı olan bir platformdur.",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "47701f46-6ac1-45ae-9bb9-7c77e47684ff",
+          "yorum": "https://www.hepsiburada E-Ticaret Bilgi Sistemine sisteminde kayıtlı değildir.",
+          "kaynak": "E-Ticaret Bilgi Sistemi"
+        }
+      ],
+      "analiz": "Güvenlik Analizi Raporu: hepsiburada E-Ticaret Sitesi\n\n**1. Şikayetvar Verilerinin Değerlendirilmesi**\n\n*   **Ticari Alışveriş Deneyimi İlişkisi:** Verilen 11 yorumdan 10'u doğrudan ticari alışveriş deneyimleriyle ilgili şikayetlerdir. Son yorum (Türkiye'nin en beğenilen e-ticaret platformlarından olduğu bilgisi) ise sitenin genel bir tanıtımı olup, spesifik bir ticari deneyim şikayeti veya olumlu yorumu değildir. Bu analizde, ticari deneyim içeren 10 şikayet baz alınmıştır.\n*   **Farklı Şikayet Sayısı ve Öne Çıkan Sorunlar:** 10 farklı ve somut şikayet bulunmaktadır. Öne çıkan sorunlar şunlardır:\n    *   **Ürün Kalitesi ve Hasarlı Teslimat (5 şikayet):** Ürünlerin ilk kullanımda kırılması (tablet tutucu), bir yıl içinde dağılması (mobilya), tekrar tekrar kırık gelmesi (TV), elde yıkamada dağılması (halı), kalitesiz ekran koruyucu. Bu, satılan ürünlerin dayanıklılığı ve teslimat sırasında hasar görmesiyle ilgili ciddi bir soruna işaret etmektedir.\n    *   **Yanlış Ürün Gönderimi (1 şikayet):** Sipariş edilen ürün yerine farklı bir ürünün gönderilmesi.\n    *   **Para İadesi Gecikmeleri ve Zorlukları (3 şikayet):** İade edilen ürünlerin paralarının uzun süre (1 ay, 1.5 ay) geri ödenmemesi, sistemin iade fotoğrafı kabul etmemesi, servis raporu gerekliliği gibi süreçsel zorluklar.\n    *   **Ürün Teslimatında Gecikme/Gönderilmeme (1 şikayet):** Ürünün günlerdir gönderilmemesi, sürekli bahaneler üretilmesi.\n    *   **İzinsiz/Haksız Kart Çekimi (1 şikayet):** Kullanıcının bilgisi dışında ve üyeliği olmamasına rağmen aylık tekrarlayan kredi kartı çekimleri.\n*   **Mağduriyetlerin Benzerliği ve Tekrar Eden Sorunlar:** Kullanıcı mağduriyetleri oldukça benzer ve tekrar eden sorunlara işaret etmektedir: ürün kalitesizliği/hasarı, teslimat hataları ve özellikle para iadesi süreçlerindeki uzun süreli gecikmeler ve müşteri hizmetlerinin yetersizliği (oyalama, bahane üretme).\n*   **Haklılık Payı ve Yoğunluk:** Şikayetlerin tamamı somut olaylara ve belgelenebilir durumlara dayanmaktadır. Bu durum şikayetlerde yüksek bir haklılık payı olduğunu düşündürmektedir. Mağduriyetlerin tekrar etmesi (örneğin iki kez kırık TV gelmesi, birden fazla uzun iade süresi şikayeti) ve finansal kayıpların (para iadesinin yapılmaması, izinsiz çekimler) olması, sorunların yoğunluğunu ve kullanıcılar üzerindeki olumsuz etkisini göstermektedir.\n\n**2. ETBİS Verilerinin Değerlendirilmesi**\n\n*   **Site ETBİS Sistemine Kayıtlı mı?:** Verilen bilgiye göre \"https://www.hepsiburada E-Ticaret Bilgi Sistemine sisteminde kayıtlı değildir.\"\n*   **Eksikliğin Anlamı:** ETBİS sistemine kayıtlı olmamak, ilgili mevzuata uyulmadığını gösteren çok ciddi bir eksikliktir. Bu durum, sitenin yasal güvenilirliği açısından büyük bir risk taşır. Tüketicilerin yasal haklarını arama, itiraz süreçlerini yönetme ve genel olarak şeffaflık konularında önemli boşluklar olduğu anlamına gelir. ETBİS kaydı, e-ticaret sitelerinin belirli standartlara uyduğunu ve resmi denetime açık olduğunu gösterirken, bu kaydın olmaması güvenilirlik açısından büyük bir zafiyet oluşturur.\n\n**3. Twitter Verilerinin Değerlendirilmesi**\n\n*   **Yorum Sayısı Yeterliliği:** Verilen veriler arasında Twitter'dan alınan herhangi bir yorum bulunmamaktadır. Bu nedenle Twitter özelinde bir analiz yapılamamaktadır.\n\n**4. Ekşi Sözlük Verilerinin Değerlendirilmesi**\n\n*   **Yorum Sayısı ve Güncellik:** Verilen veriler arasında Ekşi Sözlük'ten alınan herhangi bir yorum bulunmamaktadır. Bu nedenle Ekşi Sözlük özelinde bir analiz yapılamamaktadır.\n\n**Genel Güvenilirlik Değerlendirmesi**\n\nMevcut veriler ışığında, \"hepsiburada\" adlı butik e-ticaret sitesinin **güvenilirliği oldukça düşüktür.** En büyük endişe kaynağı, E-Ticaret Bilgi Sistemi (ETBİS) kaydının bulunmamasıdır; bu durum, yasal uyumluluk ve şeffaflık açısından ciddi bir sorun teşkil etmektedir. Şikayetvar'daki yoğun ve tekrarlayan şikayetler, sitenin operasyonel süreçlerinde (ürün kalitesi, teslimat, iade ve müşteri hizmetleri) ciddi aksaklıklar ve sistemik sorunlar olduğunu açıkça göstermektedir. İzinsiz kart çekimi gibi finansal güvenlik endişeleri de mevcuttur.\n\n**Güçlü ve Zayıf Yönler**\n\n*   **Güçlü Yönler:**\n    *   Verilen kısıtlı verilerde, sitenin öne çıkan belirgin bir güçlü yönü bulunmamaktadır. Şikayetvar'daki genel tanıtım metninde Türkiye e-ticaretine katkıda bulunduğu ve 2001'den beri hizmet verdiği belirtilse de, bu durum mevcut operasyonel sorunları ve yasal eksiklikleri telafi etmemektedir.\n*   **Zayıf Yönler:**\n    *   **Yasal Uyumluluk Eksikliği:** ETBİS kaydının olmaması en temel ve kritik zayıflıktır.\n    *   **Ürün Kalitesi ve Hasarlı Teslimat Sorunları:** Satılan ürünlerin sıkça arızalı, kırık veya kalitesiz olması.\n    *   **Operasyonel Aksaklıklar:** Yanlış/eksik ürün gönderimi, teslimat gecikmeleri ve ürünün hiç gönderilmemesi.\n    *   **Müşteri Hizmetleri Yetersizliği:** Para iadelerinde uzun süreli gecikmeler, süreçsel zorluklar ve müşteri şikayetlerine etkili çözüm üretememe.\n    *   **Finansal Güvenlik Zafiyeti:** Kullanıcılardan izinsiz ve bilgisi dışında yinelenen kredi kartı çekimleri.\n    *   **Güvenilirlik Kaybı:** Tekrarlayan sorunlar ve çözüm eksikliği nedeniyle müşteri güveninin ciddi şekilde sarsılması.\n\n**Sonuç Çıkarımı**\n\n\"hepsiburada\" e-ticaret sitesi, incelenen Şikayetvar ve ETBİS verilerine göre **yasal uyumluluktan uzak ve operasyonel olarak sorunlu bir yapıya sahiptir.** Kullanıcı deneyimi, ürün kalitesizliği, teslimat hataları, para iadesi gecikmeleri ve finansal güvenlik endişeleri gibi temel sorunlarla olumsuz etkilenmektedir. Bu bulgular, sitenin genel güvenilirliği için ciddi riskler barındırdığını göstermektedir. Güvenli bir alışveriş platformu olarak değerlendirilmesi için yasal zorunluluklara uyması ve operasyonel aksaklıklarını gidermesi esastır."
+    },
+    "timestamp": "2025-08-05T21:26:18.536345"
+  },
+  "testmagaza": {
+    "result": {
+      "site": "testmagaza",
+      "yorum_sayısı": 1,
+      "yorumlar": [
+        {
+          "id": "ebb86df2-4490-4a1b-becb-e0b1cf2a7e35",
+          "yorum": "https://www.testmagaza E-Ticaret Bilgi Sistemine sisteminde kayıtlı değildir.",
+          "kaynak": "E-Ticaret Bilgi Sistemi"
+        }
+      ],
+      "analiz": "Bir güvenlik analiz uzmanı olarak, testmagaza e-ticaret sitesi hakkında sunulan verileri aşağıdaki şekilde değerlendiriyorum:\n\n---\n\n### testmagaza E-ticaret Sitesi Güvenlik Analizi Raporu\n\n**Veri Kaynakları ve Değerlendirmeler:**\n\n**1. Şikayetvar:**\n*   **Veri Durumu:** Şikayetvar platformundan alınmış somut kullanıcı yorumu veya şikayet içeriği sağlanmamıştır.\n*   **Analiz:** Sağlanan veri eksikliği nedeniyle Şikayetvar platformundaki ticari alışveriş deneyimleriyle ilgili yorumların varlığı, adedi, öne çıkan sorunlar, mağduriyetlerin benzerliği veya tekrar eden sorunlar hakkında herhangi bir analiz yapılamamaktadır. Dolayısıyla, bu kaynaktan elde edilebilecek potansiyel olumsuzluklar veya haklılık payı değerlendirilememiştir.\n\n**2. ETBİS (E-Ticaret Bilgi Sistemi):**\n*   **Veri Durumu:** \"https://www.testmagaza E-Ticaret Bilgi Sistemine sisteminde kayıtlı değildir.\"\n*   **Analiz:** testmagaza sitesi ETBİS sistemine kayıtlı değildir. Türkiye'deki e-ticaret sitelerinin ETBİS'e kayıtlı olması yasal bir zorunluluktur ve T.C. Ticaret Bakanlığı tarafından belirlenen kurallara uyulduğunu gösterir.\n    *   **Anlamı:** ETBİS kaydı, işletmenin kimlik, adres, MERSİS numarası gibi temel bilgilerinin resmi olarak beyan edildiği ve belirli denetimlere tabi olduğu anlamına gelir. Bu kayıt, tüketiciler için önemli bir güvenilirlik göstergesidir, zira bir sorun yaşandığında muhatap bulma ve yasal yollara başvurma süreçlerini kolaylaştırır.\n    *   **Eksikliğin Anlamı:** testmagaza'nın ETBİS'e kayıtlı olmaması, yasal yükümlülüklere uyulmadığına dair ciddi bir işarettir. Bu durum, işletmenin şeffaflık konusunda eksik olduğu, denetime tabi olmadığı ve dolayısıyla tüketici hakları açısından riskli olabileceği şüphesini uyandırır. Herhangi bir anlaşmazlık durumunda tüketici için yasal takip sürecini zorlaştırabilir veya imkansız hale getirebilir. Bu, sitenin genel güvenilirliği açısından büyük bir olumsuzluktur.\n\n**3. Twitter:**\n*   **Veri Durumu:** Twitter platformundan alınmış kullanıcı yorumu veya veri içeriği sağlanmamıştır.\n*   **Analiz:** Yorum sayısı ve içeriği mevcut olmadığı için kullanıcıların markadan olumlu veya olumsuz bahsedip bahsetmediği, genel duygu analizi (memnuniyet, öfke, şüphe vb.) ve ticari bağlamdaki yorumların tespiti mümkün değildir.\n\n**4. Ekşi Sözlük:**\n*   **Veri Durumu:** Ekşi Sözlük platformundan alınmış kullanıcı yorumu veya veri içeriği sağlanmamıştır.\n*   **Analiz:** Yorum adedi, güncelliği veya içeriği mevcut olmadığı için ticari deneyime dayalı yorumların varlığı, genel memnuniyet düzeyi, eleştirilen veya övülen yönler hakkında herhangi bir değerlendirme yapılamamaktadır.\n\n---\n\n**Genel Değerlendirme:**\n\n**Sitenin Genel Güvenilirliği:**\nElde edilen veriler ışığında, testmagaza sitesinin genel güvenilirliği **oldukça düşüktür ve ciddi endişeler taşımaktadır.** Bu durumun temel sebebi, e-ticaret siteleri için kritik bir yasal zorunluluk ve güvenilirlik göstergesi olan ETBİS kaydının bulunmamasıdır. Diğer potansiyel bilgi kaynaklarından (Şikayetvar, Twitter, Ekşi Sözlük) herhangi bir veri bulunmadığı için, sitenin olumlu yönlerini veya kullanıcı memnuniyetini gösteren herhangi bir kanıta rastlanmamıştır. Dolayısıyla, mevcut tek somut bilgi, yasal bir eksikliği işaret etmektedir.\n\n**Güçlü Yönler:**\n*   Sağlanan verilere göre, testmagaza'nın tespit edilmiş **herhangi bir güçlü yönü bulunmamaktadır.** Mevcut veri, sitenin güvenilirliğini artıracak hiçbir bilgi içermemektedir.\n\n**Zayıf Yönler:**\n*   **Yasal Uygunsuzluk ve Şeffaflık Eksikliği:** En önemli zayıf yön, ETBİS sistemine kayıtlı olmamasıdır. Bu durum, yasal yükümlülüklere uyulmadığını, işletme bilgilerinin şeffaf olmadığını ve tüketici hakları açısından ciddi riskler taşıdığını gösterir.\n*   **Tüketici İçin Muhatap Bulma Zorluğu:** ETBİS kaydının olmaması, bir sorun yaşandığında tüketicinin resmi yollarla muhatap bulmasını ve hak aramasını zorlaştırır.\n*   **İtibar ve Güven Eksikliği:** Yasal uygunsuzluk, potansiyel müşterilerin siteye güven duymasını engeller ve işletmenin itibarı üzerinde olumsuz bir etki yaratır.\n*   **Veri Eksikliği (Şikayetvar, Twitter, Ekşi Sözlük):** Diğer platformlardan olumlu veya olumsuz herhangi bir bilgi bulunmaması, sitenin halkla ilişkiler veya müşteri hizmetleri performansı hakkında bir fikir edinmeyi engellemekle birlikte, sitenin genel algısı hakkında olumlu bir referans sağlamamaktadır.\n\n**Sonuç Çıkarımı:**\n\ntestmagaza e-ticaret sitesi, en temel yasal gerekliliklerden biri olan ETBİS kaydına sahip değildir. Bu durum, siteyi yasal olarak uygunsuz ve tüketici için riskli hale getirmektedir. Diğer bilgi kaynaklarından olumlu veya olumsuz herhangi bir veri bulunmadığından, sitenin mevcut durumda güvenilirlik ve şeffaflık açısından ciddi eksiklikleri olduğu ve kullanıcılar için potansiyel risk taşıdığı değerlendirilmektedir. Bu platformdan alışveriş yapmadan önce, yasal uygunluk ve şeffaflık konularının teyit edilmesi şiddetle tavsiye edilir."
+    },
+    "timestamp": "2025-08-05T21:33:13.264833"
+  },
+  "developer": {
+    "result": {
+      "site": "developer",
+      "yorum_sayısı": 19,
+      "yorumlar": [
+        {
+          "id": "7c169f32-8c98-4342-879d-5df5ae4fbddc",
+          "yorum": "\"çözüldü. teşekkürler...\"",
+          "tarih": "2025-04-16T02:09:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "a7ee2284-052e-4c09-8c7d-6f5630bbf602",
+          "yorum": "\"sorunum çözüldü, teşekkürler.\"",
+          "tarih": "2025-03-28T16:19:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "6798759e-2e3c-4cad-8e93-158e64e3cf37",
+          "yorum": "bionluk'ta freelancer olmak çok kolay; ücretini veriyorsun, profesyonel hesap takibi yok, bir şey yok. adam işi bilmese bile biliyormuş gibi yazıyor oraya: 8 senelik developer, yok 8 senelik bilmem kodun içinden geçmişim de... bunlardan bir tanesi de y**** z***** diye bir şahıs. 15.000 tl ödeme yapı...",
+          "tarih": "2025-01-05T10:45:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "399696eb-4059-4400-a561-09f7e7825423",
+          "yorum": "gta fivem developer şikayetim var şikayetçi olan: borabey şikayetçi olunan: m******* d**** y***** toplam iletişimde kalınan süre: 27.08.2024 / 29.09....",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "90061416-2724-4ce5-b225-a390b6a29266",
+          "yorum": "serverkurma ekibinden fivem paket satın aldık. bazı arkadaşlar bilir, diğer developer arkadaşlardan da scriptler ve maplar satın aldık. aldığımız her şey onların hesabında ve bunları bize aktarmıyorlar. açık kaynak olmayan paketin iadesini yapmıyorlar. 24 saat içerisinde gerekli dönüşleri almazsam y...",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "a092e439-d0b2-4dbe-9ce3-7c3d5e343a00",
+          "yorum": "\"beklerim inşallah. teşekkürler...\"",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "e1ffbc73-a6df-451b-9c33-f3834d00305d",
+          "yorum": "\"satıcıya gerekli cezayı verdiğinizi düşünerekten teşekkür ediyorum bana whatsapp üzerinden ulaşan temsilci kibardı ekibe ayrılan bütçeden iade yapmayı teklif etti fakat istediğim kesinlikle ürün ya da para değildi bunu dile getirince ceza uyguladıklarını söyledi memnun kaldım ve sorunum çözüldü\"",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "3c4fc441-6d2a-4957-bfcc-ddb33214ffb0",
+          "yorum": "\"civciv ve sincap sonsuza kadar çok mutlu olurlar. teşekkürler...\"",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "99398e93-fffe-4240-8c1b-5d58d6fc3176",
+          "yorum": "https://www.developer E-Ticaret Bilgi Sistemine sisteminde kayıtlı değildir.",
+          "kaynak": "E-Ticaret Bilgi Sistemi"
+        },
+        {
+          "id": "tw-1",
+          "yorum": "RT @AppleKoded: There is a new icon for Airdrop in iOS 26 developer beta 5🔥 https://t.co/S0Scukvvcf",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-2",
+          "yorum": "RT @Arichain_: Announcing Arichain's Web3 Partnership\n\nArichain X Abey\n\n@AbeyFoundation is a scalable, secure, and developer-friendly block…",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-3",
+          "yorum": "If you are a software developer at a major tech company you've probably used a JetBrains IDE for programming. This is huge news as Jetbrains is now entering the vibe coding space taken on Replit, Lovable, and others. https://t.co/GHyN10JxKX",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-4",
+          "yorum": "RT @Arichain_: Announcing Arichain's Web3 Partnership\n\nArichain X Abey\n\n@AbeyFoundation is a scalable, secure, and developer-friendly block…",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-5",
+          "yorum": "RT @Arichain_: Announcing Arichain's Web3 Partnership\n\nArichain X Abey\n\n@AbeyFoundation is a scalable, secure, and developer-friendly block…",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-6",
+          "yorum": "RT @WarriorRapid: People with Apple developer accounts in Kenya. What should I know before applying for one?",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-7",
+          "yorum": "Product Rolls &amp; Developer Tools\n\n✅ Expect updates on Jupiter Swap, Ultra/Perps, and Mobile App improvements—especially with Ledger support and iOS/Android parity. \nPrevious calls rolled out expanded APIs &amp; Dev Docs, enabling Swap, Ultra, Trigger &amp; Recurring integrations. https://t.co/lPd69tt4b2",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-8",
+          "yorum": "RT @Arichain_: Announcing Arichain's Web3 Partnership\n\nArichain X Abey\n\n@AbeyFoundation is a scalable, secure, and developer-friendly block…",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-9",
+          "yorum": "RT @Arichain_: Announcing Arichain's Web3 Partnership\n\nArichain X Abey\n\n@AbeyFoundation is a scalable, secure, and developer-friendly block…",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-10",
+          "yorum": "RT @Arichain_: Announcing Arichain's Web3 Partnership\n\nArichain X Abey\n\n@AbeyFoundation is a scalable, secure, and developer-friendly block…",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        }
+      ],
+      "analiz": "Bir güvenlik analiz uzmanı olarak, developer adlı butik e-ticaret sitesi hakkında sunulan verileri kaynak bazında ayrı ayrı değerlendirip genel bir analiz sunuyorum:\n\n---\n\n### Kaynak Bazında Değerlendirme\n\n**1. Şikayetvar:**\n\n*   **Yorumlar ticari alışveriş deneyimiyle ilgili mi?**\n    *   \"çözüldü. teşekkürler...\", \"sorunum çözüldü, teşekkürler.\", \"beklerim inşallah. teşekkürler...\", \"civciv ve sincap sonsuza kadar çok mutlu olurlar. teşekkürler...\" gibi yorumlar ticari alışveriş deneyiminin bir sorunla başladığını ve çözüldüğünü gösterse de, hangi e-ticaret sitesi veya hangi problemle ilgili olduğu belirsizdir. Bu genel \"teşekkür\" yorumları doğrudan \"developer\" e-ticaret sitesinin ticari faaliyetiyle ilişkilendirilemez.\n    *   \"bionluk'ta freelancer olmak...\", \"gta fivem developer şikayetim var...\", \"serverkurma ekibinden fivem paket satın aldık...\" gibi yorumlar, \"developer\" kelimesini genel olarak yazılımcı/geliştirici veya belirli bir hizmet/ürün sağlayıcısı bağlamında kullanmaktadır ve doğrudan \"developer\" adlı bir e-ticaret sitesinin ticari alışveriş deneyimiyle ilgili değildir. Bu yorumlar analiz dışında bırakılmıştır.\n    *   \"satıcıya gerekli cezayı verdiğinizi düşünerekten teşekkür ediyorum bana whatsapp üzerinden ulaşan temsilci kibardı ekibe ayrılan bütçeden iade yapmayı teklif etti fakat istediğim kesinlikle ürün ya da para değildi bunu dile getirince ceza uyguladıklarını söyledi memnun kaldım ve sorunum çözüldü\" yorumu ise bir \"satıcı\" ve \"ürün ya da para\"dan bahsettiği için ticari bir bağlam taşımaktadır ve çözülmüş bir şikayettir. Bu yorumun \"developer\" e-ticaret sitesiyle ilgili olma olasılığı vardır.\n\n*   **Kaç farklı şikayet var, içeriklerinde öne çıkan sorunlar neler?**\n    *   Ticari alışveriş deneyimiyle ilgili olduğu düşünülen tek net şikayet \"satıcıya gerekli ceza verildiği\" belirtilen ve \"ürün ya da para\" ile ilgili olduğu anlaşılan ancak detayı verilmeyen bir sorundur. Şikayet çözülmüş ve kullanıcı memnun kalmıştır.\n    *   Diğer \"çözüldü, teşekkürler\" şeklindeki yorumlar ise hangi sorunun çözüldüğüne dair bilgi içermemektedir ve doğrudan \"developer\" adlı e-ticaret sitesiyle ilişkilendirilemez.\n\n*   **Kullanıcıların mağduriyetleri benzer mi, tekrar eden sorunlar var mı?**\n    *   Elimizdeki ilgili tek veri nedeniyle mağduriyetlerin benzer olup olmadığı veya tekrar eden sorunlar olup olmadığı hakkında bir analiz yapılamamaktadır.\n\n*   **Yorumlardaki haklılık payı ve yoğunluğu:**\n    *   İlgili tek yorumda şikayetin çözüldüğü ve kullanıcının memnun kaldığı belirtilmiştir. Bu durum, şikayetin haklı görüldüğünü ve site tarafından (veya ilgili satıcı tarafından) bir çözüm sunulduğunu göstermektedir. Ancak şikayetin başlangıçtaki yoğunluğu veya detayları hakkında bilgi bulunmamaktadır. Geniş bir şikayet yelpazesinden ziyade, bireysel ve çözüme kavuşturulmuş bir durum söz konusudur.\n\n**2. ETBİS (E-Ticaret Bilgi Sistemi):**\n\n*   **Site ETBİS sistemine kayıtlı mı?**\n    *   Veriye göre, \"https://www.developer E-Ticaret Bilgi Sistemine sisteminde kayıtlı değildir.\"\n\n*   **Kayıtlıysa bu yasal güvenilirlik açısından ne ifade eder? Kayıtlı değilse bu eksikliğin anlamı nedir?**\n    *   Site ETBİS sistemine kayıtlı değildir. Bu durum, 6563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun ve ilgili yönetmelikler uyarınca, Türkiye'de faaliyet gösteren e-ticaret sitelerinin yasal yükümlülüklerinden birini yerine getirmediği anlamına gelir. ETBİS kaydı, sitenin kimlik, adres ve iletişim bilgilerinin kamuya açık bir şekilde kaydedilmesiyle yasal şeffaflık ve güvenilirlik sağlar. Kayıtlı olmaması, sitenin yasal düzenlemelere tam uyum sağlamadığını, şeffaflık konusunda eksik olduğunu ve tüketicilerin güvenini zedeleyebilecek önemli bir eksiklik olduğunu gösterir. Tüketiciler için yasal denetlenebilirlik ve hak arama süreçlerinde bir belirsizlik yaratır.\n\n**3. Twitter:**\n\n*   **Yorum sayısı yeterli mi?**\n    *   Sağlanan Twitter yorumlarının hiçbiri \"developer\" adlı bir butik e-ticaret sitesinin ticari faaliyetleri veya müşteri deneyimleri ile ilgili değildir. Yorumlar genel olarak yazılım geliştirme, teknoloji şirketleri, API'ler, Web3 veya Apple ürünleri bağlamında \"developer\" kelimesini kullanmaktadır. Bu nedenle, ticari bağlamda sitenin kendisi hakkında yeterli yorum bulunmamaktadır.\n\n*   **Kullanıcılar markadan olumlu mu olumsuz mu bahsediyor? Genel duygu analizi ne yönde?**\n    *   Ticari bağlamı olan yorum bulunmadığı için site hakkında bir duygu analizi yapmak mümkün değildir. Tüm yorumlar alakasızdır.\n\n**4. Ekşi Sözlük:**\n\n*   Verilen metinde Ekşi Sözlük'e ait herhangi bir yorum veya veri bulunmamaktadır. Bu nedenle bu platform hakkında bir analiz yapılamamaktadır.\n\n---\n\n### Sitenin Genel Güvenilirliği Değerlendirmesi\n\nVerilere dayanarak, \"developer\" adlı e-ticaret sitesinin genel güvenilirliği hakkında net ve olumlu bir tablo çizmek zordur. Özellikle **ETBİS kaydının olmaması, yasal uyumluluk ve şeffaflık açısından ciddi bir zafiyettir** ve sitenin güvenilirliğini temelden sarsmaktadır. Şikayetvar'daki ilgili tek yorumun çözüme kavuşmuş olması olumlu bir işaret olsa da, bu durum genel güvenilirlik için yeterli bir kanıt sunmamaktadır. Diğer kaynaklardan (Twitter, Ekşi Sözlük) site hakkında ticari bir bağlamda herhangi bir bilgi edinilememesi, sitenin kamuoyundaki bilinirliğinin veya kullanıcı etkileşiminin çok düşük olduğunu ya da veri toplama sürecinde ilgili yorumların yakalanamadığını göstermektedir.\n\n### Güçlü ve Zayıf Yönleri\n\n*   **Güçlü Yönler:**\n    *   Şikayetvar'da, siteyle ilgili olduğu düşünülen tek somut şikayetin çözüme kavuşturulmuş olması, müşteri sorunlarına yönelik bir çözüm mekanizmasının veya müşteri hizmetleri yaklaşımının varlığına işaret edebilir.\n\n*   **Zayıf Yönler:**\n    *   **ETBİS kaydının bulunmaması:** Bu, sitenin yasal yükümlülüklerini yerine getirmediği, şeffaflık eksikliği olduğu ve tüketiciler için büyük bir güven sorunu teşkil ettiği anlamına gelir. Yasal denetim ve tüketici haklarının korunması açısından ciddi bir eksikliktir.\n    *   **Ticari bağlamda kullanıcı yorumu eksikliği:** Şikayetvar dışındaki platformlarda (Twitter, Ekşi Sözlük) site hakkında ticari alışveriş deneyimleriyle ilgili neredeyse hiç yorum bulunmaması, sitenin kullanıcı tabanının çok küçük olduğunu, yeni olduğunu veya online itibarı hakkında bilgi eksikliği olduğunu gösterir. Bu durum, potansiyel alıcılar için bilgi eksikliği ve belirsizlik yaratır.\n    *   \"Developer\" isminin genel kullanımı nedeniyle, siteye özgü geri bildirimleri diğer genel \"developer\" tartışmalarından ayırmak zordur.\n\n### Sonuç Çıkarımı\n\n\"Developer\" butik e-ticaret sitesi, **ETBİS kaydının olmaması nedeniyle yasal uyumluluk ve temel güvenilirlik açısından ciddi bir zafiyet taşımaktadır.** Şikayetvar'da çözülmüş bir vaka bulunması olumlu olsa da, bu durum sitenin genel güvenilirliğini teminat altına almak için yeterli değildir ve ticari bağlamda genel kullanıcı geri bildirimi yetersizdir. Bu durum, siteye yönelik bir güvenlik analizi açısından önemli bir risk faktörüdür ve potansiyel kullanıcılar için yüksek bir risk seviyesi anlamına gelmektedir."
+    },
+    "timestamp": "2025-08-05T22:02:04.665469"
+  },
+  "facebook": {
+    "result": {
+      "site": "facebook",
+      "yorum_sayısı": 19,
+      "yorumlar": [
+        {
+          "id": "7cd0c495-a33f-405b-b792-407de4b7d0b2",
+          "yorum": "facebook hesabım yaklaşık 3 gün önce, herhangi bir haklı gerekçe olmadan askıya alındı. gerekçe olarak haksız bir şikayet gösterildi. hesabım kişisel amaçlarla kullanılmaktayken, gmail yoluyla iletişim kurup itiraz ettim; ancak henüz herhangi bir geri dönüş alamadım. ayrıca, bu askıya alma nedeniyle...",
+          "tarih": "2025-08-02T23:28:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "80e62bce-66a0-4171-aafe-e06bc7e100da",
+          "yorum": "facebook bu tür reklamları kabul edip yayınlıyor. şikayet edince iki gün sonra, 'kaldırmadık' diye cevap veriyor. bu nasıl bir iş? o zaman mağdurlar facebook'u da suça ortak sayıp mahkemeye vermeleri gerekmiyor mu? bu bir değil, iki değil; defalarca aynısı yapılıyor.",
+          "tarih": "2025-07-31T12:39:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "ab334979-c801-4637-96fc-e46312c4a414",
+          "yorum": "facebook tarafından kredi kartımdan 27.07.2025-28.07.2025 tarihlerinde çekim yapılmıştır. facebook hesabım aktif bile değil. tarafıma çekilen tutarların iadesini talep ediyorum. bu durumun yanıltma olduğunu düşünüyorum. kartlarımı iptal ettim ve konunun takipçisiyim.",
+          "tarih": "2025-07-28T17:39:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "184437f5-a3dc-4f87-ba96-a0a977066098",
+          "yorum": "halil a**** · herkese açık ile paylaşılıyor i̇srail ile ilgili öfkeli bir paylaşım yaptım, 'nefret var' gerekçesiyle facebook yayından kaldırdı. tüm dünyanın tepki gösterdiği i̇srail'e karşı herhangi bir tepki göstermeyen facebook'u kınıyorum. hesabımı kısıtlayacaklarını belirttiler. buna gerek yok, z...",
+          "tarih": "2025-07-28T14:32:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "83c23cce-89b0-47bf-aafa-834036b3c82c",
+          "yorum": "\"teşekkürler\"",
+          "tarih": "2025-07-28T11:37:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "b0ccd4db-7831-494c-a3c6-6fd5822d4df3",
+          "yorum": "merhaba, facebook tarafından kredi kartımdan 26.07.2025tarihinde haddinden fazla çekim yapılmıştır. tarafıma çekilen tutarların iadesini talep ediyorum. aksi halde yasal yollara başvurulacaktır. desteğinizi rica ederim. geri dönüşlerinizi bekliyorum",
+          "tarih": "2025-07-27T11:04:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "bfbc3178-3fd4-42c4-8b8f-223aa5d5ac20",
+          "yorum": "merhaba, iyi çalışmalar. sayın facebook destek ekibi, kullanıcı adım metintasoglu39 olan facebook hesabıma tamamen giriş yapamıyorum. geçen sene şikayetvar mobil uygulamasından, 27 temmuz 2024 tarihinde saat 12:40'ta, facebook markasına metintasoglu39 kullanıcı adım ve s********@gmail.com e-posta ad...",
+          "tarih": "2025-07-26T15:23:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "d26c1f43-5cff-44dd-b411-f760529974e8",
+          "yorum": "dünyanın en büyük sosyal medya platformu olanfacebook, ilk olarak 2006 yılında mark zuckerberg tarafından kurulmuştur. i̇nsanların arkadaşları ve çevreleri ile iletişim kurmasına, bilgi alışverişi yapmasına ve paylaşımlar yaparak irtibatta kalmasına olanak sağlayan bu sosyal ağ, kurulduğu günden bu yana sürekli olarak büyüyerek ve gelişerek dünyanın bir numaralı sosyal medya mecrası haline gelmiştir. sosyal medyanın günümüzdeki gücüne ve etkinliğine ulaşmasında çok büyük rol sahibi olan facebook, ilk olarak sadece harvard üniversitesi öğrencileri için kurulmuş, ardından tüm ivy ligi üniversitelerine yayılmıştır. çok kısa bir süre içerisinde tüm dünyada yaygın bir şekilde kullanılmaya başlayan sosyal mecra, günümüzde 1.44 milyarı aşkın aktif kullanıcıya sahiptir. girişimcileri arasında eduardo saverin, andrew mccollum, dustin moskovitz ve chris hughes'un bulunduğu facebook, güncel verilere göre dünyanın en çok ziyaret edilen 2. sitesi konumundadır. marka aynı zamanda dünyanın en popüler mesajlaşma uygulaması olan whatsapp'ın ve bir diğer popüler sosyal medya mecrası instagram'ın da sahibidir.",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "e4a1b6e2-d8ba-49c5-8240-01712fc20e4a",
+          "yorum": "https://www.facebook E-Ticaret Bilgi Sistemine sisteminde kayıtlıdır. Mobil uygulaması YOK.",
+          "kaynak": "E-Ticaret Bilgi Sistemi"
+        },
+        {
+          "id": "tw-1",
+          "yorum": "RT @sdehini1: هكر اخلاقي وخبير تقني 🧑🏻‍💻 \n\n🪬 استرجاع الحسابات \n{ snapchat - Instagram - TikTok - Facebook - Gmail - X - games } \n\n🪬 حل قضاي…",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-2",
+          "yorum": "https://t.co/hM5MTzvXHi",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-3",
+          "yorum": "bro older ppl so funny on facebook, i commented on my homeboy post this older woman up there tb “in the name of jesus” 🤣🤣🤣🤣",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-4",
+          "yorum": "Say it with me. “Tropes and not genres.”\n\nYou can listen to S3:E6 now on Apple Podcast, Spotify, iHeartradio, Audible, and YouTube.   \n\nJoin our community on Instagram, Facebook and Threads @ teaandtalespodcast; and on Tik Tok and X(Twitter) @ PodcastTeaTales https://t.co/tUoYnRgQwM",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-5",
+          "yorum": "RT @DenverChannel: \"📍 Rocky Mountains, CO USA\"\n\n(📸: Lindsay Erin | See more Colorado photography: https://t.co/pt5hW7I3Z6) https://t.co/2TF…",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-6",
+          "yorum": "https://t.co/GJNmTst59E",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-7",
+          "yorum": "RT @capysoft: nossa mas isso aqui é mto Facebook 2013",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-8",
+          "yorum": "https://t.co/znkBnkD7L2",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-9",
+          "yorum": "Comuníquese conmigo si desea piratear cualquier cuenta de Facebook de forma privada sin que el propietario reciba ninguna notificación.\nDina Boluarte\nPeru\nKeiko\nLa Molina https://t.co/pMEySLRT79",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        },
+        {
+          "id": "tw-10",
+          "yorum": "¡Aún puedes participar! Realiza transacciones con el Banco Amigo y conéctate a la transmisión en Facebook este 08 de agosto a las 10:00 am. https://t.co/CAqqjfMTAR",
+          "tarihler": [
+            "2025-08-05"
+          ],
+          "kaynak": "twitter"
+        }
+      ],
+      "analiz": "Sayın Analist,\n\nAşağıda \"facebook\" adlı butik e-ticaret sitesi hakkında çeşitli kaynaklardan toplanan verilerin güvenlik analizi bulunmaktadır. Verilerin büyük çoğunluğunun, belirtilen \"butik e-ticaret sitesi\" yerine küresel sosyal medya platformu Facebook (Meta) ile ilgili olduğu tespit edilmiştir. Bu durum, butik e-ticaret sitesinin güvenilirliği hakkında doğrudan bir değerlendirme yapmayı kısıtlamaktadır. Analiz, mevcut veriler ışığında, verilerin atıfta bulunduğu \"Facebook\" entity'sinin genel durumunu yansıtacak şekilde yapılmıştır.\n\n---\n\n### Güvenlik Analizi: \"facebook\" (Butik E-ticaret Sitesi)\n\n**1. Şikayetvar Değerlendirmesi:**\n\n*   **Ticari Alışveriş Deneyimi İle İlgili Yorumlar:** Verilen Şikayetvar yorumlarının büyük çoğunluğu küresel sosyal medya platformu Facebook'un kullanıcı hesabı askıya alma, içerik moderasyonu ve reklam politikaları gibi platform yönetimiyle ilgili sorunlarını içermektedir. Ancak, **iki adet kredi kartından izinsiz çekim yapıldığına dair şikayet** ve **bir adet yanıltıcı reklamların yayınlanmasına dair şikayet** doğrudan veya dolaylı olarak ticari ve finansal bir bağlama sahiptir. Diğer yorumlar (hesap askıya alma, nefret söylemi moderasyonu, genel bilgi açıklaması, \"teşekkürler\") butik e-ticaret alışveriş deneyimiyle doğrudan ilgili değildir ve analiz dışında tutulmuştur.\n*   **Kaç Farklı Şikayet ve Öne Çıkan Sorunlar:** Ticari bağlamda değerlendirilebilecek 3 farklı şikayet öne çıkmaktadır:\n    *   **Yetkisiz Kredi Kartı Çekimleri:** İki ayrı kullanıcı, bilgileri ve onayları olmadan kredi kartlarından yüksek tutarlarda çekim yapıldığını belirtmiştir. Bu, ciddi bir finansal güvenlik açığı veya dolandırıcılık potansiyeline işaret etmektedir. Kullanıcılar kartlarını iptal ettiğini ve yasal yollara başvuracaklarını ifade etmiştir.\n    *   **Yanıltıcı/Zararlı Reklamların Kabulü:** Bir kullanıcı, Facebook'un yanıltıcı reklamları yayınlamaya devam ettiğini ve şikayetlere rağmen kaldırmadığını belirtmiştir. Bu, platformun reklam denetimindeki eksikliklerini ve kullanıcı mağduriyetlerine yol açma potansiyelini göstermektedir.\n*   **Benzerlik ve Tekrar Eden Sorunlar:** Yetkisiz kredi kartı çekimleri, birden fazla kullanıcı tarafından dile getirilen ve tekrar eden, benzer bir finansal güvenlik sorunudur. Bu, sorunun münferit olmaktan ziyade yapısal veya yaygın olabileceği endişesini yaratmaktadır.\n*   **Haklılık Payı ve Yoğunluk:** Kredi kartı şikayetlerinin haklılık payı oldukça yüksektir ve kullanıcılar büyük mağduriyet yaşadıklarını, parasal kayıplara uğradıklarını ifade etmiştir. Yoğunluk, kullanıcıların doğrudan finansal kayıpları ve yasal yollara başvurma tehditleri ile kendini göstermektedir. Bu tür şikayetler, bir e-ticaret sitesi için güvenilirlik açısından en kritik olumsuz göstergelerdendir.\n\n**2. ETBİS Değerlendirmesi:**\n\n*   **Site ETBİS Sistemine Kayıtlı mı?** Evet, verilen bilgiye göre \"https://www.facebook\" ETBİS sistemine kayıtlıdır. Ancak bu adres küresel Facebook platformuna aittir. Bir butik e-ticaret sitesinin bu adresle kayıtlı olması, isimlendirme karışıklığını veya veri hatasını düşündürmektedir.\n*   **Yasal Güvenilirlik Açısından Anlamı:** Eğer ilgili butik e-ticaret sitesi ETBİS'e kendi doğru domain adıyla kayıtlı ise, bu durum yasal bir zorunluluğun yerine getirildiği ve Ticaret Bakanlığı nezdinde bir kimliğe sahip olunduğu anlamına gelir. Bu, tüketiciler için asgari düzeyde yasal bir denetlenebilirlik ve güven hissi sağlar, zira firmanın iletişim ve yasal bilgileri devlette kayıtlıdır. Ancak, ETBİS kaydı tek başına finansal güvenlik açıklarını veya kötü müşteri hizmetlerini garanti etmez.\n*   **Kayıtlı Değilse Eksikliğin Anlamı:** Veride kayıtlı olduğu belirtilmiştir.\n\n**3. Twitter Değerlendirmesi:**\n\n*   **Yorum Sayısı Yeterli mi?** Verilen 9 adet Twitter yorumu, küresel bir marka olan Facebook için geneline yayılan bir duygu analizi yapmak için kesinlikle yeterli değildir. Butik bir e-ticaret sitesi için de, yorumların büyük çoğunluğunun ticari bağlamda olmaması nedeniyle anlamlı bir analiz yapmak zordur.\n*   **Kullanıcı Duygu Analizi ve Ticari Bağlam:**\n    *   Yorumların çoğu Facebook'un sosyal medya platformu olarak kullanımına, hesap kurtarma hizmetlerine (üçüncü parti teklifler), platformdaki genel etkileşimlere veya alakasız paylaşımlara ilişkindir.\n    *   \"Hacker\" veya \"piratear\" (hackleme) ile ilgili yorumlar, platformun genel güvenlik zafiyetleri veya kişisel hesap güvenliği ile ilgili endişeleri (veya yasa dışı teklifleri) yansıtmaktadır; ancak butik e-ticaret sitesinin doğrudan ticari güvenilirliğine dair bir gösterge değildir.\n    *   Bir yorumda \"Banco Amigo ile işlemler yapın ve Facebook yayınına bağlanın\" ifadesi geçse de, bu Facebook'un bir etkinlik için platform olarak kullanılmasına işaret eder, kendi ticari faaliyetine doğrudan ticari bir deneyim yorumu değildir.\n*   **Sonuç:** Twitter verileri, \"facebook\" adlı butik e-ticaret sitesinin ticari güvenilirliği veya kullanıcı deneyimi hakkında yeterli ve ilgili bilgi sunmamaktadır.\n\n**4. Ekşi Sözlük Değerlendirmesi:**\n\n*   Ekşi Sözlük'ten herhangi bir veri sağlanmamıştır. Bu nedenle bu platform üzerinden bir değerlendirme yapılamamaktadır.\n\n---\n\n### Genel Değerlendirme ve Sonuç\n\n**Sitenin Genel Güvenilirliği Değerlendirmesi:**\n\nSağlanan verilerdeki temel sorun, \"facebook adlı bir butik e-ticaret sitesi\" tanımı ile yorumların (özellikle Şikayetvar ve Twitter) büyük çoğunluğunun küresel sosyal medya platformu Facebook (Meta) ile ilgili olması arasındaki uyumsuzluktur. Bu nedenle, doğrudan belirtilen butik e-ticaret sitesinin güvenilirliği hakkında kesin bir sonuca varmak zordur.\n\nAncak, Şikayetvar'daki ticari bağlamdaki şikayetler (yetkisiz kredi kartı çekimleri ve reklam denetimi eksikliği) eğer butik e-ticaret sitesiyle ilgili olsaydı, sitenin finansal güvenlik ve müşteri destek mekanizmalarında ciddi zaaflar olduğuna işaret ederdi. ETBİS kaydı ise yasal bir yükümlülüğün yerine getirildiğini ve asgari bir yasal denetlenebilirlik olduğunu gösterir ki bu olumlu bir adımdır.\n\n**Güçlü Yönleri:**\n\n*   **ETBİS Kaydı:** Eğer butik e-ticaret sitesi doğru domain adıyla ETBİS'e kayıtlı ise, bu durum sitenin yasal bir zeminde faaliyet gösterdiğini ve belirli bir yasal denetime tabi olduğunu gösterir. Bu, tüketiciler için bir miktar yasal güvence sağlar.\n\n**Zayıf Yönleri:**\n\n*   **Potansiyel Finansal Güvenlik Açıkları:** Şikayetvar'daki tekrarlayan ve yetkisiz kredi kartı çekimi iddiaları, eğer ilgili butik siteye yönelikse, çok ciddi bir finansal güvenlik zafiyeti veya dolandırıcılık potansiyeli anlamına gelir.\n*   **Yetersiz Müşteri Desteği ve Çözüm Süreçleri:** Şikayetlerin çözümsüz kalması veya yanıt alınamaması, müşteri hizmetleri ve problem çözme mekanizmalarında eksikliklere işaret eder.\n*   **Platform Sorumluluğu (Yanıltıcı Reklamlar):** Yanıltıcı reklamların yayınlanması ve kaldırılmaması, eğer butik site kendi platformunda reklam yayınlıyorsa, içerik denetiminde zayıflık ve kullanıcı mağduriyetine açık kapı bırakma sorununu ortaya koyar.\n*   **Veri Kapsamında Belirsizlik:** Sağlanan verilerin büyük çoğunluğunun küresel Facebook'a ait olması, butik e-ticaret sitesi hakkında kapsamlı ve doğrudan bir güvenlik analizi yapmayı engellemektedir.\n\n**Sonuç Çıkarımı:**\n\nMevcut veriler, \"facebook\" adlı bir butik e-ticaret sitesinin güvenilirliği hakkında net bir değerlendirme yapmak için yetersiz ve karışıktır. Verilerin çoğu küresel sosyal medya platformu Facebook ile ilgili olup, bu platformun finansal güvenlik açıkları ve müşteri hizmetleri sorunları olduğu izlenimi edinilmiştir. ETBİS kaydı yasal bir temel sağlasa da, eğer Şikayetvar'daki finansal şikayetler butik siteyi hedef alıyorsa, ciddi bir güvenilirlik sorunu olduğu varsayılabilir. Butik e-ticaret sitesi hakkında daha spesifik ve ilgili verilere ihtiyaç duyulmaktadır."
+    },
+    "timestamp": "2025-08-05T22:22:21.416805"
+  },
+  "trendyol": {
+    "result": {
+      "site": "trendyol",
+      "yorum_sayısı": 12,
+      "yorumlar": [
+        {
+          "id": "94e8e67c-a2e4-4739-8c52-e40ff0073996",
+          "yorum": "trendyol'dan kampanyalı 4 adet biocat kedi kumu aldım frog pet satıcısından. ancak bana sadece 2 adet ürün geldi. trendyol müşteri hizmetlerine sorun bildirdim. 24.06.2025 tarihinde 3 iş günü içerisinde gelmeyen ürünlerin para iadesinin yapılacağını söylemelerine rağmen henüz bir işlem yapılmadı. 04...",
+          "tarih": "2025-08-05T22:20:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "469cd491-53d6-47f9-a4c3-c872639e920e",
+          "yorum": "trendyol’dan 1 ay içinde 10 adet kargo bedava paketi aldım. bugün, bilgim dışında banka hesabımdan 75₺ çekilmiş. uygulama üzerinden görüştüğüm e*** isimli temsilci, iade yapılmadığını belirtti. bu paketin her ay otomatik yenilendiğini bilmiyordum, daha önce de trendyol pass almıştım. sitede herhangi...",
+          "tarih": "2025-08-05T21:45:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "95cf57f0-fbe0-42ee-b23a-90ffb90c2bd6",
+          "yorum": "merhaba, trendyol firmasından vantilatör siparişi verdim. gelen ürün hasarlıydı ve çalışmıyordu. değişim talebinde bulundum ve talebim kabul edildi. sonrasında ürünü gönderdim; ancak firma, değişim yapmak yerine keyfi olarak ürünün ücretini iade etti. ürünü avantajlı fiyattan almıştım ve ürün hâlâ s...",
+          "tarih": "2025-08-05T20:49:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "46b5d281-758f-430a-8d2d-416291a65dfe",
+          "yorum": "19 mart 2025 tarihinde trendyol üzerinden derimonts mağazasından bir ceket ve mavi sima mağazasından bir gömlek satın aldım. ürünler için iade talebinde bulundum ve trendyol her iki ürünü de teslim aldı. uygulamada iadenin tamamlandığı ve ücretin geri ödendiği belirtilmesine rağmen, 341,28 sar tutar...",
+          "tarih": "2025-08-05T20:41:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "d3e10c72-b780-4415-a9a5-d94b95189982",
+          "yorum": "10377841764 sipariş numaralı alışverişimde trendyol'dan iki adet pardösü sipariş verdik. i̇kisini de beğenmeyip iade yaptık, birinci firma iadeyi kabul etti. i̇kinci firma ise yanlış ürün yolladığımızı söyleyerek iadeyi kabul etmedi ve ürünü bize geri gönderdi. trendyol ile görüştük; iki ürün aldığımı...",
+          "tarih": "2025-08-05T20:33:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "3267ae2f-0d48-4753-a3ea-d7f962e8fa42",
+          "yorum": "29 temmuz 2025 te trendyol go uygulamasından popeyes iki kişilik kemiksiz kova menü istedik ve içerikte tek doğru bile yoktu ne yiyecek doğruydu ne içecek hatta soslar yoktu bile. bu durum sonucunda kurye de yanımda olarak iade etmek istedim. asistana bağlandım ve asistan bana nelerin yanlış olduğun...",
+          "tarih": "2025-08-05T20:11:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "0561da0f-c6cf-4216-8bf3-bdbbc7b4d1ad",
+          "yorum": "trendyol plus üyeliğim 1 ağustos 2025 tarihinde başladı. üyelik kapsamında sunulan exxen ve youtube.com kampanyalarından 3 ay ücretsiz yararlanabileceğim belirtilmişti. ancak hem uygulamadan hem de farklı tarayıcılardan defalarca denememe rağmen exxen ve youtube.com için kampanya kodlarını alamıyoru...",
+          "tarih": "2025-08-05T19:57:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "68723358-4faf-453c-bc41-436b04ca0b4f",
+          "yorum": "trendyol internet sitesindeki “bitti bitiyor” satıcısından xiaomi redmi 13 marka telefon satın aldım. ürünü teslim aldıktan sonra, telefonun dokunmatiğinin yavaş çalıştığını, sesinin boğuk olduğunu ve cihazın sürekli olarak çabuk ısındığını fark ettim. satıcıya başvurduğumda, iadeyi kabul etmeyip ür...",
+          "tarih": "2025-08-05T19:42:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "0cd1685d-99ad-4230-b390-d5f2cff7ee74",
+          "yorum": "updigo firmasından trendyol üzerinden \"puma black graffiti\" model çantayı, fiyatı düştüğü için son ürünü olarak satın aldım. sipariş numaram: 10396315829. ancak bugün, hiçbir gerekçe belirtilmeden siparişim iptal edildi ve iade işlemi başlatıldı. ben ürünü almak istiyorum, iade değil, siparişimin ye...",
+          "tarih": "2025-08-05T19:28:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "9de16f3b-5efa-4013-85fe-221e99ae9f75",
+          "yorum": "tamer tanca marka aldığım ayakkabının tabanı açıldı, topuğu kırıldı. firmayla irtibata geçtim ve iadem onaylandı. yalnız, trendyol'dan aldığım için bir iade kodu istendi; ancak iki gündür trendyol müşteri hizmetlerine hiçbir şekilde ulaşamıyorum. tamer tanca, trendyol'dan kod istiyor ve bu nedenle a...",
+          "tarih": "2025-08-05T19:21:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "92a4bb41-a335-467a-9a8c-b14b536c5d8c",
+          "yorum": "trendyol.com, hem türkiye'nin hem orta doğu'nun en büyük ve en popüler e-ticaret şirketleri arasında yer alıyor. 2018 yılında alibaba.com tarafından satın alınan ve hem müşteri portföyünü, hem yatırım ağını geliştirme yolunda ilerleme kaydedentrendyol, ayakkabıdan çantaya, kadın giyimden erkek giyime, ev dekorasyon ürünlerinden temizlik malzemelerine geniş bir yelpaze çerçevesindeki ürünlerini kullanıcıları ile buluşturuyor.",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "b3193c4c-4973-49c7-9c9b-5552478f1b04",
+          "yorum": "https://www.trendyol E-Ticaret Bilgi Sistemine sisteminde kayıtlıdır. Mobil uygulaması YOK.",
+          "kaynak": "E-Ticaret Bilgi Sistemi"
+        }
+      ],
+      "analiz": "Güvenlik Analiz Uzmanı Değerlendirmesi: Trendyol\n\n---\n\n**1. Şikayetvar Kaynak Değerlendirmesi:**\n\n*   **Ticari Alışveriş Deneyimi:** Sunulan tüm yorumlar doğrudan ticari alışveriş deneyimleriyle ilgilidir. Hiçbir yorum atlanmamıştır.\n*   **Farklı Şikayetler ve Öne Çıkan Sorunlar:**\n    *   **Eksik/Yanlış Ürün Teslimatı:** Kedi kumu siparişinde 4 yerine 2 adet gelmesi; Popeyes menüsünde eksik/yanlış yiyecek ve içecek teslimatı.\n    *   **İade Süreçlerindeki Sorunlar:**\n        *   Para iadesinin yapılmaması (kedi kumu, derimonts/mavi sima ceketi/gömlek).\n        *   Değişim yerine keyfi olarak para iadesi (vantilatör), kullanıcının avantajlı fiyat hakkını kaybetmesi.\n        *   Yanlış ürün gönderildiği iddiasıyla iadenin reddedilmesi ve ürünün geri gönderilmesi (pardösü).\n        *   Ürün iade koduna erişimde sorunlar nedeniyle iadenin gecikmesi/yapılamaması (Tamer Tanca ayakkabı).\n    *   **Müşteri Hizmetleri Yetersizliği:** Sorunlara çözüm bulunamaması, vaatlerin yerine getirilmemesi (kedi kumu iadesi), ulaşılamama (Tamer Tanca ayakkabı).\n    *   **Arızalı/Kusurlu Ürünler:** Hasarlı ve çalışmayan vantilatör; dokunmatiği yavaş, sesi boğuk, ısınan telefon (Xiaomi Redmi 13); tabanı açılan/topuğu kırılan ayakkabı (Tamer Tanca).\n    *   **Satıcı Kaynaklı Sorunlar:** Satıcının iadeyi kabul etmemesi veya yanlış ürün gönderildiğini iddia etmesi (pardösü, Xiaomi telefon).\n    *   **Otomatik Üyelik ve İptal Sorunları:** Trendyol Pass'in bilgisi dışında otomatik yenilenmesi ve 75₺ çekilmesi, iadenin yapılmaması.\n    *   **Kampanya ve Avantajların Kullanılamaması:** Trendyol Plus üyeliği kapsamında vaat edilen Exxen ve YouTube kampanyalarına erişilememesi.\n    *   **Sipariş İptali:** Müşterinin isteği dışında, gerekçe belirtilmeksizin siparişin iptal edilmesi ve iade başlatılması (Puma çanta).\n*   **Tekrar Eden Sorunlar ve Mağduriyetler:**\n    *   **İade/Para İadesi Sorunları:** Kullanıcıların paralarının iade edilmemesi veya iade süreçlerinde zorluk yaşaması (para iadesi gecikmeleri, iade reddi, keyfi iadeler). Bu konu, Şikayetvar yorumlarında en çok tekrar eden ve kullanıcıları finansal olarak mağdur eden ana sorundur.\n    *   **Müşteri Hizmetleri Yetkinliği:** Müşteri hizmetlerine ulaşılamaması veya sorun çözme konusunda yetersiz kalmaları da sıkça belirtilen bir problemdir.\n    *   **Ürün Kalitesi ve Teslimat Hataları:** Arızalı ürünler ve yanlış/eksik teslimatlar da tekrar eden sorunlardır.\n*   **Haklılık Payı ve Yoğunluk:** Yorumların geneli, somut ve belgelenebilir sorunları (eksik ürün, iade edilmeyen para, arızalı ürün) içermektedir. Kullanıcıların mağduriyetleri doğrudan finansal kayıplara veya ciddi zaman kaybına yol açmaktadır. Sorunların tekrar etme sıklığı ve içeriği, şikayetlerin haklılık payının yüksek olduğunu ve Trendyol'un operasyonel süreçlerinde (özellikle iade ve müşteri hizmetleri) ciddi aksaklıklar yaşandığını göstermektedir. Yoğunluk, farklı problem başlıklarında olsa da, temelinde \"satış sonrası destek\" ve \"tüketici hakları\" ile ilgili olduğu için, genel bir memnuniyetsizlik algısı yaratmaktadır.\n\n---\n\n**2. ETBİS Kaynak Değerlendirmesi:**\n\n*   **ETBİS Kaydı:** Trendyol'un \"https://www.trendyol E-Ticaret Bilgi Sistemine sisteminde kayıtlı\" olduğu belirtilmiştir.\n*   **Yasal Güvenilirlik Anlamı:** Trendyol'un ETBİS'e kayıtlı olması, Türkiye'deki e-ticaret faaliyetlerine ilişkin yasal düzenlemelere uyduğunu ve resmi bir denetim mekanizmasına tabi olduğunu gösterir. Bu durum, sitenin yasal bir muhatabı olduğu, belirli standartlara uymak zorunda olduğu ve tüketicilerin uyuşmazlık durumunda yasal yollara başvurabileceği anlamına gelir. Temel bir yasal güvenilirlik ve şeffaflık işareti olarak kabul edilir.\n*   **Kayıtlı Değilse Anlamı:** Trendyol kayıtlı olduğu için bu durum geçerli değildir.\n*   **Ek Not:** Veride \"Mobil uygulaması YOK\" ifadesi yer almaktadır. Trendyol'un genel bilinirliği göz önüne alındığında bu bilgi gerçeklikten uzak olsa da, sağlanan veri kapsamında değerlendirildiğinde, sitenin mobil uygulama erişiminin olmaması kullanıcı deneyimi ve erişilebilirlik açısından büyük bir eksiklik olarak kabul edilir ve potansiyel güvenlik/erişim riskleri yaratabilir.\n\n---\n\n**3. Twitter Kaynak Değerlendirmesi:**\n\n*   Veri sağlanmadığı için analiz yapılamamıştır.\n\n---\n\n**4. Ekşi Sözlük Kaynak Değerlendirmesi:**\n\n*   Veri sağlanmadığı için analiz yapılamamıştır.\n\n---\n\n**Genel Güvenilirlik Değerlendirmesi:**\n\nTrendyol, ETBİS sistemine kayıtlı olmasıyla yasal bir çerçevede faaliyet gösterdiğini ve temel bir yasal güvenilirlik seviyesine sahip olduğunu göstermektedir. Ancak, Şikayetvar platformundaki yoğun ve tekrar eden kullanıcı yorumları, operasyonel güvenilirliği ve müşteri memnuniyeti açısından ciddi sorunlar olduğunu ortaya koymaktadır. Özellikle para iadesi süreçlerindeki aksaklıklar, ürün hataları, satıcı kaynaklı sorunlar ve müşteri hizmetlerinin yetersizliği, kullanıcılar için önemli finansal ve operasyonel mağduriyetlere yol açmaktadır. Bu durum, yasal uyumluluğa rağmen, müşteri deneyimi ve sorun çözme yeteneği konularında zayıflıklar olduğunu göstermektedir.\n\n**Güçlü Yönler:**\n\n*   **Yasal Uyum ve Şeffaflık:** ETBİS'e kayıtlı olması, yasal düzenlemelere uyum sağladığını ve tüketiciler için temel bir yasal güvence sunduğunu gösterir.\n\n**Zayıf Yönler:**\n\n*   **İade ve Geri Ödeme Süreçleri:** En kritik zayıflık. Para iadelerinin yapılmaması, gecikmeler, keyfi iadeler/reddetmeler sıkça yaşanan ve kullanıcı mağduriyetine yol açan sorunlardır.\n*   **Müşteri Hizmetleri Etkisizliği:** Ulaşılamama, sorun çözmede yetersiz kalma ve verilen sözlerin tutulmaması, genel müşteri memnuniyetini olumsuz etkilemektedir.\n*   **Ürün Kalitesi ve Teslimat Kontrolü:** Hasarlı, arızalı, eksik veya yanlış ürün teslimatları, site üzerindeki satıcıların denetiminde veya lojistik süreçlerinde eksikliklere işaret etmektedir.\n*   **Satıcı Sorumluluğu ve Denetimi:** Kullanıcı mağduriyetlerinin bir kısmının satıcılardan kaynaklanması (iade reddi, hatalı ürün), Trendyol'un satıcıları üzerindeki denetim ve yaptırım gücünün yetersiz olduğunu düşündürmektedir.\n*   **Mobil Uygulama Eksikliği (Veri Kapsamında):** Sağlanan veride \"Mobil uygulaması YOK\" olarak belirtilmesi, erişilebilirlik ve modern e-ticaret beklentileri açısından büyük bir zayıflıktır.\n\n**Sonuç Çıkarımı:**\n\nTrendyol, yasal yükümlülüklerini (ETBİS kaydı) yerine getirse de, kullanıcı deneyimi açısından özellikle satış sonrası süreçlerde (iade, müşteri hizmetleri, ürün kalitesi sorunları) ciddi operasyonel aksaklıklar ve zayıflıklar barındırmaktadır. Bu durum, kullanıcılarda finansal mağduriyet ve genel memnuniyetsizliğe yol açarak sitenin genel güvenilirliği algısını düşürmektedir."
+    },
+    "timestamp": "2025-08-05T22:54:28.377820"
+  },
+  "zulays": {
+    "result": {
+      "site": "zulays",
+      "yorum_sayısı": 13,
+      "yorumlar": [
+        {
+          "id": "94e8e67c-a2e4-4739-8c52-e40ff0073996",
+          "yorum": "trendyol'dan kampanyalı 4 adet biocat kedi kumu aldım frog pet satıcısından. ancak bana sadece 2 adet ürün geldi. trendyol müşteri hizmetlerine sorun bildirdim. 24.06.2025 tarihinde 3 iş günü içerisinde gelmeyen ürünlerin para iadesinin yapılacağını söylemelerine rağmen henüz bir işlem yapılmadı. 04...",
+          "tarih": "2025-08-05T22:20:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "469cd491-53d6-47f9-a4c3-c872639e920e",
+          "yorum": "trendyol’dan 1 ay içinde 10 adet kargo bedava paketi aldım. bugün, bilgim dışında banka hesabımdan 75₺ çekilmiş. uygulama üzerinden görüştüğüm e*** isimli temsilci, iade yapılmadığını belirtti. bu paketin her ay otomatik yenilendiğini bilmiyordum, daha önce de trendyol pass almıştım. sitede herhangi...",
+          "tarih": "2025-08-05T21:45:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "95cf57f0-fbe0-42ee-b23a-90ffb90c2bd6",
+          "yorum": "merhaba, trendyol firmasından vantilatör siparişi verdim. gelen ürün hasarlıydı ve çalışmıyordu. değişim talebinde bulundum ve talebim kabul edildi. sonrasında ürünü gönderdim; ancak firma, değişim yapmak yerine keyfi olarak ürünün ücretini iade etti. ürünü avantajlı fiyattan almıştım ve ürün hâlâ s...",
+          "tarih": "2025-08-05T20:49:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "46b5d281-758f-430a-8d2d-416291a65dfe",
+          "yorum": "19 mart 2025 tarihinde trendyol üzerinden derimonts mağazasından bir ceket ve mavi sima mağazasından bir gömlek satın aldım. ürünler için iade talebinde bulundum ve trendyol her iki ürünü de teslim aldı. uygulamada iadenin tamamlandığı ve ücretin geri ödendiği belirtilmesine rağmen, 341,28 sar tutar...",
+          "tarih": "2025-08-05T20:41:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "d3e10c72-b780-4415-a9a5-d94b95189982",
+          "yorum": "10377841764 sipariş numaralı alışverişimde trendyol'dan iki adet pardösü sipariş verdik. i̇kisini de beğenmeyip iade yaptık, birinci firma iadeyi kabul etti. i̇kinci firma ise yanlış ürün yolladığımızı söyleyerek iadeyi kabul etmedi ve ürünü bize geri gönderdi. trendyol ile görüştük; iki ürün aldığımı...",
+          "tarih": "2025-08-05T20:33:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "3267ae2f-0d48-4753-a3ea-d7f962e8fa42",
+          "yorum": "29 temmuz 2025 te trendyol go uygulamasından popeyes iki kişilik kemiksiz kova menü istedik ve içerikte tek doğru bile yoktu ne yiyecek doğruydu ne içecek hatta soslar yoktu bile. bu durum sonucunda kurye de yanımda olarak iade etmek istedim. asistana bağlandım ve asistan bana nelerin yanlış olduğun...",
+          "tarih": "2025-08-05T20:11:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "0561da0f-c6cf-4216-8bf3-bdbbc7b4d1ad",
+          "yorum": "trendyol plus üyeliğim 1 ağustos 2025 tarihinde başladı. üyelik kapsamında sunulan exxen ve youtube.com kampanyalarından 3 ay ücretsiz yararlanabileceğim belirtilmişti. ancak hem uygulamadan hem de farklı tarayıcılardan defalarca denememe rağmen exxen ve youtube.com için kampanya kodlarını alamıyoru...",
+          "tarih": "2025-08-05T19:57:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "68723358-4faf-453c-bc41-436b04ca0b4f",
+          "yorum": "trendyol internet sitesindeki “bitti bitiyor” satıcısından xiaomi redmi 13 marka telefon satın aldım. ürünü teslim aldıktan sonra, telefonun dokunmatiğinin yavaş çalıştığını, sesinin boğuk olduğunu ve cihazın sürekli olarak çabuk ısındığını fark ettim. satıcıya başvurduğumda, iadeyi kabul etmeyip ür...",
+          "tarih": "2025-08-05T19:42:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "0cd1685d-99ad-4230-b390-d5f2cff7ee74",
+          "yorum": "updigo firmasından trendyol üzerinden \"puma black graffiti\" model çantayı, fiyatı düştüğü için son ürünü olarak satın aldım. sipariş numaram: 10396315829. ancak bugün, hiçbir gerekçe belirtilmeden siparişim iptal edildi ve iade işlemi başlatıldı. ben ürünü almak istiyorum, iade değil, siparişimin ye...",
+          "tarih": "2025-08-05T19:28:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "9de16f3b-5efa-4013-85fe-221e99ae9f75",
+          "yorum": "tamer tanca marka aldığım ayakkabının tabanı açıldı, topuğu kırıldı. firmayla irtibata geçtim ve iadem onaylandı. yalnız, trendyol'dan aldığım için bir iade kodu istendi; ancak iki gündür trendyol müşteri hizmetlerine hiçbir şekilde ulaşamıyorum. tamer tanca, trendyol'dan kod istiyor ve bu nedenle a...",
+          "tarih": "2025-08-05T19:21:00",
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "92a4bb41-a335-467a-9a8c-b14b536c5d8c",
+          "yorum": "trendyol.com, hem türkiye'nin hem orta doğu'nun en büyük ve en popüler e-ticaret şirketleri arasında yer alıyor. 2018 yılında alibaba.com tarafından satın alınan ve hem müşteri portföyünü, hem yatırım ağını geliştirme yolunda ilerleme kaydedentrendyol, ayakkabıdan çantaya, kadın giyimden erkek giyime, ev dekorasyon ürünlerinden temizlik malzemelerine geniş bir yelpaze çerçevesindeki ürünlerini kullanıcıları ile buluşturuyor.",
+          "tarih": null,
+          "kaynak": "sikayetvar"
+        },
+        {
+          "id": "b3193c4c-4973-49c7-9c9b-5552478f1b04",
+          "yorum": "https://www.trendyol E-Ticaret Bilgi Sistemine sisteminde kayıtlıdır. Mobil uygulaması YOK.",
+          "kaynak": "E-Ticaret Bilgi Sistemi"
+        },
+        {
+          "id": "42784888-7850-4c8f-bacf-5b6aa2237c2e",
+          "yorum": "https://www.zulays E-Ticaret Bilgi Sistemine sisteminde kayıtlı değildir.",
+          "kaynak": "E-Ticaret Bilgi Sistemi"
+        }
+      ],
+      "analiz": "Bir güvenlik analiz uzmanı olarak, zulays adlı e-ticaret sitesi hakkında sunulan verileri kaynak bazında değerlendirdikten sonra genel bir güvenlik ve güvenilirlik analizi aşağıda sunulmuştur:\n\n---\n\n### **Zulays E-Ticaret Sitesi Güvenilirlik Analizi**\n\n**1. Şikayetvar Değerlendirmesi:**\n\n*   **Analiz:** Verilen Şikayetvar yorumlarının tamamı Trendyol, Trendyol Go, Trendyol Plus veya Trendyol platformu üzerinden yapılan alışverişler ve satıcılarla ilgilidir. \"Zulays\" adlı butik e-ticaret sitesiyle ilgili herhangi bir şikayet bulunmamaktadır.\n*   **Sonuç:** Bu kaynaktan zulays hakkında ticari alışveriş deneyimine dair herhangi bir veri elde edilememiştir. Dolayısıyla, zulays'ın şikayet yoğunluğu veya sorunlarına dair bir yorum yapılamaz.\n\n**2. ETBİS Değerlendirmesi:**\n\n*   **Analiz:** Verilere göre, \"https://www.zulays\" E-Ticaret Bilgi Sistemi'ne (ETBİS) **kayıtlı değildir**. Trendyol'un ise kayıtlı olduğu belirtilmiştir.\n*   **Sonuç:** ETBİS'e kayıtlı olmamak, bir e-ticaret sitesi için önemli bir yasal eksikliktir. Türkiye'de faaliyet gösteren e-ticaret sitelerinin ETBİS'e kaydolması zorunludur. Bu durum, sitenin yasal düzenlemelere uymadığını, denetlenebilirlik ve şeffaflık açısından zayıf olduğunu gösterir. Kullanıcılar için, olası bir problemde muhatap bulma veya yasal haklarını arama süreçlerini zorlaştırabilecek bir güvensizlik unsuru oluşturur.\n\n**3. Twitter Değerlendirmesi:**\n\n*   **Analiz:** Zulays hakkında herhangi bir Twitter yorumu veya verisi sunulmamıştır.\n*   **Sonuç:** Yorum sayısı yetersiz olduğu için (sıfır yorum), bu kaynaktan zulays hakkında bir duygu analizi veya kullanıcı memnuniyet düzeyi değerlendirmesi yapılamamıştır.\n\n**4. Ekşi Sözlük Değerlendirmesi:**\n\n*   **Analiz:** Zulays hakkında herhangi bir Ekşi Sözlük yorumu veya verisi sunulmamıştır.\n*   **Sonuç:** Yorum sayısı yetersiz olduğu için (sıfır yorum), bu kaynaktan zulays hakkında genel memnuniyet düzeyi, eleştirilen veya övülen yönler değerlendirilememiştir.\n\n---\n\n### **Genel Güvenilirlik Değerlendirmesi ve Sonuç**\n\n**Sitenin Genel Güvenilirliği:**\nVerilen sınırlı bilgiler ışığında, zulays sitesinin güvenilirliği düşüktür. Bu yargı, özellikle e-ticaret siteleri için temel bir yasal gereklilik olan ETBİS kaydının bulunmamasından kaynaklanmaktadır. Diğer kaynaklardan (Şikayetvar, Twitter, Ekşi Sözlük) siteye özel veri olmaması, hakkında olumlu ya da olumsuz kullanıcı deneyimi bilgisi edinilememesine yol açmıştır.\n\n**Güçlü Yönleri:**\n*   Verilen bilgiler ışığında belirlenebilen bir güçlü yön bulunmamaktadır.\n\n**Zayıf Yönleri:**\n*   **ETBİS Kaydı Yoksunluğu:** En belirgin ve önemli zayıf yönüdür. Yasal uyumluluk eksikliği, denetlenebilirlik ve şeffaflık sorunlarına işaret eder. Bu durum, kullanıcıların güvenliğini ve haklarını doğrudan etkiler.\n*   **Kamuya Açık Kullanıcı Geri Bildirimi Eksikliği:** Şikayetvar, Twitter ve Ekşi Sözlük gibi platformlarda siteye özel veri bulunmaması, sitenin bilinirliği, kullanıcı tabanının boyutu veya genel kullanıcı deneyimi hakkında bilgi edinmeyi engellemektedir. Bu durum, potansiyel kullanıcılar için belirsizlik yaratır.\n\n**Sonuç Çıkarımı:**\nZulays adlı e-ticaret sitesi hakkında sağlanan veriler oldukça kısıtlıdır. Mevcut tek somut bilgi, sitenin ETBİS sistemine kayıtlı olmamasıdır. Bu durum, sitenin yasal gereklilikleri yerine getirmediğini ve güvenlik/güvenilirlik açısından önemli bir eksikliği bulunduğunu göstermektedir. Kullanıcıların bu site üzerinden alışveriş yapmadan önce yasal durumunu teyit etmeleri ve dikkatli olmaları önerilir."
+    },
+    "timestamp": "2025-08-05T23:07:45.520286"
+  }
+}

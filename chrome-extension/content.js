@@ -16,9 +16,46 @@ class ElalemAnalyzer {
 
     detectSiteType() {
         const hostname = window.location.hostname.toLowerCase();
+        const path = window.location.pathname;
         
-        // Artık tüm siteler destekleniyor, sadece türünü belirle
-        if (hostname.includes('sikayetvar.com')) {
+        // E-ticaret platformları listesi
+        const ecommercePlatforms = [
+            'shophier', 'ticimax', 'ideasoft', 'shopify', 'wix', 'squarespace',
+            'opencart', 'prestashop', 'magento', 'wordpress', 'etstur', 'gittigidiyor'
+        ];
+        
+        let platformDetected = false;
+        let storeName = null;
+        let platformName = null;
+        
+        // Platform kontrolü
+        for (const platform of ecommercePlatforms) {
+            if (hostname.includes(platform)) {
+                platformDetected = true;
+                platformName = platform;
+                
+                // Path'den mağaza ismini çıkar
+                const pathParts = path.split('/').filter(part => part.length > 0);
+                if (pathParts.length > 0) {
+                    storeName = pathParts[0]
+                        .replace(/-/g, ' ')
+                        .replace(/_/g, ' ')
+                        .replace(/\b\w/g, l => l.toUpperCase());
+                }
+                break;
+            }
+        }
+        
+        // Platform üzerindeki mağaza tespit edildiyse
+        if (platformDetected && storeName) {
+            this.siteType = 'ecommerce_store';
+            this.siteName = storeName;
+            this.platform = platformName;
+            this.platformDisplay = platformName.charAt(0).toUpperCase() + platformName.slice(1);
+            console.log(`🏪 Platform mağazası tespit edildi: ${storeName} (${this.platformDisplay} üzerinde)`);
+        }
+        // Bilinen siteler
+        else if (hostname.includes('sikayetvar.com')) {
             this.siteType = 'sikayetvar';
             this.siteName = 'Şikayetvar';
         } else if (hostname.includes('eksisozluk.com') || hostname.includes('ekşisözlük.com')) {
@@ -46,7 +83,13 @@ class ElalemAnalyzer {
             hostname: hostname,
             url: window.location.href,
             title: document.title,
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
+            ...(platformDetected && storeName && {
+                platform: this.platform,
+                platformDisplay: this.platformDisplay,
+                isPlatformStore: true,
+                originalSiteName: storeName
+            })
         };
     }
 
@@ -169,6 +212,9 @@ class ElalemAnalyzer {
             border: none;
         `;
 
+        // Headless mod bilgisi için tooltip
+        button.title = '🔍 Site analizi başlat\n💡 Browser penceresi gizli modda açılacak';
+
         button.addEventListener('mouseenter', () => {
             button.style.transform = 'scale(1.05)';
         });
@@ -191,7 +237,7 @@ class ElalemAnalyzer {
 
         try {
             // Önce API test et
-            const testResponse = await fetch('http://127.0.0.1:8000/test');
+            const testResponse = await fetch('http://127.0.0.1:8003/status');
             if (!testResponse.ok) {
                 throw new Error('API server ulaşılamıyor');
             }
@@ -437,17 +483,41 @@ class ElalemAnalyzer {
             // Site bilgilerini al
             const siteInfo = this.getSiteInfo();
             
+            // Platform mağazası ise, mağaza URL'ini oluştur
+            let analysisUrl = siteInfo.currentUrl;
+            let siteName = siteInfo.siteName;
+            
+            // Eğer platform mağazası tespit edildiyse, mağaza ismini kullan
+            if (this.siteInfo.isPlatformStore && this.siteInfo.originalSiteName) {
+                // Mağaza ismini lowercase yapıp URL formatına çevir
+                const storeNameForUrl = this.siteInfo.originalSiteName.toLowerCase().replace(/\s+/g, '');
+                analysisUrl = `https://${storeNameForUrl}.com`;
+                siteName = this.siteInfo.originalSiteName;
+                
+                console.log(`🏪 Platform mağazası analizi: ${this.siteInfo.originalSiteName} (${this.siteInfo.platformDisplay} üzerinde)`);
+                console.log(`📍 Analiz URL'i: ${analysisUrl}`);
+            }
+            
             // Backend'in beklediği format
             const requestData = {
-                url: siteInfo.currentUrl,
+                url: analysisUrl,
                 site_type: siteInfo.siteType,
-                data: data
+                data: {
+                    ...data,
+                    platform_info: this.siteInfo.isPlatformStore ? {
+                        platform: this.siteInfo.platform,
+                        platform_display: this.siteInfo.platformDisplay,
+                        store_name: this.siteInfo.originalSiteName,
+                        original_url: siteInfo.currentUrl
+                    } : null
+                },
+                headless: true  // Browser'ları görünmez modda çalıştır
             };
             
             console.log('API\'ye gönderilen veriler:', requestData);
             
             // Ana analiz endpoint'i (/analyze) - POST metodu ile
-            const response = await fetch('http://127.0.0.1:8000/analyze', {
+            const response = await fetch('http://127.0.0.1:8003/analyze', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -489,11 +559,14 @@ class ElalemAnalyzer {
         const analiz = analysisData.analiz || analysisData.analysis || 'Analiz bulunamadı';
         const siteName = analysisData.site || siteInfo?.siteName || 'Bilinmeyen Site';
         
+        // Tüm veriyi JSON formatında göster
+        const fullDataJson = JSON.stringify(analysisData, null, 2);
+        
         resultDiv.innerHTML = `
             <div style="position: fixed; top: 100px; right: 20px; z-index: 999999; 
                         background: white; color: #333; padding: 20px; border-radius: 12px; 
                         box-shadow: 0 8px 32px rgba(0,0,0,0.3); font-family: 'Segoe UI', Arial; 
-                        max-width: 450px; border-left: 5px solid #4CAF50; max-height: 70vh; overflow-y: auto;">
+                        max-width: 500px; border-left: 5px solid #4CAF50; max-height: 80vh; overflow-y: auto;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                     <h3 style="margin: 0; color: #4CAF50; font-size: 18px;">🎯 ${siteName} Analizi</h3>
                     <button onclick="this.parentElement.parentElement.parentElement.remove()" 
@@ -517,21 +590,30 @@ class ElalemAnalyzer {
                     <h4 style="margin: 0 0 10px 0; color: #333; font-size: 16px;">🤖 AI Analizi:</h4>
                     <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; 
                                 border-left: 4px solid #2196F3; line-height: 1.6; font-size: 14px;">
-                        ${analiz.length > 500 ? analiz.substring(0, 500) + '...' : analiz}
+                        ${analiz}
+                    </div>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <h4 style="margin: 0 0 10px 0; color: #333; font-size: 16px;">� Tam Veri (JSON):</h4>
+                    <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; 
+                                border-left: 4px solid #FF9800; font-family: 'Courier New', monospace; 
+                                font-size: 12px; white-space: pre-wrap; max-height: 300px; overflow-y: auto;">
+                        ${fullDataJson}
                     </div>
                 </div>
                 
                 <div style="display: flex; gap: 10px; margin-top: 15px;">
-                    <button onclick="window.open('http://127.0.0.1:8000/dashboard', '_blank')" 
-                            style="flex: 1; background: #2196F3; color: white; border: none; padding: 10px; 
-                                   border-radius: 6px; cursor: pointer; font-size: 13px;">
-                        📋 Dashboard'u Aç
-                    </button>
                     <button onclick="navigator.clipboard.writeText('${analiz.replace(/'/g, "\\'")}'); 
-                                     this.textContent='✅ Kopyalandı'; setTimeout(() => this.textContent='📋 Kopyala', 2000)" 
-                            style="background: #FF9800; color: white; border: none; padding: 10px; 
+                                     this.textContent='✅ Analiz Kopyalandı'; setTimeout(() => this.textContent='📋 Analiz Kopyala', 2000)" 
+                            style="flex: 1; background: #4CAF50; color: white; border: none; padding: 10px; 
                                    border-radius: 6px; cursor: pointer; font-size: 13px;">
-                        📋 Kopyala
+                        📋 Analiz Kopyala
+                    </button>
+                    <button onclick="navigator.clipboard.writeText(\`${fullDataJson.replace(/`/g, '\\`').replace(/'/g, "\\'")}\`); 
+                                     this.textContent='✅ JSON Kopyalandı'; setTimeout(() => this.textContent='� JSON Kopyala', 2000)" 
+                            style="flex: 1; background: #FF9800; color: white; border: none; padding: 10px; 
+                                   border-radius: 6px; cursor: pointer; font-size: 13px;">
+                        � JSON Kopyala
                     </button>
                 </div>
             </div>
@@ -543,12 +625,12 @@ class ElalemAnalyzer {
         
         document.body.appendChild(resultDiv);
         
-        // 30 saniye sonra otomatik kaldır
+        // 60 saniye sonra otomatik kaldır (daha uzun süre)
         setTimeout(() => {
             if (resultDiv.parentNode) {
                 resultDiv.parentNode.removeChild(resultDiv);
             }
-        }, 30000);
+        }, 60000);
     }
     
     showLocalAnalysis(data) {

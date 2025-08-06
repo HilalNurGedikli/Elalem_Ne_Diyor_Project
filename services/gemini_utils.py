@@ -1,6 +1,8 @@
 import os
 from google.generativeai import configure, GenerativeModel
 from dotenv import load_dotenv
+from datetime import datetime
+import json
 
 load_dotenv()
 configure(api_key=os.getenv("GEMINI_API_KEY"))
@@ -8,12 +10,24 @@ model = GenerativeModel("models/gemini-2.5-flash")
 
 def find_insta(site: str) -> str:
     prompt = f"""
-    Bana {site} 'e ait instagram sayfasını ve hakkındaki bilgileri bul ve kullanıcı yorumlarını direkt yaz
-    twitter, şikayetvar, etbis ve ekşi sözlük gibi kaynaklardan veri çek. bütün verileri istiyorum!!
-    """
+    {site} 'e ait instagram sayfasını ve mevcut takipçi sayısını ve kullanıcı yorumlarını direkt yaz"""
     try:
         response = model.generate_content(prompt)
-        return response.text
+        yorum = {
+            "kaynak": "instagram",
+            "site": site,
+            "yorum": response.text,
+            "tarih": datetime.now().isoformat()
+        }
+        dosya_yolu = "yorumlar_tarihli_filtreli.json"
+        try:
+            with open(dosya_yolu, "r", encoding="utf-8") as f:
+                mevcut_veri = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            mevcut_veri = []
+        mevcut_veri.append(yorum)
+        with open(dosya_yolu, "w", encoding="utf-8") as f:
+            json.dump(mevcut_veri, f, ensure_ascii=False, indent=2)
     except Exception as e:
         return f"[HATA] Gemini isteği başarısız: {str(e)}"
 

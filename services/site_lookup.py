@@ -3,17 +3,37 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
-import subprocess
 import time
 import sys
 import json
+import re
+from bs4 import BeautifulSoup
+import uuid
+from datetime import datetime
 
 def scrape_sikayetvar(site_name: str) -> list[dict]:
+    """Şikayetvar.com'dan yorumları çek ve işle - HTML dosyası kaydetmeden"""
     url_site_name = site_name.replace(".", "-")
     url = f"https://www.sikayetvar.com/{url_site_name}"
 
+    # Anahtar kelimeler
+    anahtar_kelimeler = [
+        "şikayet", "şikayetçi", "memnun değilim", "pişman", "iade", "ret", "reddedildi",
+        "yırtıldı", "kırıldı", "soyuldu", "çatladı", "şikayetim", "kalitesiz", "hüsran",
+        "yanıltıcı", "bozuldu", "incelendi", "olumsuz", "reddi", "değişim yapılmadı",
+        "memnun", "teşekkür", "çok beğendim", "sorunsuz", "iyi hizmet", "kaliteli",
+        "hızlı teslimat", "olumlu", "tavsiye ederim", "güzel", "iyi ki", "harika", "çok güzel",
+        "beğendim", "mükemmel", "tatmin oldum", "şahane", "kusursuz"
+    ]
+    
+    # Türkçe aylar sözlüğü
+    aylar = {
+        "ocak": "01", "şubat": "02", "mart": "03", "nisan": "04", "mayıs": "05", "haziran": "06",
+        "temmuz": "07", "ağustos": "08", "eylül": "09", "ekim": "10", "kasım": "11", "aralık": "12"
+    }
+
     options = Options()
-    # options.add_argument("--headless")  # İstersen aktif et
+    options.add_argument("--headless")  # Browser penceresi açılmayacak
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
 
@@ -21,23 +41,71 @@ def scrape_sikayetvar(site_name: str) -> list[dict]:
         service=Service(r"C:\Users\gzmns\Downloads\chromedriver-win64\chromedriver-win64\chromedriver.exe"),
         options=options
     )
-    # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-    driver.get(url)
+    
+    try:
+        driver.get(url)
 
-    # Sayfa biraz yüklensin diye aşağı kaydır
-    for _ in range(2):
-        driver.execute_script("window.scrollBy(0, 1000);")
-        time.sleep(1.5)
+        # Sayfa biraz yüklensin diye aşağı kaydır
+        for _ in range(2):
+            driver.execute_script("window.scrollBy(0, 1000);")
+            time.sleep(1.5)
 
-    # Sayfayı kaydet
-    with open("sayfa.html", "w", encoding="utf-8") as f:
-        f.write(driver.page_source)
-    print("HTML sayfası kaydedildi: sayfa.html")
+        # HTML içeriğini doğrudan işle (dosyaya kaydetmeden)
+        html_content = driver.page_source
+        print("✅ Sayfa içeriği alındı (bellekte işleniyor)")
+        
+        # BeautifulSoup ile işle
+        soup = BeautifulSoup(html_content, "html.parser")
+        filtreli_yorumlar = []
+        articles = soup.find_all("article")
 
-    # yorumlari_cek.py dosyasını çalıştır
-    print("Yorumları işleyen Python dosyası çalıştırılıyor...")
-    subprocess.run([sys.executable, "yorumlari_cek.py"], check=True)
+        for article in articles:
+            try:
+                p_tag = article.find("p")
+                if not p_tag:
+                    continue
 
-    driver.quit()
+                yorum = p_tag.get_text(strip=True).lower()
+                if not any(kelime in yorum for kelime in anahtar_kelimeler):
+                    continue
+
+                tarih_iso = None
+
+                # Div içinden tarihi çekmeye çalış
+                tarih_div = article.find("div", class_="js-tooltip time")
+                if tarih_div:
+                    tarih_text = tarih_div.get_text(strip=True).lower()
+                    try:
+                        parcalar = tarih_text.split()
+                        if len(parcalar) >= 3:
+                            gun, ay_ad, saat = parcalar[:3]
+                            ay = aylar.get(ay_ad)
+                            yil = datetime.now().year
+                            tarih_iso = f"{yil}-{ay}-{int(gun):02d}T{saat}:00"
+                        else:
+                            tarih_iso = tarih_text
+                    except Exception:
+                        tarih_iso = tarih_text
+
+                filtreli_yorumlar.append({
+                    "id": str(uuid.uuid4()),
+                    "yorum": yorum,
+                    "tarih": tarih_iso,
+                    "kaynak": "sikayetvar",
+                    "site": site_name
+                })
+
+            except Exception as e:
+                print(f"⚠️ Yorum işleme hatası: {e}")
+                continue
+
+        print(f"✅ {len(filtreli_yorumlar)} yorum bulundu ve işlendi")
+        return filtreli_yorumlar
+
+    finally:
+        driver.quit()
+
+
+# Eski fonksiyon kaldırıldı - artık direkt bellekte işliyoruz
 
 

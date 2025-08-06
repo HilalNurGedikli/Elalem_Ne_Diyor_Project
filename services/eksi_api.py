@@ -20,15 +20,60 @@ def scrape_eksi(baslik: str, max_pages: int = 3) -> None:
     txt_filename = f"{TXT_PATH}/_{url_baslik}_eksi_entryler.txt"
 
     options = Options()
-    #options.add_argument("--headless")
+    options.add_argument("--headless")  # Browser penceresi açılmayacak
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
     options.add_argument("--start-maximized")
 
-    driver = webdriver.Chrome(
-        service=Service("C:/Users/gedik/tools/chromedriver-win64/chromedriver.exe"),
-        options=options
-    )
+    # ChromeDriver path'ini doğru şekilde ayarla
+    try:
+        # Önce yerel ChromeDriver'ı dene
+        driver = webdriver.Chrome(
+            service=Service(r"c:\Users\gzmns\onedrivefake\Masaüstü\elalem\Elalem_Ne_Diyor_Project\services\chromedriver.exe"),
+            options=options
+        )
+        print("✅ Yerel ChromeDriver kullanılıyor")
+    except Exception as e:
+        print(f"⚠️ Yerel ChromeDriver çalışmadı: {e}")
+        try:
+            # WebDriverManager ile dene
+            from webdriver_manager.chrome import ChromeDriverManager
+            
+            # Cache'i temizle ve yeniden indir
+            wdm_path = ChromeDriverManager().install()
+            print(f"📥 WebDriverManager path: {wdm_path}")
+            
+            # WebDriverManager bazen yanlış dosyayı döndürür, doğru exe dosyasını bulalım
+            if "THIRD_PARTY_NOTICES" in wdm_path:
+                # WebDriverManager yanlış dosya döndürdü, doğru chromedriver.exe'yi bulalım
+                driver_dir = os.path.dirname(wdm_path)
+                chromedriver_exe = os.path.join(driver_dir, "chromedriver.exe")
+                if os.path.exists(chromedriver_exe):
+                    wdm_path = chromedriver_exe
+                    print(f"🔧 Doğru driver bulundu: {wdm_path}")
+                else:
+                    # chromedriver-win32 klasörünü kontrol et
+                    chromedriver_exe = os.path.join(driver_dir, "chromedriver-win32", "chromedriver.exe")
+                    if os.path.exists(chromedriver_exe):
+                        wdm_path = chromedriver_exe
+                        print(f"🔧 Win32 klasöründe driver bulundu: {wdm_path}")
+            
+            # Dosyanın var olup olmadığını kontrol et
+            if os.path.exists(wdm_path) and wdm_path.endswith('.exe'):
+                driver = webdriver.Chrome(service=Service(wdm_path), options=options)
+                print("✅ WebDriverManager ChromeDriver kullanılıyor")
+            else:
+                raise Exception(f"WebDriverManager exe dosyası bulunamadı: {wdm_path}")
+                
+        except Exception as e2:
+            print(f"❌ WebDriverManager de çalışmadı: {e2}")
+            # Son çare: system PATH'teki chromedriver'ı kullan
+            try:
+                driver = webdriver.Chrome(options=options)
+                print("✅ System PATH ChromeDriver kullanılıyor")
+            except Exception as e3:
+                raise Exception(f"Hiçbir ChromeDriver çalışmadı: {e3}")
+    
     driver.get(url)
     time.sleep(3)
 

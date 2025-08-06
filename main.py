@@ -55,7 +55,7 @@ class AnalysisResponse(BaseModel):
     error: str = None
 
 def parse_site_name(site_input: str):
-    """Site girdisinden site bilgilerini çıkar - Artık tüm siteler destekleniyor"""
+    """Site girdisinden site bilgilerini çıkar - Platform bazlı mağaza desteği ile"""
     try:
         from urllib.parse import urlparse
         
@@ -63,8 +63,10 @@ def parse_site_name(site_input: str):
         if site_input.startswith(('http://', 'https://')):
             parsed_url = urlparse(site_input)
             hostname = parsed_url.netloc.lower()
+            path = parsed_url.path.strip('/')
         else:
             hostname = site_input.lower()
+            path = ""
         
         # www. ve m. prefixlerini kaldır
         if hostname.startswith('www.'):
@@ -78,6 +80,23 @@ def parse_site_name(site_input: str):
         else:
             site_name = hostname
             
+        # E-ticaret platformları - path'den mağaza ismini çıkar
+        ecommerce_platforms = [
+            "shophier", "ticimax", "ideasoft", "shopify", "wix", "squarespace",
+            "opencart", "prestashop", "magento", "wordpress", "etstur", "gittigidiyor"
+        ]
+        
+        store_name = None
+        platform_detected = False
+        
+        if site_name in ecommerce_platforms and path:
+            # Platform üzerindeki mağaza ismini path'den çıkar
+            path_parts = path.split('/')
+            if path_parts and path_parts[0]:
+                store_name = path_parts[0].replace('-', ' ').replace('_', ' ').title()
+                platform_detected = True
+                print(f"🏪 Platform tespit edildi: {site_name.upper()} → Mağaza: {store_name}")
+        
         # Bilinen siteler için özel isimler
         known_sites = {
             "sikayetvar": {"type": "sikayetvar", "display": "Şikayetvar"},
@@ -92,8 +111,28 @@ def parse_site_name(site_input: str):
             "netflix": {"type": "streaming", "display": "Netflix"},
             "spotify": {"type": "music", "display": "Spotify"},
             "linkedin": {"type": "social", "display": "LinkedIn"},
-            "github": {"type": "development", "display": "GitHub"}
+            "github": {"type": "development", "display": "GitHub"},
+            # E-ticaret platformları
+            "shophier": {"type": "ecommerce_platform", "display": "Shophier"},
+            "ticimax": {"type": "ecommerce_platform", "display": "Ticimax"},
+            "ideasoft": {"type": "ecommerce_platform", "display": "IdeaSoft"},
+            "shopify": {"type": "ecommerce_platform", "display": "Shopify"}
         }
+        
+        # Platform tespit edilmişse mağaza ismini kullan
+        if platform_detected and store_name:
+            return {
+                "site_name": store_name.lower().replace(' ', ''),
+                "display_name": store_name,
+                "site_type": "ecommerce_store",
+                "hostname": hostname,
+                "platform": site_name,
+                "platform_display": known_sites.get(site_name, {}).get("display", site_name.title()),
+                "is_supported": True,
+                "is_known_site": False,
+                "is_platform_store": True,
+                "original_url": site_input
+            }
         
         # Site bilgilerini belirle
         if site_name in known_sites:
@@ -157,13 +196,24 @@ async def analyze_extension_data(request: AnalysisRequest):
         
         # Extension'ın topladığı veriyi al
         comments = request.data.get('comments', []) if request.data else []
+        platform_info = request.data.get('platform_info') if request.data else None
+        
         logger.info(f"   💬 Extension Comments Count: {len(comments)}")
+        if platform_info:
+            logger.info(f"   🏪 Platform Store Detected: {platform_info.get('store_name')} on {platform_info.get('platform_display')}")
         
         # Main sistem ile entegre analiz
         from routers.analyze import analyze_site as main_analyze
         
-        # Site ismini main sisteme uygun formata çevir
-        site_name = site_info.get('site_name', '').replace('www.', '').replace('m.', '')
+        # Site ismini belirle - Platform mağazası ise mağaza ismini kullan
+        if platform_info and platform_info.get('store_name'):
+            # Platform mağazası - mağaza ismini kullan
+            site_name = platform_info.get('store_name').lower().replace(' ', '').replace('-', '').replace('_', '')
+            logger.info(f"   🏪 Platform Store Analysis: '{platform_info.get('store_name')}' → '{site_name}'")
+        else:
+            # Normal site - site_info'dan al
+            site_name = site_info.get('site_name', '').replace('www.', '').replace('m.', '')
+            
         logger.info(f"   🎯 Analyzing Site: '{site_name}'")
         
         try:
@@ -230,14 +280,24 @@ async def analyze_site_endpoint(request: AnalysisRequest):
     try:
         # URL'den site ismini çıkar
         site_info = parse_site_name(request.url)
-        site_name = site_info.get('site_name', '').replace('www.', '').replace('m.', '')
-        
-        logger.info(f"   🎯 Extracted Site Name: '{site_name}'")
         
         # Extension'dan gelen veriyi al
         extension_data = request.data or {}
         comments = extension_data.get('comments', [])
+        platform_info = extension_data.get('platform_info')
         
+        # Site ismini belirle - Platform mağazası ise mağaza ismini kullan
+        if platform_info and platform_info.get('store_name'):
+            # Platform mağazası - mağaza ismini kullan
+            site_name = platform_info.get('store_name').lower().replace(' ', '').replace('-', '').replace('_', '')
+            display_name = platform_info.get('store_name')
+            logger.info(f"   � Platform Store Analysis: '{platform_info.get('store_name')}' → '{site_name}'")
+        else:
+            # Normal site - site_info'dan al
+            site_name = site_info.get('site_name', '').replace('www.', '').replace('m.', '')
+            display_name = site_info.get('display_name', site_name)
+        
+        logger.info(f"   🎯 Extracted Site Name: '{site_name}'")
         logger.info(f"   💬 Extension Data: {len(comments)} comments")
         
         # Ana analiz sistemini çağır
@@ -249,14 +309,15 @@ async def analyze_site_endpoint(request: AnalysisRequest):
             
             # Analiz sonucunu formatla
             response_data = {
-                "site": site_info.get('display_name', site_name),
-                "yorum_sayısı": len(comments),
+                "site": display_name,
+                "yorum_sayısı": analysis_result.get('yorum_sayısı', 0),
                 "analiz": analysis_result.get('analiz', 'Analiz tamamlandı'),
                 "site_info": site_info,
+                "platform_info": platform_info,
                 "processed_at": str(datetime.now())
             }
             
-            logger.info(f"   📤 Sending Response: {response_data.get('site')} - {len(comments)} comments")
+            logger.info(f"   📤 Sending Response: {display_name} - {analysis_result.get('yorum_sayısı', 0)} comments")
             
             return JSONResponse(
                 content=response_data, 
@@ -268,10 +329,11 @@ async def analyze_site_endpoint(request: AnalysisRequest):
             
             # Analiz hatası durumunda basit yanıt döndür
             fallback_data = {
-                "site": site_info.get('display_name', site_name),
+                "site": display_name,
                 "yorum_sayısı": len(comments),
                 "analiz": f"Site analizi yapıldı. {len(comments)} yorum toplandı. Detaylı analiz için dashboard'u kontrol edin.",
                 "error": "Backend analysis failed",
+                "platform_info": platform_info,
                 "processed_at": str(datetime.now())
             }
             
@@ -285,6 +347,114 @@ async def analyze_site_endpoint(request: AnalysisRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 # Duplicate test endpoint removed - using the UTF-8 version above
+
+@app.get("/search-site")
+async def search_site_suggestions(query: str):
+    """Kullanıcı site ismi arama önerisi"""
+    try:
+        # Bilinen siteler listesi
+        known_sites = {
+            "trendyol": {"display": "Trendyol", "type": "trendyol"},
+            "hepsiburada": {"display": "Hepsiburada", "type": "ecommerce"},
+            "amazon": {"display": "Amazon", "type": "ecommerce"},
+            "gittigidiyor": {"display": "GittiGidiyor", "type": "ecommerce"},
+            "n11": {"display": "N11", "type": "ecommerce"},
+            "ciceksepeti": {"display": "ÇiçekSepeti", "type": "ecommerce"},
+            "migros": {"display": "Migros", "type": "ecommerce"},
+            "carrefour": {"display": "Carrefour", "type": "ecommerce"},
+            "teknosa": {"display": "Teknosa", "type": "ecommerce"},
+            "mediamarkt": {"display": "MediaMarkt", "type": "ecommerce"},
+            "vatan": {"display": "Vatan Bilgisayar", "type": "ecommerce"},
+            "yemeksepeti": {"display": "Yemeksepeti", "type": "food"},
+            "getir": {"display": "Getir", "type": "food"},
+            "facebook": {"display": "Facebook", "type": "social"},
+            "instagram": {"display": "Instagram", "type": "social"},
+            "twitter": {"display": "Twitter", "type": "social"},
+            "eksisozluk": {"display": "Ekşi Sözlük", "type": "eksisozluk"},
+            "sahibinden": {"display": "Sahibinden", "type": "classified"},
+            "letgo": {"display": "Letgo", "type": "classified"},
+            "dolap": {"display": "Dolap", "type": "classified"}
+        }
+        
+        query_lower = query.lower().strip()
+        suggestions = []
+        
+        # Başlangıç eşleşmeleri (en yüksek öncelik)
+        for site_key, site_info in known_sites.items():
+            if site_key.startswith(query_lower) or site_info["display"].lower().startswith(query_lower):
+                suggestions.append({
+                    "key": site_key,
+                    "display": site_info["display"],
+                    "type": site_info["type"],
+                    "match_type": "başlangıç",
+                    "confidence": 0.9
+                })
+        
+        # İçerik eşleşmeleri (orta öncelik)
+        for site_key, site_info in known_sites.items():
+            if query_lower in site_key or query_lower in site_info["display"].lower():
+                # Zaten başlangıç eşleşmesi varsa ekleme
+                if not any(s["key"] == site_key for s in suggestions):
+                    suggestions.append({
+                        "key": site_key,
+                        "display": site_info["display"],
+                        "type": site_info["type"],
+                        "match_type": "içerik",
+                        "confidence": 0.7
+                    })
+        
+        # Benzer kelime eşleşmeleri (düşük öncelik)
+        similar_words = {
+            "market": ["migros", "carrefour"],
+            "alışveriş": ["trendyol", "hepsiburada", "n11"],
+            "elektronik": ["teknosa", "mediamarkt", "vatan"],
+            "yemek": ["yemeksepeti", "getir"],
+            "sosyal": ["facebook", "instagram", "twitter"],
+            "sözlük": ["eksisozluk"],
+            "ilan": ["sahibinden", "letgo", "dolap"]
+        }
+        
+        for keyword, related_sites in similar_words.items():
+            if keyword in query_lower:
+                for site_key in related_sites:
+                    if site_key in known_sites and not any(s["key"] == site_key for s in suggestions):
+                        suggestions.append({
+                            "key": site_key,
+                            "display": known_sites[site_key]["display"],
+                            "type": known_sites[site_key]["type"],
+                            "match_type": "benzer",
+                            "confidence": 0.5
+                        })
+        
+        # Confidence'a göre sırala ve ilk 10'unu al
+        suggestions.sort(key=lambda x: x["confidence"], reverse=True)
+        suggestions = suggestions[:10]
+        
+        # Eğer hiç eşleşme yoksa, kullanıcının girdiği ismi öner
+        if not suggestions:
+            suggestions.append({
+                "key": query_lower.replace(" ", "").replace(".", ""),
+                "display": query.title(),
+                "type": "generic",
+                "match_type": "kullanıcı_girişi",
+                "confidence": 0.3
+            })
+        
+        return {
+            "success": True,
+            "query": query,
+            "suggestions": suggestions,
+            "total": len(suggestions),
+            "message": f"'{query}' için {len(suggestions)} öneri bulundu" if suggestions else "Hiç eşleşme bulunamadı"
+        }
+        
+    except Exception as e:
+        return {
+            "success": False,
+            "query": query,
+            "error": str(e),
+            "suggestions": []
+        }
 
 @app.get("/status")
 async def get_status():
@@ -303,8 +473,8 @@ async def get_status():
     )
 
 # Orijinal router'ı dahil et
-app.include_router(analyze.router)
+app.include_router(analyze.router, prefix="/analyze")
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("main:app", host="127.0.0.1", port=8003, reload=False)
 

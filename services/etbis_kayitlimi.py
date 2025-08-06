@@ -19,7 +19,7 @@ def etbis_kayit_kontrol(girdi: str) -> str:
     tam_url = base_url + site_url
 
     options = Options()
-    #options.add_argument("--headless")
+    options.add_argument("--headless")  # Browser penceresi açılmayacak
 
     driver = webdriver.Chrome(
         service=Service(r"C:\Users\gzmns\Downloads\chromedriver-win64\chromedriver-win64\chromedriver.exe"),
